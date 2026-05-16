@@ -1,0 +1,88 @@
+{
+  "6.jpg": {
+    "new_filename": "rapid-river-public-golf-course-hole-5-green-01.jpg",
+    "description": "Hole 5 green at Nahma Golf Club, public golf course near Rapid River MI",
+    "context": "green"
+  },
+  "7.jpg": {
+    "new_filename": "rapid-river-public-golf-course-flagstick-on-green-02.jpg",
+    "description": "Green with flagstick at public golf course in upper peninsula Michigan",
+    "context": "green"
+  },
+  "Clubhouse1-small.jpeg": {
+    "new_filename": "rapid-river-public-golf-course-clubhouse-dining-room-03.jpg",
+    "description": "Interior dining room at Nahma Golf Club, public golf course near Rapid River MI",
+    "context": "clubhouse"
+  },
+  "Clubhouse14-small.jpeg": {
+    "new_filename": "rapid-river-public-golf-course-clubhouse-bar-and-grill-04.jpg",
+    "description": "Cozy clubhouse bar and grill at public golf course near Rapid River",
+    "context": "clubhouse"
+  },
+  "Clubhouse4-small.jpeg": {
+    "new_filename": "rapid-river-public-golf-course-clubhouse-bar-dining-area-05.jpg",
+    "description": "Clubhouse bar and dining area at public golf course near Escanaba Michigan",
+    "context": "clubhouse"
+  },
+  "Clubhouse5-small.jpeg": {
+    "new_filename": "rapid-river-public-golf-course-clubhouse-bar-dining-area-06.jpg",
+    "description": "Clubhouse bar and dining area at public golf course near Escanaba Michigan",
+    "context": "clubhouse"
+  },
+  "Clubhouse7-small.jpeg": {
+    "new_filename": "rapid-river-public-golf-course-clubhouse-bar-interior-07.jpg",
+    "description": "Historic golf course clubhouse bar with wood paneling and trophy displays",
+    "context": "clubhouse"
+  },
+  "carthouse.jpg": {
+    "new_filename": "rapid-river-public-golf-course-carts-storage-shed-08.jpg",
+    "description": "Golf carts lined up in covered storage at public golf course",
+    "context": "clubhouse"
+  },
+  "carts.jpg": {
+    "new_filename": "rapid-river-public-golf-course-carts-on-fairway-09.jpg",
+    "description": "Two golf carts positioned on fairway at public golf course",
+    "context": "fairway"
+  },
+  "clubhousefromcart.jpg": {
+    "new_filename": "rapid-river-public-golf-course-cart-on-fairway-10.jpg",
+    "description": "Golf cart on fairway at public golf course near Rapid River",
+    "context": "fairway"
+  },
+  "fall1.jpg": {
+    "new_filename": "rapid-river-public-golf-course-green-with-flagstick-autumn-11.jpg",
+    "description": "Green with flagstick surrounded by vibrant fall colors at Upper Peninsula golf course",
+    "context": "green"
+  },
+  "golfcourse.jpg": {
+    "error": "Claude vision failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'messages.0.content.0.image.source.base64: image exceeds 5 MB maximum: 6973584 bytes > 5242880 bytes'}, 'request_id': 'req_011CahcdzuaFr7XHMTSZysBL'}"
+  },
+  "golfcoursescenery2.jpg": {
+    "new_filename": "rapid-river-public-golf-course-carts-on-fairway-13.jpg",
+    "description": "Golf carts on fairway at public golf course near Escanaba Michigan",
+    "context": "fairway"
+  },
+  "golfcoursescenery3.jpg": {
+    "new_filename": "rapid-river-public-golf-course-cart-on-fairway-14.jpg",
+    "description": "Golf cart on fairway at public golf course near Rapid River Michigan",
+    "context": "fairway"
+  },
+  "golfcoursescenery4.jpg": {
+    "new_filename": "rapid-river-public-golf-course-cart-on-fairway-15.jpg",
+    "description": "Golf cart on tree-lined fairway at Upper Peninsula public golf course",
+    "context": "fairway"
+  },
+  "golfcoursescenery_6D.jpg": {
+    "new_filename": "rapid-river-public-golf-course-fairway-overview-16.jpg",
+    "description": "Fairway view at historic golf course near Rapid River Michigan",
+    "context": "fairway"
+  },
+  "lakeview.jpg": {
+    "error": "Claude vision failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'messages.0.content.0.image.source.base64: image exceeds 5 MB maximum: 6067860 bytes > 5242880 bytes'}, 'request_id': 'req_011CahcejRSRteeqxmBUPxhf'}"
+  },
+  "vintage.jpg": {
+    "new_filename": "rapid-river-public-golf-course-vintage-car-golfers-field-18.jpg",
+    "description": "Golfers with vintage car at historic Upper Peninsula golf course",
+    "context": "fairway"
+  }
+}
