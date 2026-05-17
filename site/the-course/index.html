@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>The Course | Nahma Golf Club — 9 Holes on Big Bay de Noc | Est. 1922</title>
+<meta name="description" content="A 9-hole public golf course on the shore of Big Bay de Noc, Upper Peninsula Michigan. Par 36, 2,875 yards. Established 1922. Green fees from $18. Walk-ins welcome." />
+<link rel="stylesheet" href="../css/main.css" />
+<style>
+  /* ============== HERO (green solid variant — The Course page) ============== */
+  .hero {
+    background: var(--color-green);
+    color: var(--color-white);
+    padding: 128px 0 144px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero__inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+    position: relative;
+    z-index: 2;
+  }
+  .hero__est {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .hero__est::before,
+  .hero__est::after {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 1px;
+    background: var(--color-terracotta);
+  }
+  .hero h1 {
+    margin: 0 0 24px;
+    color: var(--color-white);
+  }
+  .hero__sub {
+    font-size: 20px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+    margin: 0;
+    text-wrap: pretty;
+  }
+  .hero__tag {
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+  .hero__tag span {
+    padding: 0 18px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+  }
+  .hero__tag span:last-child { border-right: none; }
+  .hero__watermark {
+    position: absolute;
+    right: -4%;
+    bottom: -8%;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(280px, 40vw, 520px);
+    line-height: 1;
+    color: rgba(255,255,255,0.025);
+    letter-spacing: -0.04em;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ============== COURSE OVERVIEW ============== */
+  .overview {
+    background: var(--color-cream);
+    padding: 128px 0;
+  }
+  .overview__grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 88px;
+    align-items: start;
+  }
+  .overview__copy h2 {
+    margin: 0 0 36px;
+    text-wrap: balance;
+  }
+  .overview__copy p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-dark);
+    margin: 0 0 22px;
+  }
+  .overview__copy p:last-child { margin-bottom: 0; }
+
+  .overview__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .o-card {
+    background: var(--color-off-white);
+    border: 1px solid var(--color-cream-dark);
+    border-top: 4px solid var(--color-green);
+    padding: 32px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: border-color 200ms ease;
+  }
+  .o-card:hover { border-top-color: var(--color-terracotta); }
+  .o-card__lbl {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .o-card__lbl::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 1px;
+    background: var(--color-terracotta);
+  }
+  .o-card h3 { margin: 0; font-size: 24px; letter-spacing: 0.05em; }
+  .o-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-dark);
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  /* ============== STATS BAR ============== */
+  .stats {
+    background: var(--color-cream-dark);
+    padding: 120px 0;
+  }
+  .stats__head {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+  .stats__head .overline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .stats__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    max-width: 960px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(28,56,41,0.15);
+    border-bottom: 1px solid rgba(28,56,41,0.15);
+    padding: 48px 0;
+  }
+  .stat {
+    padding: 0 20px;
+    text-align: center;
+    border-right: 1px solid rgba(28,56,41,0.15);
+  }
+  .stat:last-child { border-right: none; }
+  .stat__num {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(48px, 4.6vw, 68px);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: var(--color-terracotta);
+    margin-bottom: 14px;
+    white-space: nowrap;
+  }
+  .stat__lbl {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-green-dark);
+  }
+
+  /* ============== EXPLORE LINKS ============== */
+  .explore {
+    background: var(--color-off-white);
+    padding: 120px 0;
+  }
+  .explore__head {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .explore__head h2 { margin-top: 0; }
+  .explore__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  .e-card {
+    background: var(--color-cream);
+    border: 1px solid var(--color-cream-dark);
+    padding: 48px 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    text-decoration: none;
+    color: var(--color-dark);
+    transition: border-color 200ms ease, box-shadow 200ms ease;
+  }
+  .e-card:hover {
+    border-color: var(--color-green);
+    box-shadow: 0 4px 24px rgba(28,56,41,0.08);
+  }
+  .e-card__num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+  }
+  .e-card h3 {
+    margin: 0;
+    font-size: 28px;
+    letter-spacing: 0.05em;
+    color: var(--color-green);
+    transition: color 200ms ease;
+  }
+  .e-card:hover h3 { color: var(--color-green-dark); }
+  .e-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin: 0;
+    text-wrap: pretty;
+  }
+  .e-card__arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-green);
+    margin-top: auto;
+    transition: color 200ms ease;
+  }
+  .e-card:hover .e-card__arrow { color: var(--color-terracotta); }
+  .e-card__arrow svg {
+    transition: transform 150ms ease;
+  }
+  .e-card:hover .e-card__arrow svg { transform: translateX(3px); }
+
+  /* ============== RATES CTA ============== */
+  .rates-cta {
+    background: var(--color-green);
+    padding: 120px 0;
+    text-align: center;
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+  }
+  .rates-cta__watermark {
+    position: absolute;
+    left: -2%;
+    bottom: -10%;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(200px, 28vw, 380px);
+    line-height: 1;
+    color: rgba(255,255,255,0.025);
+    letter-spacing: -0.04em;
+    pointer-events: none;
+    user-select: none;
+  }
+  .rates-cta__inner {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+  }
+  .rates-cta .overline { margin-left: auto; margin-right: auto; }
+  .rates-cta h2 {
+    color: var(--color-white);
+    margin: 0 0 20px;
+    text-wrap: balance;
+  }
+  .rates-cta__sub {
+    font-size: 19px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.78);
+    margin: 0 0 44px;
+    text-wrap: pretty;
+  }
+  .rates-cta__price {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-top: 28px;
+  }
+  .rates-cta__ctas {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  /* ============== RESPONSIVE ============== */
+  @media (max-width: 1100px) {
+    .overview__grid { grid-template-columns: 1fr; gap: 64px; }
+    .stats__grid { grid-template-columns: repeat(2, 1fr); gap: 32px 0; padding: 32px 0; }
+    .stat { padding: 16px 12px; border-right: 1px solid rgba(28,56,41,0.15); }
+    .stat:nth-child(2) { border-right: none; }
+    .stat:nth-child(-n+2) { border-bottom: 1px solid rgba(28,56,41,0.15); }
+    .explore__grid { grid-template-columns: 1fr; max-width: 560px; }
+  }
+  @media (max-width: 680px) {
+    .overview, .stats, .explore, .rates-cta { padding-top: 80px; padding-bottom: 80px; }
+    .stats__grid { grid-template-columns: repeat(2, 1fr); }
+    .hero__tag { flex-wrap: wrap; gap: 10px; }
+    .hero__tag span { border-right: none; padding: 0 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav nav--solid">
+  <div class="nav__inner">
+    <a href="/" class="logo" aria-label="Nahma Golf Club">
+      <div class="logo__rule"></div>
+      <div class="logo__mark">Nahma Golf Club</div>
+      <div class="logo__rule"></div>
+    </a>
+    <div class="nav__links">
+      <a href="/the-course/" class="is-active">The Course</a>
+      <a href="/#rates">Rates</a>
+      <a href="/#leagues">Leagues</a>
+      <a href="/#outings">Outings</a>
+      <a href="/about/">About</a>
+    </div>
+    <div class="nav__cta">
+      <a href="/#rates" class="btn btn--nav-primary">See Rates</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ BREADCRUMB ============ -->
+<div class="crumbs">
+  <div class="crumbs__inner">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <span class="here">The Course</span>
+  </div>
+</div>
+
+<!-- ============ SECTION 1 — HERO ============ -->
+<section class="hero">
+  <div class="hero__watermark" aria-hidden="true">9</div>
+  <div class="hero__inner">
+    <div class="hero__est">Est. 1922 &nbsp;·&nbsp; Big Bay de Noc, Michigan</div>
+    <h1 class="h-display">The Course</h1>
+    <p class="hero__sub">Nine holes on the shore of Big Bay de Noc. Par 36, 2,875 yards. Open to the public since 1922.</p>
+    <div class="hero__tag">
+      <span>9 Holes</span>
+      <span>Par 36</span>
+      <span>2,875 Yards</span>
+      <span>Walk or Ride</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2 — COURSE OVERVIEW ============ -->
+<section class="overview">
+  <div class="wrap">
+    <div class="overview__grid">
+      <div class="overview__copy">
+        <div class="overline">The Layout</div>
+        <h2 class="h2">Nine Holes on the Bay.</h2>
+        <p>Nahma Golf Club sits on the shoreline of Big Bay de Noc, part of Lake Michigan's Green Bay. The course plays 2,875 yards from the tips, par 36. It is a walking course at heart. Flat terrain, open fairways, and a lake breeze that shifts throughout the day.</p>
+        <p>The greens are round and dish-shaped, the style common to courses built in the early twentieth century. They reward precision over power. If you play here once, you will want to know them better before you come back.</p>
+        <p>No driving range. No dress code. No tee time required. Show up, pay your green fee, and play. That has been the arrangement here since 1922.</p>
+      </div>
+
+      <div class="overview__cards">
+        <article class="o-card">
+          <span class="o-card__lbl">The Setting</span>
+          <h3 class="h4">Big Bay de Noc Shoreline</h3>
+          <p>The course runs along the shore of Big Bay de Noc, the northern arm of Green Bay on Lake Michigan. The lake is visible throughout the round. No other golf course in the region can claim this address.</p>
+        </article>
+
+        <article class="o-card">
+          <span class="o-card__lbl">The Greens</span>
+          <h3 class="h4">Historic, Round, Dish-Shaped</h3>
+          <p>Built to the design conventions of 1922, the greens are small, round, and bowl-shaped. They hold a well-struck approach shot and reject a poorly hit one. Each green has its own personality.</p>
+        </article>
+
+        <article class="o-card">
+          <span class="o-card__lbl">How to Play</span>
+          <h3 class="h4">Walk or Ride. No Reservation.</h3>
+          <p>Walk the course or rent a gas cart. Eighteen holes means replaying the same nine. Walk-ins are welcome anytime. Large groups should call ahead.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 3 — STATS BAR ============ -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats__head">
+      <div class="overline overline--centered">Course at a Glance</div>
+      <h2 class="h2">By the Numbers</h2>
+    </div>
+    <div class="stats__grid">
+      <div class="stat">
+        <div class="stat__num">36</div>
+        <div class="stat__lbl">Par</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">2,875</div>
+        <div class="stat__lbl">Yards</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">9</div>
+        <div class="stat__lbl">Holes</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num">1922</div>
+        <div class="stat__lbl">Established</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 4 — EXPLORE LINKS ============ -->
+<section class="explore">
+  <div class="wrap">
+    <div class="explore__head">
+      <div class="overline overline--centered">Go Deeper</div>
+      <h2 class="h2">Explore the Course</h2>
+    </div>
+    <div class="explore__grid">
+      <a href="/the-course/hole-by-hole/" class="e-card">
+        <span class="e-card__num">01 — 09</span>
+        <h3 class="h4">Explore Every Hole</h3>
+        <p>Par, yardage, and a brief read on each of the nine holes. Know what you are walking into before you arrive.</p>
+        <span class="e-card__arrow">
+          Hole by Hole
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </a>
+
+      <a href="/the-course/scorecard/" class="e-card">
+        <span class="e-card__num">Par · Yards · Handicap</span>
+        <h3 class="h4">View the Scorecard</h3>
+        <p>Full scorecard with par, yardage, and handicap for all nine holes. A quick reference before or after your round.</p>
+        <span class="e-card__arrow">
+          View Scorecard
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 5 — RATES CTA ============ -->
+<section class="rates-cta">
+  <div class="rates-cta__watermark" aria-hidden="true">$18</div>
+  <div class="rates-cta__inner">
+    <div class="overline overline--centered overline--dark">Green Fees</div>
+    <h2 class="h2">Ready to Play?</h2>
+    <p class="rates-cta__sub">Nine holes start at $18. Eighteen holes (replaying the course) are $28. Gas cart rental available. No tee time required.</p>
+    <div class="rates-cta__ctas">
+      <a href="/rates/" class="btn btn--ghost btn--lg">See All Rates</a>
+      <a href="/about/#contact" class="btn btn--ghost btn--lg">Contact the Club</a>
+    </div>
+    <p class="rates-cta__price">Green fees from $18 · Open May through September</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="logo" aria-label="Nahma Golf Club">
+          <div class="logo__rule"></div>
+          <div class="logo__mark">Nahma Golf Club</div>
+          <div class="logo__rule"></div>
+        </a>
+        <p class="footer__tag">Nine holes on the shore of Big Bay de Noc. Public course. Established 1922.</p>
+      </div>
+
+      <div class="footer__col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="/the-course/">The Course</a></li>
+          <li><a href="/the-course/hole-by-hole/">Hole by Hole</a></li>
+          <li><a href="/#rates">Rates</a></li>
+          <li><a href="/#leagues">Leagues</a></li>
+          <li><a href="/#outings">Outings</a></li>
+          <li><a href="/#clubhouse">Clubhouse</a></li>
+          <li><a href="/about/">About</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h5>Visit</h5>
+        <div class="footer__addr">
+          8588 Ll Rd<br/>
+          Rapid River, MI 49878
+        </div>
+        <h5 style="margin-top:28px">Season</h5>
+        <div class="footer__addr">Open May through September</div>
+      </div>
+
+      <div class="footer__col">
+        <h5>Contact</h5>
+        <div class="footer__addr">
+          <a href="tel:+19066442648">(906) 644-2648</a><br/>
+          <a href="mailto:nahmagolfclub@gmail.com">nahmagolfclub@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="badge">No tee time required. Walk-ins welcome.</div>
+      <div>© 1922–2026 Nahma Golf Club · Nahma, Michigan</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
