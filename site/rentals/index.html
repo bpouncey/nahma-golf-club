@@ -209,9 +209,9 @@
   }
   .addons__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 0;
-    max-width: 960px;
+    max-width: 640px;
     margin: 0 auto;
     border-top: 1px solid rgba(28,56,41,0.15);
     border-bottom: 1px solid rgba(28,56,41,0.15);
@@ -312,7 +312,7 @@
   /* ============== RESPONSIVE — PAGE-SPECIFIC ============== */
   @media (max-width: 1100px) {
     .rentals__grid { grid-template-columns: 1fr; gap: 64px; }
-    .addons__grid { grid-template-columns: repeat(3, 1fr); gap: 32px 0; padding: 32px 0; }
+    .addons__grid { grid-template-columns: repeat(2, 1fr); gap: 32px 0; padding: 32px 0; }
     .addon { padding: 16px 16px; border-right: 1px solid rgba(28,56,41,0.15); }
   }
   @media (max-width: 680px) {
@@ -433,7 +433,7 @@
         <article class="r-card">
           <span class="r-card__lbl">Payment</span>
           <h3 class="h4">Cards and Mobile Pay Accepted</h3>
-          <p>We accept credit cards, debit cards, and NFC mobile payments. No cash required, though cash is welcome too.</p>
+          <p>We accept credit cards, debit cards, and NFC mobile payments. Cash is also accepted.</p>
         </article>
       </div>
 
@@ -458,11 +458,6 @@
         <div class="addon__num">$150</div>
         <div class="addon__lbl">Cart Shed Storage</div>
         <div class="addon__note">Store your personal cart at the club for 12 months. No hauling it back and forth.</div>
-      </div>
-      <div class="addon">
-        <div class="addon__num">May&ndash;Sep</div>
-        <div class="addon__lbl">Season Open</div>
-        <div class="addon__note">The course and cart services are available May through September. Closed in winter.</div>
       </div>
     </div>
   </div>
