@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Handoff bundle (large binary — not needed in version history)
+*.zip
+_handoff_tmp/
+
+# Environment
+.env
