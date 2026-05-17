@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>About Nahma Golf Club | Public Golf Since 1922 | Upper Peninsula, MI</title>
+<meta name="description" content="Nahma Golf Club — a public golf course on the shore of Big Bay de Noc since 1922. No dress code. No tee time required. Green fees from $18. Rapid River, Michigan." />
+<link rel="stylesheet" href="../css/main.css" />
+<style>
+  /* ============== HERO (green solid variant — About page) ============== */
+  .hero {
+    background: var(--color-green);
+    color: var(--color-white);
+    padding: 128px 0 144px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero__inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+    position: relative;
+    z-index: 2;
+  }
+  .hero__est {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .hero__est::before,
+  .hero__est::after {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 1px;
+    background: var(--color-terracotta);
+  }
+  .hero h1 {
+    margin: 0 0 24px;
+    color: var(--color-white);
+  }
+  .hero__sub {
+    font-size: 20px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+    margin: 0;
+    text-wrap: pretty;
+  }
+  .hero__tag {
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+  .hero__tag span {
+    padding: 0 18px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+  }
+  .hero__tag span:last-child { border-right: none; }
+  /* Watermark numeral decoration */
+  .hero__watermark {
+    position: absolute;
+    right: -4%;
+    bottom: -8%;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(280px, 40vw, 520px);
+    line-height: 1;
+    color: rgba(255,255,255,0.025);
+    letter-spacing: -0.04em;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ============== MISSION ============== */
+  .mission {
+    background: var(--color-cream);
+    padding: 128px 0;
+  }
+  .mission__grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 88px;
+    align-items: start;
+  }
+  .mission__copy h2 {
+    margin: 0 0 36px;
+    text-wrap: balance;
+  }
+  .mission__copy p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-dark);
+    margin: 0 0 22px;
+  }
+  .mission__copy p:last-child { margin-bottom: 0; }
+
+  .mission__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .m-card {
+    background: var(--color-off-white);
+    border: 1px solid var(--color-cream-dark);
+    border-top: 4px solid var(--color-green);
+    padding: 32px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: border-color 200ms ease;
+  }
+  .m-card:hover { border-top-color: var(--color-terracotta); }
+  .m-card__lbl {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .m-card__lbl::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 1px;
+    background: var(--color-terracotta);
+  }
+  .m-card h3 { margin: 0; font-size: 24px; letter-spacing: 0.05em; }
+  .m-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-dark);
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  /* ============== FACTS ============== */
+  .facts {
+    background: var(--color-cream-dark);
+    padding: 120px 0;
+  }
+  .facts__head {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+  .facts__head .overline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .facts__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(28,56,41,0.15);
+    border-bottom: 1px solid rgba(28,56,41,0.15);
+    padding: 48px 0;
+  }
+  .fact {
+    padding: 0 20px;
+    text-align: center;
+    border-right: 1px solid rgba(28,56,41,0.15);
+  }
+  .fact:last-child { border-right: none; }
+  .fact__num {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(48px, 4.6vw, 68px);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: var(--color-terracotta);
+    margin-bottom: 14px;
+    white-space: nowrap;
+  }
+  .fact__lbl {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-green-dark);
+  }
+
+  /* ============== CONTACT ============== */
+  .contact {
+    background: var(--color-cream);
+    padding: 120px 0 128px;
+    text-align: center;
+  }
+  .contact__inner {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+  }
+  .contact .overline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contact h2 { margin: 0 0 36px; text-wrap: balance; }
+  .contact__ctas {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 64px;
+    flex-wrap: wrap;
+  }
+  .contact__nap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 760px;
+    margin: 0 auto;
+    padding-top: 48px;
+    border-top: 1px solid var(--color-cream-dark);
+    text-align: left;
+  }
+  .contact__nap > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .contact__nap .lbl {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+  .contact__nap .val {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--color-dark);
+  }
+  .contact__nap a { transition: color 150ms ease; }
+  .contact__nap a:hover { color: var(--color-terracotta); }
+
+  /* ============== RESPONSIVE — PAGE-SPECIFIC ============== */
+  @media (max-width: 1100px) {
+    .mission__grid { grid-template-columns: 1fr; gap: 64px; }
+    .facts__grid { grid-template-columns: repeat(3, 1fr); gap: 32px 0; padding: 32px 0; }
+    .fact { padding: 16px 12px; border-right: 1px solid rgba(28,56,41,0.15); }
+    .fact:nth-child(3) { border-right: none; }
+    .fact:nth-child(-n+3) { border-bottom: 1px solid rgba(28,56,41,0.15); }
+  }
+  @media (max-width: 680px) {
+    .mission, .facts, .contact { padding-top: 80px; padding-bottom: 80px; }
+    .facts__grid { grid-template-columns: repeat(2, 1fr); }
+    .contact__nap { grid-template-columns: 1fr; gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav nav--solid">
+  <div class="nav__inner">
+    <a href="/" class="logo" aria-label="Nahma Golf Club">
+      <div class="logo__rule"></div>
+      <div class="logo__mark">Nahma Golf Club</div>
+      <div class="logo__rule"></div>
+    </a>
+    <div class="nav__links">
+      <a href="/the-course/">The Course</a>
+      <a href="/#rates">Rates</a>
+      <a href="/#leagues">Leagues</a>
+      <a href="/#outings">Outings</a>
+      <a href="/about/" class="is-active">About</a>
+    </div>
+    <div class="nav__cta">
+      <a href="/#rates" class="btn btn--nav-primary">See Rates</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ BREADCRUMB ============ -->
+<div class="crumbs">
+  <div class="crumbs__inner">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <span class="here">About</span>
+  </div>
+</div>
+
+<!-- ============ SECTION 1 — HERO ============ -->
+<section class="hero">
+  <div class="hero__watermark" aria-hidden="true">1922</div>
+  <div class="hero__inner">
+    <div class="hero__est">Est. 1922 &nbsp;·&nbsp; Nahma, Michigan</div>
+    <h1 class="h-display">About<br/>Nahma Golf Club</h1>
+    <p class="hero__sub">Public golf on the shore of Big Bay de Noc since 1922.</p>
+    <div class="hero__tag">
+      <span>9 Holes</span>
+      <span>Par 36</span>
+      <span>Public Course</span>
+      <span>Walk-Ins Welcome</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2 — MISSION ============ -->
+<section class="mission">
+  <div class="wrap">
+    <div class="mission__grid">
+      <div class="mission__copy">
+        <div class="overline">Our Purpose</div>
+        <h2 class="h2">Community Golf. Public Access.</h2>
+        <p>Nahma Golf Club exists to provide affordable, accessible golf to the people of the Upper Peninsula. No dress code. No tee time requirement. No membership required to play. We believe golf should be available to anyone who wants to play it.</p>
+        <p>That belief is baked into our pricing, our leagues, and how we welcome everyone who walks through the door. For over a century, this course has been part of the fabric of Delta County. The founding goal was simple: a public course on the shore of Big Bay de Noc, open to the community.</p>
+        <p>Our goal is to keep it going for the next hundred years. We are a family-run club, not a resort operation. The people who play here are the community.</p>
+      </div>
+
+      <div class="mission__cards">
+        <article class="m-card">
+          <span class="m-card__lbl">What We Are</span>
+          <h3 class="h4">A Public Course on the Bay</h3>
+          <p>A family-run public golf course on the shoreline of Big Bay de Noc. Open to the public, May through September. Established in 1922.</p>
+        </article>
+
+        <article class="m-card">
+          <span class="m-card__lbl">What We're Not</span>
+          <h3 class="h4">Not a Private Club</h3>
+          <p>Not a private club. Not a resort course. Not a place where you will feel out of place for showing up in jeans. Golf for everyone.</p>
+        </article>
+
+        <article class="m-card">
+          <span class="m-card__lbl">What This Means for You</span>
+          <h3 class="h4">Show Up. Play.</h3>
+          <p>Show up and play. $18 gets you on the course. No other barriers.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 3 — FACTS ============ -->
+<section class="facts">
+  <div class="wrap">
+    <div class="facts__head">
+      <div class="overline overline--centered">Course at a Glance</div>
+      <h2 class="h2">The Facts</h2>
+    </div>
+    <div class="facts__grid">
+      <div class="fact">
+        <div class="fact__num">1922</div>
+        <div class="fact__lbl">Established</div>
+      </div>
+      <div class="fact">
+        <div class="fact__num">9</div>
+        <div class="fact__lbl">Holes</div>
+      </div>
+      <div class="fact">
+        <div class="fact__num">36</div>
+        <div class="fact__lbl">Par</div>
+      </div>
+      <div class="fact">
+        <div class="fact__num">2,875</div>
+        <div class="fact__lbl">Yards</div>
+      </div>
+      <div class="fact">
+        <div class="fact__num">$18</div>
+        <div class="fact__lbl">Green Fees From</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 4 — CONTACT ============ -->
+<section class="contact">
+  <div class="contact__inner">
+    <div class="overline overline--centered">Reach Out</div>
+    <h2 class="h2">Get in Touch</h2>
+    <div class="contact__ctas">
+      <a href="#contact" class="btn btn--primary btn--lg">Contact Us</a>
+      <a href="/#rates" class="btn btn--secondary btn--lg">Rates and Green Fees</a>
+      <a href="#history" class="btn btn--secondary btn--lg">Club History</a>
+    </div>
+    <div class="contact__nap">
+      <div>
+        <span class="lbl">Visit</span>
+        <span class="val">8588 Ll Rd<br/>Rapid River, MI 49878</span>
+      </div>
+      <div>
+        <span class="lbl">Call</span>
+        <span class="val"><a href="tel:+19066442648">(906) 644-2648</a></span>
+      </div>
+      <div>
+        <span class="lbl">Email</span>
+        <span class="val"><a href="mailto:nahmagolfclub@gmail.com">nahmagolfclub@gmail.com</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="logo" aria-label="Nahma Golf Club">
+          <div class="logo__rule"></div>
+          <div class="logo__mark">Nahma Golf Club</div>
+          <div class="logo__rule"></div>
+        </a>
+        <p class="footer__tag">Nine holes on the shore of Big Bay de Noc. Public course. Established 1922.</p>
+      </div>
+
+      <div class="footer__col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="/the-course/">The Course</a></li>
+          <li><a href="/#rates">Rates</a></li>
+          <li><a href="/#leagues">Leagues</a></li>
+          <li><a href="/#outings">Outings</a></li>
+          <li><a href="/#clubhouse">Clubhouse</a></li>
+          <li><a href="/about/">About</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h5>Visit</h5>
+        <div class="footer__addr">
+          8588 Ll Rd<br/>
+          Rapid River, MI 49878
+        </div>
+        <h5 style="margin-top:28px">Season</h5>
+        <div class="footer__addr">Open May through September</div>
+      </div>
+
+      <div class="footer__col">
+        <h5>Contact</h5>
+        <div class="footer__addr">
+          <a href="tel:+19066442648">(906) 644-2648</a><br/>
+          <a href="mailto:nahmagolfclub@gmail.com">nahmagolfclub@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="badge">No tee time required. Walk-ins welcome.</div>
+      <div>© 1922–2026 Nahma Golf Club · Nahma, Michigan</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
