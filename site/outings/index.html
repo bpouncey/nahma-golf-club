@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Group Outings | Nahma Golf Club — Private Golf Outings in Michigan's UP</title>
+<meta name="description" content="Plan your private golf outing on the shore of Big Bay de Noc. Nahma Golf Club hosts corporate events, fundraisers, family reunions, and golf trips — with a full-service clubhouse, food, and bar. Upper Peninsula, Michigan. Call (906) 644-2648 to book." />
+<link rel="stylesheet" href="../css/main.css" />
+<style>
+  /* ============== HERO (photo variant) ============== */
+  .hero {
+    position: relative;
+    height: 72vh;
+    min-height: 540px;
+    width: 100%;
+    overflow: hidden;
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero__photo {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero__photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 45%;
+  }
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(18,37,25,0.50) 0%,
+      rgba(18,37,25,0.35) 40%,
+      rgba(18,37,25,0.65) 80%,
+      rgba(18,37,25,0.88) 100%
+    );
+    z-index: 1;
+  }
+  .hero__content {
+    position: relative;
+    z-index: 2;
+    padding: 0 var(--pad-x);
+    max-width: 920px;
+  }
+  .hero__est {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .hero__est::before,
+  .hero__est::after {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 1px;
+    background: var(--color-terracotta);
+  }
+  .hero h1 {
+    margin: 0 0 24px;
+    color: var(--color-white);
+  }
+  .hero__sub {
+    font-size: 20px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.9);
+    font-weight: 400;
+    margin: 0 auto 40px;
+    max-width: 640px;
+  }
+  .hero__ctas {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ============== INTRO ============== */
+  .intro {
+    background: var(--color-cream);
+    padding: 112px 0;
+  }
+  .intro__grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 88px;
+    align-items: start;
+  }
+  .intro__copy h2 {
+    margin: 0 0 32px;
+    text-wrap: balance;
+  }
+  .intro__copy p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-dark);
+    margin: 0 0 22px;
+  }
+  .intro__copy p:last-child { margin-bottom: 0; }
+  .intro__copy .btn-group {
+    margin-top: 40px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .intro__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .o-card {
+    background: var(--color-off-white);
+    border: 1px solid var(--color-cream-dark);
+    border-top: 4px solid var(--color-green);
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color 200ms ease;
+  }
+  .o-card:hover { border-top-color: var(--color-terracotta); }
+  .o-card__lbl {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .o-card__lbl::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 1px;
+    background: var(--color-terracotta);
+  }
+  .o-card h3 { margin: 0; font-size: 22px; letter-spacing: 0.04em; }
+  .o-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-dark);
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  /* ============== OUTING TYPES ============== */
+  .types {
+    background: var(--color-green);
+    color: var(--color-white);
+    padding: 112px 0;
+  }
+  .types__head {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+  .types__head .overline {
+    color: rgba(255,255,255,0.6);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .types__head .overline::before,
+  .types__head .overline::after {
+    background: var(--color-terracotta);
+  }
+  .types__head h2 {
+    color: var(--color-white);
+    margin: 0;
+    text-wrap: balance;
+  }
+  .types__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .type-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 40px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: background 200ms ease;
+  }
+  .type-card:hover { background: rgba(255,255,255,0.08); }
+  .type-card__num {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1;
+    color: var(--color-terracotta);
+    opacity: 0.7;
+    letter-spacing: 0.02em;
+  }
+  .type-card h3 {
+    margin: 0;
+    font-size: 22px;
+    letter-spacing: 0.06em;
+    color: var(--color-white);
+  }
+  .type-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.75);
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  /* ============== HOW IT WORKS ============== */
+  .how {
+    background: var(--color-cream-dark);
+    padding: 112px 0;
+  }
+  .how__head {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+  .how__head .overline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .how__head h2 {
+    margin: 0;
+    text-wrap: balance;
+  }
+  .how__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .step {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .step__num {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 0.95;
+    color: var(--color-green);
+    opacity: 0.18;
+    letter-spacing: 0.02em;
+  }
+  .step h3 {
+    margin: 0;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    color: var(--color-dark);
+  }
+  .step p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--color-dark);
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  /* ============== CLUBHOUSE ============== */
+  .clubhouse {
+    background: var(--color-cream);
+    padding: 112px 0;
+  }
+  .clubhouse__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .clubhouse__copy h2 {
+    margin: 0 0 32px;
+    text-wrap: balance;
+  }
+  .clubhouse__copy p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-dark);
+    margin: 0 0 20px;
+  }
+  .clubhouse__copy p:last-of-type { margin-bottom: 0; }
+  .clubhouse__list {
+    list-style: none;
+    padding: 0;
+    margin: 32px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .clubhouse__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-dark);
+  }
+  .clubhouse__list li::before {
+    content: "";
+    display: block;
+    flex-shrink: 0;
+    width: 18px;
+    height: 1px;
+    background: var(--color-terracotta);
+    margin-top: 12px;
+  }
+  .clubhouse__photo {
+    position: relative;
+  }
+  .clubhouse__photo img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+  }
+  .clubhouse__photo::after {
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    width: 80px;
+    height: 80px;
+    border: 3px solid var(--color-terracotta);
+    pointer-events: none;
+  }
+
+  /* ============== SOCIAL PROOF ============== */
+  .proof {
+    background: var(--color-off-white);
+    padding: 96px 0;
+    border-top: 1px solid var(--color-cream-dark);
+    border-bottom: 1px solid var(--color-cream-dark);
+  }
+  .proof__head {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .proof__head .overline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .proof__head h2 {
+    margin: 0;
+    text-wrap: balance;
+  }
+  .proof__list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(28,56,41,0.15);
+    border-bottom: 1px solid rgba(28,56,41,0.15);
+    padding: 40px 0;
+  }
+  .proof-item {
+    padding: 0 20px;
+    text-align: center;
+    border-right: 1px solid rgba(28,56,41,0.15);
+  }
+  .proof-item:last-child { border-right: none; }
+  .proof-item__name {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-green-dark);
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .proof-item__type {
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  /* ============== CTA ============== */
+  .cta-section {
+    background: var(--color-green-dark);
+    color: var(--color-white);
+    padding: 112px 0;
+    text-align: center;
+  }
+  .cta-section__inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+  }
+  .cta-section .overline {
+    color: rgba(255,255,255,0.6);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-section .overline::before,
+  .cta-section .overline::after {
+    background: var(--color-terracotta);
+  }
+  .cta-section h2 {
+    color: var(--color-white);
+    margin: 0 0 24px;
+    text-wrap: balance;
+  }
+  .cta-section p {
+    font-size: 18px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.8);
+    margin: 0 0 48px;
+    text-wrap: pretty;
+  }
+  .cta-section__actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 56px;
+  }
+  .cta-section__nap {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    flex-wrap: wrap;
+  }
+  .cta-section__nap > div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .cta-section__nap .lbl {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+  .cta-section__nap .val {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(255,255,255,0.88);
+  }
+  .cta-section__nap a {
+    color: rgba(255,255,255,0.88);
+    transition: color 150ms ease;
+  }
+  .cta-section__nap a:hover { color: var(--color-terracotta); }
+
+  /* ============== RESPONSIVE ============== */
+  @media (max-width: 1100px) {
+    .intro__grid { grid-template-columns: 1fr; gap: 56px; }
+    .clubhouse__grid { grid-template-columns: 1fr; gap: 48px; }
+    .proof__list { grid-template-columns: repeat(3, 1fr); gap: 24px 0; padding: 32px 0; }
+    .proof-item { padding: 12px 16px; }
+    .proof-item:nth-child(3) { border-right: none; }
+    .proof-item:nth-child(-n+3) { border-bottom: 1px solid rgba(28,56,41,0.15); }
+  }
+  @media (max-width: 860px) {
+    .types__grid { grid-template-columns: 1fr 1fr; }
+    .how__steps { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 680px) {
+    .intro, .types, .how, .clubhouse, .proof, .cta-section { padding-top: 72px; padding-bottom: 72px; }
+    .types__grid { grid-template-columns: 1fr; }
+    .proof__list { grid-template-columns: repeat(2, 1fr); }
+    .proof-item:nth-child(3) { border-right: 1px solid rgba(28,56,41,0.15); }
+    .proof-item:nth-child(-n+3) { border-bottom: none; }
+    .proof-item:nth-child(odd) { border-right: 1px solid rgba(28,56,41,0.15); }
+    .proof-item:nth-child(even) { border-right: none; }
+    .cta-section__nap { flex-direction: column; gap: 24px; align-items: center; }
+    .clubhouse__photo::after { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav nav--solid">
+  <div class="nav__inner">
+    <a href="/" class="logo" aria-label="Nahma Golf Club">
+      <div class="logo__rule"></div>
+      <div class="logo__mark">Nahma Golf Club</div>
+      <div class="logo__rule"></div>
+    </a>
+    <div class="nav__links">
+      <a href="/the-course/">The Course</a>
+      <a href="/#rates">Rates</a>
+      <a href="/#leagues">Leagues</a>
+      <a href="/outings/">Outings</a>
+      <a href="/about/">About</a>
+    </div>
+    <div class="nav__cta">
+      <a href="tel:+19066442648" class="btn btn--nav-primary">Call to Book</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ BREADCRUMB ============ -->
+<div class="crumbs">
+  <div class="crumbs__inner">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <span class="here">Group Outings</span>
+  </div>
+</div>
+
+<!-- ============ SECTION 1 — HERO ============ -->
+<section class="hero">
+  <div class="hero__photo">
+    <img
+      src="../photos/outings-fairway-bay.jpg"
+      alt="Fairway at Nahma Golf Club with Big Bay de Noc in the background"
+      width="1920"
+      height="1080"
+      fetchpriority="high"
+    />
+  </div>
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <div class="hero__content">
+    <div class="hero__est">Group Outings &nbsp;·&nbsp; Upper Peninsula, Michigan</div>
+    <h1 class="h-display">Private Golf Outings<br/>on Big Bay de Noc</h1>
+    <p class="hero__sub">A lakeside course, a full-service clubhouse, and a setting no corporate conference room can match.</p>
+    <div class="hero__ctas">
+      <a href="tel:+19066442648" class="btn btn--primary btn--lg">Call to Book: (906) 644-2648</a>
+      <a href="#how-it-works" class="btn btn--outline btn--lg">How It Works</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2 — INTRO ============ -->
+<section class="intro">
+  <div class="wrap">
+    <div class="intro__grid">
+      <div class="intro__copy">
+        <div class="overline">Why Nahma</div>
+        <h2 class="h2">A Lakeside Round with the Full Day Built In</h2>
+        <p>Nahma Golf Club sits on the shoreline of Big Bay de Noc, on a course that has been welcoming groups since 1922. When your group finishes the round, the clubhouse is right there: food, pizza, and a full bar ready to go. No coordinating a separate restaurant reservation. No driving somewhere else. The whole outing, start to finish, happens in one place.</p>
+        <p>The course is flat, walkable, and forgiving enough for all skill levels. Whether your group is a mix of serious golfers and first-timers, everyone finishes the round. Green fees start at $18 per person, making Nahma one of the most affordable group outing destinations in the Upper Peninsula.</p>
+        <p>Large groups should call ahead. We will work with you on timing and logistics to make sure the day runs smoothly.</p>
+        <div class="btn-group">
+          <a href="tel:+19066442648" class="btn btn--primary">Call (906) 644-2648</a>
+          <a href="/#rates" class="btn btn--secondary">See Rates</a>
+        </div>
+      </div>
+
+      <div class="intro__cards">
+        <article class="o-card">
+          <span class="o-card__lbl">The Setting</span>
+          <h3 class="h4">Shoreline of Big Bay de Noc</h3>
+          <p>Nine holes on the Lake Michigan shoreline. The bay is visible from the course. No other golf outing destination in the region offers this view.</p>
+        </article>
+
+        <article class="o-card">
+          <span class="o-card__lbl">The Clubhouse</span>
+          <h3 class="h4">Food, Pizza, and a Full Bar</h3>
+          <p>The clubhouse is the other half of the outing. Your group eats, drinks, and settles the bets all in one place. No separate logistics. No extra cost to find.</p>
+        </article>
+
+        <article class="o-card">
+          <span class="o-card__lbl">The Course</span>
+          <h3 class="h4">Flat, Walkable, All Skill Levels</h3>
+          <p>Par 36, 2,875 yards. Dish-shaped greens established in 1922. Easy to walk, enjoyable for every handicap. A scramble format works perfectly here.</p>
+        </article>
+
+        <article class="o-card">
+          <span class="o-card__lbl">The Value</span>
+          <h3 class="h4">Affordable for Groups</h3>
+          <p>Green fees start at $18. Cart rentals available. No mandatory packages, no hidden fees. Your group pays for what they play.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 3 — OUTING TYPES ============ -->
+<section class="types">
+  <div class="wrap">
+    <div class="types__head">
+      <div class="overline overline--centered">Who Books with Us</div>
+      <h2 class="h2">Every Kind of Group Outing</h2>
+    </div>
+    <div class="types__grid">
+      <div class="type-card">
+        <div class="type-card__num">01</div>
+        <h3>Corporate Outings</h3>
+        <p>A half-day on the bay is more memorable than a conference room. Teams finish the round, gather at the clubhouse, and leave with an experience worth talking about. Simple to organize, easy for everyone to participate in.</p>
+      </div>
+      <div class="type-card">
+        <div class="type-card__num">02</div>
+        <h3>Fundraisers and Charity</h3>
+        <p>Scramble formats work naturally on a 9-hole course. Outings can be organized as a single round or a two-round event. The course and clubhouse together make it easy to add a meal and a raffle without leaving the property.</p>
+      </div>
+      <div class="type-card">
+        <div class="type-card__num">03</div>
+        <h3>Family Reunions</h3>
+        <p>Golf for the golfers, the clubhouse for everyone else. A family outing at Nahma works because the setting is beautiful, the course is approachable, and the day doesn't end when the round does.</p>
+      </div>
+      <div class="type-card">
+        <div class="type-card__num">04</div>
+        <h3>Friend Group Trips</h3>
+        <p>A group of buddies on a Michigan golf trip needs a course that delivers on scenery and doesn't take itself too seriously. Nahma checks both. The bar being open after the round is not a small thing.</p>
+      </div>
+      <div class="type-card">
+        <div class="type-card__num">05</div>
+        <h3>Michigan Golf Trips</h3>
+        <p>The Upper Peninsula is underrated golf country. Nahma is the only course on the shore of Big Bay de Noc, and it has been operating since 1922. It belongs on any UP golf itinerary. Call ahead for multi-day trip planning.</p>
+      </div>
+      <div class="type-card">
+        <div class="type-card__num">06</div>
+        <h3>Annual Scrambles</h3>
+        <p>Some groups come back every year. Named scrambles, trophy presentations, the same post-round table at the clubhouse. Nahma is the kind of course where that tradition makes sense. Private bookings available throughout the season.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 4 — HOW IT WORKS ============ -->
+<section class="how" id="how-it-works">
+  <div class="wrap">
+    <div class="how__head">
+      <div class="overline overline--centered">Planning Your Outing</div>
+      <h2 class="h2">Three Steps to Book</h2>
+    </div>
+    <div class="how__steps">
+      <div class="step">
+        <div class="step__num">01</div>
+        <h3>Call to Discuss</h3>
+        <p>Call us at (906) 644-2648. Tell us your group size, preferred date, and what you're looking for. We'll confirm availability and walk through the details. Large groups should call at least a few weeks ahead during peak season.</p>
+      </div>
+      <div class="step">
+        <div class="step__num">02</div>
+        <h3>Set Your Format</h3>
+        <p>Decide on your round format (scramble is the most popular for groups), how many holes, cart or walking, and whether you want the clubhouse reserved for a group meal afterward. We keep it flexible.</p>
+      </div>
+      <div class="step">
+        <div class="step__num">03</div>
+        <h3>Show Up and Play</h3>
+        <p>Your group arrives, tees off, and finishes at the clubhouse. Food, drinks, and the bar are ready when you come in. The course is open May through September, seven days a week.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 5 — CLUBHOUSE ============ -->
+<section class="clubhouse">
+  <div class="wrap">
+    <div class="clubhouse__grid">
+      <div class="clubhouse__copy">
+        <div class="overline">After the Round</div>
+        <h2 class="h2">The Clubhouse Makes the Outing</h2>
+        <p>Most outing coordinators underestimate how much the post-round experience matters. At Nahma, the clubhouse is a full-service bar and kitchen, not just a cart shed with a vending machine.</p>
+        <p>Your group finishes the 9th hole, walks into the clubhouse, and the afternoon is just getting started. Food, pizza, a full bar, and the kind of atmosphere that makes people want to stay a while.</p>
+        <ul class="clubhouse__list">
+          <li>Full bar with spirits, beer, and wine</li>
+          <li>Hot food: snacks, sandwiches, and pizza</li>
+          <li>Comfortable indoor space for your whole group</li>
+          <li>On-site, no separate restaurant needed</li>
+          <li>Open throughout the golf season, May through September</li>
+        </ul>
+      </div>
+      <div class="clubhouse__photo">
+        <img
+          src="../photos/clubhouse-bar-interior.jpg"
+          alt="Interior of the Nahma Golf Club clubhouse bar"
+          width="880"
+          height="480"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 6 — SOCIAL PROOF ============ -->
+<section class="proof">
+  <div class="wrap">
+    <div class="proof__head">
+      <div class="overline overline--centered">Who's Been Here</div>
+      <h2 class="h2">Groups That Have Made the Trip</h2>
+    </div>
+    <div class="proof__list">
+      <div class="proof-item">
+        <div class="proof-item__name">Manistique Paper Outing</div>
+        <div class="proof-item__type">Annual Private</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-item__name">Geno Open</div>
+        <div class="proof-item__type">Annual Private</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-item__name">Mallach Outing</div>
+        <div class="proof-item__type">Annual Private</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-item__name">LaLonde Family Scramble</div>
+        <div class="proof-item__type">Family Outing</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-item__name">Stonington Booster Outing</div>
+        <div class="proof-item__type">Group Outing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 7 — CTA ============ -->
+<section class="cta-section">
+  <div class="cta-section__inner">
+    <div class="overline overline--centered">Ready to Plan</div>
+    <h2 class="h2">Book Your Outing at Nahma</h2>
+    <p>Private outings are available throughout the season. Spots fill during peak summer weekends. Call to confirm availability and lock in your date. We will work out the rest.</p>
+    <div class="cta-section__actions">
+      <a href="tel:+19066442648" class="btn btn--primary btn--lg">Call (906) 644-2648</a>
+      <a href="mailto:nahmagolfclub@gmail.com" class="btn btn--outline btn--lg">Email the Club</a>
+    </div>
+    <div class="cta-section__nap">
+      <div>
+        <span class="lbl">Call</span>
+        <span class="val"><a href="tel:+19066442648">(906) 644-2648</a></span>
+      </div>
+      <div>
+        <span class="lbl">Email</span>
+        <span class="val"><a href="mailto:nahmagolfclub@gmail.com">nahmagolfclub@gmail.com</a></span>
+      </div>
+      <div>
+        <span class="lbl">Season</span>
+        <span class="val">Open May through September</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="logo" aria-label="Nahma Golf Club">
+          <div class="logo__rule"></div>
+          <div class="logo__mark">Nahma Golf Club</div>
+          <div class="logo__rule"></div>
+        </a>
+        <p class="footer__tag">Nine holes on the shore of Big Bay de Noc. Public course. Established 1922.</p>
+      </div>
+
+      <div class="footer__col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="/the-course/">The Course</a></li>
+          <li><a href="/#rates">Rates</a></li>
+          <li><a href="/#leagues">Leagues</a></li>
+          <li><a href="/outings/">Outings</a></li>
+          <li><a href="/#clubhouse">Clubhouse</a></li>
+          <li><a href="/about/">About</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h5>Visit</h5>
+        <div class="footer__addr">
+          8588 Ll Rd<br/>
+          Rapid River, MI 49878
+        </div>
+        <h5 style="margin-top:28px">Season</h5>
+        <div class="footer__addr">Open May through September</div>
+      </div>
+
+      <div class="footer__col">
+        <h5>Contact</h5>
+        <div class="footer__addr">
+          <a href="tel:+19066442648">(906) 644-2648</a><br/>
+          <a href="mailto:nahmagolfclub@gmail.com">nahmagolfclub@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="badge">No tee time required. Walk-ins welcome.</div>
+      <div>© 1922–2026 Nahma Golf Club · Nahma, Michigan</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
