@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Scorecard | Nahma Golf Club — Par 36, 2,875 Yards</title>
+  <meta name="description" content="Official scorecard for Nahma Golf Club — Par 36, 2,875 yards over 9 holes on Big Bay de Noc. Yardages for men's and red tees. See hole-by-hole descriptions and tips at nahmagolfclub.com." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../../css/main.css" />
+  <style>
+    /* ===================== INTRO ===================== */
+    .intro {
+      background: var(--color-cream);
+      padding: 72px 0 88px;
+      text-align: center;
+    }
+    .intro__inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+    }
+    .intro .overline { margin-left: auto; margin-right: auto; }
+    .intro h1 { margin: 0 0 28px; }
+    .intro__lede {
+      font-size: 19px;
+      line-height: 1.65;
+      color: var(--color-dark);
+      margin: 0;
+      text-wrap: pretty;
+    }
+    .intro__meta {
+      margin-top: 48px;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--color-text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .intro__meta span {
+      padding: 0 18px;
+      border-right: 1px solid var(--color-cream-dark);
+    }
+    .intro__meta span:last-child { border-right: none; }
+
+    /* ===================== SCORECARD TABLE ===================== */
+    .scorecard-section {
+      background: var(--color-off-white);
+      padding: 96px 0 112px;
+    }
+    .scorecard-section__inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+    }
+    .scorecard-section__head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+    .scorecard-section__head h2 { margin: 0; }
+    .scorecard-section__head .overline { margin-bottom: 12px; }
+    .scorecard-section__note {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0;
+      max-width: 300px;
+      text-align: right;
+      line-height: 1.55;
+    }
+
+    /* Table */
+    .sc-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .sc-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-body);
+      font-size: 14px;
+    }
+    .sc-table thead th {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      padding: 0 16px 14px;
+      text-align: center;
+      border-bottom: 2px solid var(--color-cream-dark);
+      white-space: nowrap;
+    }
+    .sc-table thead th:first-child { text-align: left; padding-left: 0; }
+    .sc-table thead th:last-child { padding-right: 0; }
+
+    .sc-table tbody tr {
+      border-bottom: 1px solid var(--color-cream-dark);
+      transition: background 150ms ease;
+    }
+    .sc-table tbody tr:hover { background: var(--color-cream); }
+    .sc-table tbody tr.is-total {
+      background: var(--color-green-dark);
+      border-bottom: none;
+    }
+    .sc-table tbody tr.is-total:hover { background: var(--color-green); }
+
+    .sc-table td {
+      padding: 20px 16px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .sc-table td:first-child { text-align: left; padding-left: 0; }
+    .sc-table td:last-child { padding-right: 0; }
+
+    /* Hole number cell */
+    .sc-hole {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .sc-hole__num {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: 0.04em;
+      color: var(--color-terracotta);
+      min-width: 36px;
+    }
+    .sc-hole__label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+
+    /* Par cell */
+    .sc-par {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.04em;
+      color: var(--color-dark);
+    }
+
+    /* Yardage cell */
+    .sc-yds {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.04em;
+      color: var(--color-dark);
+    }
+
+    /* Red tee yardage */
+    .sc-red {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+    }
+
+    /* HCP cell */
+    .sc-hcp {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+    }
+
+    /* Signature badge */
+    .sc-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-white);
+      background: var(--color-terracotta);
+      padding: 3px 7px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* Total row */
+    .sc-table tr.is-total td { padding: 22px 16px; }
+    .sc-table tr.is-total td:first-child { padding-left: 0; }
+    .sc-table tr.is-total td:last-child { padding-right: 0; }
+    .sc-total-label {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+    }
+    .sc-total-par {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 26px;
+      letter-spacing: 0.04em;
+      color: var(--color-terracotta);
+    }
+    .sc-total-yds {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 26px;
+      letter-spacing: 0.04em;
+      color: var(--color-white);
+    }
+    .sc-total-red {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.55);
+    }
+    .sc-total-hcp {
+      color: rgba(255, 255, 255, 0.3);
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
+    /* Score column (blank) */
+    .sc-score {
+      width: 64px;
+      min-width: 64px;
+    }
+    .sc-score-box {
+      display: block;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--color-cream-dark);
+      margin: 0 auto;
+      background: var(--color-white);
+    }
+
+    /* ===================== REPLAY NOTE ===================== */
+    .replay {
+      background: var(--color-cream);
+      padding: 72px 0 80px;
+      text-align: center;
+      border-top: 1px solid var(--color-cream-dark);
+    }
+    .replay__inner {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+    }
+    .replay .overline { margin-left: auto; margin-right: auto; }
+    .replay h2 { margin: 0 0 20px; }
+    .replay p {
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--color-text-muted);
+      margin: 0 0 36px;
+      text-wrap: pretty;
+    }
+
+    /* ===================== CLOSING CTA ===================== */
+    .closer {
+      background: var(--color-green);
+      color: var(--color-white);
+      padding: 104px 0;
+      text-align: center;
+    }
+    .closer__inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+    }
+    .closer h2 { color: var(--color-white); margin: 0 0 36px; text-wrap: balance; }
+    .closer__ctas { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 860px) {
+      .scorecard-section__head { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .scorecard-section__note { text-align: left; max-width: none; }
+      .sc-table thead th,
+      .sc-table td { padding-left: 10px; padding-right: 10px; }
+    }
+    @media (max-width: 600px) {
+      .intro__meta { flex-direction: column; gap: 0; }
+      .intro__meta span { padding: 10px 0; border-right: none; border-bottom: 1px solid var(--color-cream-dark); }
+      .intro__meta span:last-child { border-bottom: none; }
+      .sc-badge { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============== NAV ============== -->
+<nav class="nav nav--solid">
+  <div class="nav__inner">
+    <a href="/" class="logo" aria-label="Nahma Golf Club">
+      <div class="logo__rule"></div>
+      <div class="logo__mark">Nahma Golf Club</div>
+      <div class="logo__rule"></div>
+    </a>
+    <div class="nav__links">
+      <a href="/the-course/" class="is-active">The Course</a>
+      <a href="/#rates">Rates</a>
+      <a href="/#leagues">Leagues</a>
+      <a href="/#outings">Outings</a>
+      <a href="/#clubhouse">Clubhouse</a>
+    </div>
+    <div class="nav__cta">
+      <a href="/#rates" class="btn btn--nav-primary">See Rates</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============== BREADCRUMB ============== -->
+<div class="crumbs">
+  <div class="crumbs__inner">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <a href="/the-course/">The Course</a>
+    <span class="sep">/</span>
+    <span class="here">Scorecard</span>
+  </div>
+</div>
+
+<!-- ============== INTRO ============== -->
+<section class="intro">
+  <div class="intro__inner">
+    <div class="overline overline--centered">Par 36 · 2,875 Yards</div>
+    <h1 class="h-display">Nahma Golf Club<br/>Scorecard</h1>
+    <p class="intro__lede">Nine holes on the shore of Big Bay de Noc. Yardages shown for men's tees and red tees. All stats verified for the 2026 season.</p>
+    <div class="intro__meta">
+      <span>Est. 1922</span>
+      <span>9 Holes</span>
+      <span>Par 36</span>
+      <span>2,875 Yards</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SCORECARD TABLE ============== -->
+<section class="scorecard-section" id="scorecard">
+  <div class="scorecard-section__inner">
+    <header class="scorecard-section__head">
+      <div>
+        <div class="overline">Official Scorecard</div>
+        <h2 class="h2">All Nine Holes</h2>
+      </div>
+      <p class="scorecard-section__note">Men's tees listed first. Red tee yardages shown in the Red column. Handicap (HCP) reflects relative hole difficulty.</p>
+    </header>
+
+    <div class="sc-table-wrap">
+      <table class="sc-table" aria-label="Nahma Golf Club scorecard — Par 36, 2,875 yards">
+        <thead>
+          <tr>
+            <th scope="col">Hole</th>
+            <th scope="col">Par</th>
+            <th scope="col">Yards</th>
+            <th scope="col">Red Tees</th>
+            <th scope="col">HCP</th>
+            <th scope="col" class="sc-score">Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Hole 1 -->
+          <tr>
+            <td>
+              <div class="sc-hole">
+                <span class="sc-hole__num">01</span>
+                <span class="sc-hole__label">Opening hole</span>
+              </div>
+            </td>
+            <td><span class="sc-par">4</span></td>
+            <td><span class="sc-yds">340</span></td>
+            <td><span class="sc-red">310</span></td>
+            <td><span class="sc-hcp">5</span></td>
+            <td><span class="sc-score-box" aria-label="Score box"></span></td>
+          </tr>
+          <!-- Hole 2 -->
+          <tr>
+            <td>
+              <div class="sc-hole">
+                <span class="sc-hole__num">02</span>
+                <span class="sc-hole__label">Bay View</span>
+              </div>
+            </td>
+            <td><span class="sc-par">3</span></td>
+            <td><span class="sc-yds">165</span></td>
+            <td><span class="sc-red">140</span></td>
+            <td><span class="sc-hcp">9</span></td>
+            <td><span class="sc-score-box" aria-label="Score box"></span></td>
+          </tr>
+          <!-- Hole 3 — Signature -->
+          <tr>
+            <td>
+              <div class="sc-hole">
+                <span class="sc-hole__num">03</span>
+                <span class="sc-hole__label">Signature<span class="sc-badge">HCP 1</span></span>
+              </div>
+            </td>
+            <td><span class="sc-par">5</span></td>
+            <td><span class="sc-yds">480</span></td>
+            <td><span class="sc-red">445</span></td>
+            <td><span class="sc-hcp">1</span></td>
+            <td><span class="sc-score-box" aria-label="Score box"></span></td>
+          </tr>
+          <!-- Hole 4 -->
+          <tr>
+            <td>
+              <div class="sc-hole">
+                <span class="sc-hole__num">04</span>
+                <span class="sc-hole__label">Uphill approach</span>
+              </div>
+            </td>
+            <td><span class="sc-par">4</span></td>
+            <td><span class="sc-yds">355</span></td>
+            <td><span class="sc-red">325</span></td>
+            <td><span class="sc-hcp">3</span></td>
+            <td><span class="sc-score-box" aria-label="Score box"></span></td>
+          </tr>
+          <!-- Hole 5 -->
+          <tr>
+            <td>
+              <div class="sc-hole">
+                <span class="sc-hole__num">05</span>
+                <span class="sc-hole__label">Shortest hole</span>
+              </div>
+            </td>
+            <td><span class="sc-par">3</span></td>
+            <td><span class="sc-yds">140</span></td>
+            <td><span class="sc-red">120</span></td>
+            <td><span class="sc-hcp">7</span></td>
+            <td><span class="sc-score-box" aria-label="Score box"></span></td>
+          </tr>
+          <!-- Hole 6 -->
+          <tr>
+            <td>
+              <div class="sc-hole">
+                <span class="sc-hole__num">06</span>
+                <span class="sc-hole__label">Best driving hole</span>
+              </div>
+            </td>
+            <td><span class="sc-par">4</span></td>
+            <td><span class="sc-yds">385</span></td>
+            <td><span class="sc-red">355</span></td>
+            <td><span class="sc-hcp">2</span></td>
+            <td><span class="sc-score-box" aria-label="Score box"></span></td>
+          </tr>
+          <!-- Hole 7 -->
+          <tr>
+            <td>
+              <div class="sc-hole">
+                <span class="sc-hole__num">07</span>
+                <span class="sc-hole__label">Dogleg right</span>
+              </div>
+            </td>
+            <td><span class="sc-par">4</span></td>
+            <td><span class="sc-yds">360</span></td>
+            <td><span class="sc-red">335</span></td>
+            <td><span class="sc-hcp">4</span></td>
+            <td><span class="sc-score-box" aria-label="Score box"></span></td>
+          </tr>
+          <!-- Hole 8 -->
+          <tr>
+            <td>
+              <div class="sc-hole">
+                <span class="sc-hole__num">08</span>
+                <span class="sc-hole__label">Shoreline</span>
+              </div>
+            </td>
+            <td><span class="sc-par">5</span></td>
+            <td><span class="sc-yds">490</span></td>
+            <td><span class="sc-red">460</span></td>
+            <td><span class="sc-hcp">6</span></td>
+            <td><span class="sc-score-box" aria-label="Score box"></span></td>
+          </tr>
+          <!-- Hole 9 -->
+          <tr>
+            <td>
+              <div class="sc-hole">
+                <span class="sc-hole__num">09</span>
+                <span class="sc-hole__label">Closer</span>
+              </div>
+            </td>
+            <td><span class="sc-par">4</span></td>
+            <td><span class="sc-yds">360</span></td>
+            <td><span class="sc-red">330</span></td>
+            <td><span class="sc-hcp">8</span></td>
+            <td><span class="sc-score-box" aria-label="Score box"></span></td>
+          </tr>
+          <!-- TOTAL ROW -->
+          <tr class="is-total">
+            <td><span class="sc-total-label">Total — 9 Holes</span></td>
+            <td><span class="sc-total-par">36</span></td>
+            <td><span class="sc-total-yds">2,875</span></td>
+            <td><span class="sc-total-red">2,820</span></td>
+            <td><span class="sc-total-hcp">—</span></td>
+            <td><span class="sc-score-box" style="border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.07);" aria-label="Total score box"></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============== REPLAY NOTE ============== -->
+<section class="replay">
+  <div class="replay__inner">
+    <div class="overline overline--centered">Playing 18?</div>
+    <h2 class="h2">Replay the same 9 holes</h2>
+    <p>To play 18 holes, simply replay the course from the first tee after completing hole 9. Total yardage for 18 holes: 5,750 yards, Par 72.</p>
+    <a href="/the-course/hole-by-hole/" class="btn btn--primary btn--lg">Hole-by-Hole Guide &amp; Playing Tips</a>
+  </div>
+</section>
+
+<!-- ============== CLOSING CTA ============== -->
+<section class="closer">
+  <div class="closer__inner">
+    <div class="overline overline--centered overline--dark">Walk-Ins Welcome</div>
+    <h2 class="h2">Green fees start at $18.<br/>No tee time required.</h2>
+    <div class="closer__ctas">
+      <a href="/#rates" class="btn btn--ghost btn--lg">Current Green Fees</a>
+      <a href="/the-course/" class="btn btn--ghost btn--lg">The Course</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="logo" aria-label="Nahma Golf Club">
+          <div class="logo__rule"></div>
+          <div class="logo__mark">Nahma Golf Club</div>
+          <div class="logo__rule"></div>
+        </a>
+        <p class="footer__tag">Nine holes on the shore of Big Bay de Noc. Public course. Established 1922.</p>
+      </div>
+
+      <div class="footer__col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="/the-course/">The Course</a></li>
+          <li><a href="/#rates">Rates</a></li>
+          <li><a href="/#leagues">Leagues</a></li>
+          <li><a href="/#outings">Outings</a></li>
+          <li><a href="/#clubhouse">Clubhouse</a></li>
+          <li><a href="/about/">About</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h5>Visit</h5>
+        <div class="footer__addr">
+          8588 Ll Rd<br/>
+          Rapid River, MI 49878
+        </div>
+        <h5 style="margin-top:28px">Season</h5>
+        <div class="footer__addr">Open May through September</div>
+      </div>
+
+      <div class="footer__col">
+        <h5>Contact</h5>
+        <div class="footer__addr">
+          <a href="tel:+19066442648">(906) 644-2648</a><br/>
+          <a href="mailto:nahmagolfclub@gmail.com">nahmagolfclub@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="badge">No tee time required. Walk-ins welcome.</div>
+      <div>© 1922–2026 Nahma Golf Club · Nahma, Michigan</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
