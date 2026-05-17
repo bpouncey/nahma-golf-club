@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Golf Leagues | Nahma Golf Club — Weekly Leagues in Michigan's Upper Peninsula</title>
+<meta name="description" content="Join a golf league at Nahma Golf Club on Big Bay de Noc. Men's League Tuesdays, Women's League Thursdays, All Scramble Wednesdays — all at 6 PM, May through September. Call (906) 644-2648 to join." />
+<link rel="stylesheet" href="../css/main.css" />
+<style>
+  /* ============== HERO (green solid variant) ============== */
+  .hero {
+    background: var(--color-green);
+    color: var(--color-white);
+    padding: 128px 0 144px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero__inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+    position: relative;
+    z-index: 2;
+  }
+  .hero__est {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .hero__est::before,
+  .hero__est::after {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 1px;
+    background: var(--color-terracotta);
+  }
+  .hero h1 {
+    margin: 0 0 24px;
+    color: var(--color-white);
+  }
+  .hero__sub {
+    font-size: 20px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+    margin: 0;
+    text-wrap: pretty;
+  }
+  .hero__tag {
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+  .hero__tag span {
+    padding: 0 18px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+  }
+  .hero__tag span:last-child { border-right: none; }
+  .hero__watermark {
+    position: absolute;
+    right: -4%;
+    bottom: -8%;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(280px, 40vw, 520px);
+    line-height: 1;
+    color: rgba(255,255,255,0.025);
+    letter-spacing: -0.04em;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ============== INTRO SECTION ============== */
+  .intro {
+    background: var(--color-cream);
+    padding: 128px 0;
+  }
+  .intro__grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 88px;
+    align-items: start;
+  }
+  .intro__copy h2 {
+    margin: 0 0 36px;
+    text-wrap: balance;
+  }
+  .intro__copy p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-dark);
+    margin: 0 0 22px;
+  }
+  .intro__copy p:last-child { margin-bottom: 0; }
+
+  /* Season badge */
+  .season-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--color-green-light);
+    border: 1px solid rgba(28,56,41,0.18);
+    padding: 14px 22px;
+    margin-top: 36px;
+  }
+  .season-badge__icon {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-terracotta);
+    flex-shrink: 0;
+  }
+  .season-badge__text {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-green-dark);
+  }
+
+  /* Photo sidebar */
+  .intro__photo {
+    position: sticky;
+    top: 108px;
+  }
+
+  /* ============== LEAGUES SECTION ============== */
+  .leagues {
+    background: var(--color-cream-dark);
+    padding: 120px 0;
+  }
+  .leagues__head {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+  .leagues__head .overline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .leagues__head h2 { margin-bottom: 0; }
+
+  .leagues__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  /* League cards */
+  .league-card {
+    background: var(--color-off-white);
+    border: 1px solid var(--color-cream-dark);
+    border-top: 5px solid var(--color-green);
+    padding: 48px 40px 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: border-color 200ms ease, box-shadow 200ms ease;
+  }
+  .league-card:hover {
+    border-top-color: var(--color-terracotta);
+    box-shadow: 0 8px 32px rgba(28,56,41,0.08);
+  }
+  .league-card__num {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: rgba(28,56,41,0.08);
+    margin-bottom: 20px;
+  }
+  .league-card__lbl {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .league-card__lbl::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 1px;
+    background: var(--color-terracotta);
+  }
+  .league-card h3 {
+    font-size: 28px;
+    letter-spacing: 0.05em;
+    margin: 0 0 28px;
+  }
+  .league-card__schedule {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--color-cream-dark);
+  }
+  .league-card__schedule-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .league-card__schedule-label {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    min-width: 44px;
+  }
+  .league-card__schedule-value {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--color-dark);
+  }
+  .league-card p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--color-dark);
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  /* Open badge on All Scramble */
+  .open-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-green);
+    color: var(--color-white);
+    padding: 5px 12px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    align-self: flex-start;
+  }
+
+  /* ============== HOW TO JOIN ============== */
+  .join {
+    background: var(--color-cream);
+    padding: 120px 0;
+  }
+  .join__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 88px;
+    align-items: center;
+  }
+  .join__copy h2 { margin: 0 0 32px; text-wrap: balance; }
+  .join__copy p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-dark);
+    margin: 0 0 22px;
+  }
+  .join__copy p:last-child { margin-bottom: 0; }
+  .join__steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .join-step {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    padding: 28px 32px;
+    background: var(--color-off-white);
+    border: 1px solid var(--color-cream-dark);
+    border-left: 4px solid var(--color-terracotta);
+  }
+  .join-step__num {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    color: var(--color-terracotta);
+    flex-shrink: 0;
+    min-width: 28px;
+  }
+  .join-step__body h4 {
+    font-size: 18px;
+    letter-spacing: 0.06em;
+    margin: 0 0 8px;
+    color: var(--color-dark);
+  }
+  .join-step__body p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-dark);
+    margin: 0;
+  }
+  .join-step__body a { color: var(--color-green); }
+  .join-step__body a:hover { color: var(--color-terracotta); }
+
+  /* ============== CTA CLOSER ============== */
+  .closer {
+    background: var(--color-green);
+    color: var(--color-white);
+    padding: 120px 0;
+    text-align: center;
+  }
+  .closer .overline { margin-bottom: 28px; }
+  .closer h2 {
+    color: var(--color-white);
+    margin: 0 0 20px;
+    text-wrap: balance;
+  }
+  .closer__lead {
+    font-size: 19px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.82);
+    margin: 0 0 48px;
+    text-wrap: pretty;
+  }
+
+  /* ============== RESPONSIVE ============== */
+  @media (max-width: 1100px) {
+    .intro__grid { grid-template-columns: 1fr; gap: 64px; }
+    .intro__photo { position: static; }
+    .leagues__grid { grid-template-columns: 1fr; max-width: 680px; margin: 0 auto; }
+    .join__inner { grid-template-columns: 1fr; gap: 64px; }
+  }
+  @media (max-width: 820px) {
+    .leagues__grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 680px) {
+    .intro, .leagues, .join, .closer { padding-top: 80px; padding-bottom: 80px; }
+    .league-card { padding: 36px 28px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav nav--solid">
+  <div class="nav__inner">
+    <a href="/" class="logo" aria-label="Nahma Golf Club">
+      <div class="logo__rule"></div>
+      <div class="logo__mark">Nahma Golf Club</div>
+      <div class="logo__rule"></div>
+    </a>
+    <div class="nav__links">
+      <a href="/the-course/">The Course</a>
+      <a href="/#rates">Rates</a>
+      <a href="/#leagues">Leagues</a>
+      <a href="/#outings">Outings</a>
+      <a href="/about/">About</a>
+    </div>
+    <div class="nav__cta">
+      <a href="/#rates" class="btn btn--nav-primary">See Rates</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ BREADCRUMB ============ -->
+<div class="crumbs">
+  <div class="crumbs__inner">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <span class="here">Golf Leagues</span>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero__watermark" aria-hidden="true">3</div>
+  <div class="hero__inner">
+    <div class="hero__est">Est. 1922 &nbsp;·&nbsp; Nahma, Michigan</div>
+    <h1 class="h-display">Golf<br/>Leagues</h1>
+    <p class="hero__sub">Three weekly leagues. A real golf community on the shore of Big Bay de Noc. Open to all skill levels, May through September.</p>
+    <div class="hero__tag">
+      <span>Men's League</span>
+      <span>Women's League</span>
+      <span>All Scramble</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTRO ============ -->
+<section class="intro">
+  <div class="wrap">
+    <div class="intro__grid">
+      <div class="intro__copy">
+        <div class="overline">Weekly Competition</div>
+        <h2 class="h2">A Living Golf Community</h2>
+        <p>Nahma Golf Club has run weekly leagues every season since well before anyone working here can remember. Three nights a week, regulars show up, play nine holes, and stick around at the clubhouse after. That is what a golf community looks like.</p>
+        <p>The leagues run from mid-May through early September, following the course's open season. No handicap system required to join. No prior league experience required. You show up on league night, you are in.</p>
+        <p>The course is a 9-hole public layout on Big Bay de Noc, established in 1922. It is a place where the same people have played the same holes for decades. The leagues are a big part of why.</p>
+        <div class="season-badge">
+          <div class="season-badge__icon" aria-hidden="true"></div>
+          <span class="season-badge__text">Season runs May through September</span>
+        </div>
+      </div>
+
+      <div class="intro__photo">
+        <figure class="photo-fig">
+          <img
+            src="../photos/outings-fairway-bay.jpg"
+            alt="Golfers on the fairway at Nahma Golf Club with Big Bay de Noc in the background"
+            width="700"
+            height="467"
+            loading="lazy"
+          />
+          <figcaption>Fairway view — Big Bay de Noc, Nahma Golf Club</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEAGUES ============ -->
+<section class="leagues">
+  <div class="wrap">
+    <div class="leagues__head">
+      <div class="overline overline--centered">Three Leagues Weekly</div>
+      <h2 class="h2">Pick Your Night</h2>
+    </div>
+
+    <div class="leagues__grid">
+
+      <!-- Men's League -->
+      <article class="league-card">
+        <div class="league-card__num" aria-hidden="true">01</div>
+        <span class="league-card__lbl">Tuesdays</span>
+        <h3 class="h4">Men's League</h3>
+        <div class="league-card__schedule">
+          <div class="league-card__schedule-item">
+            <span class="league-card__schedule-label">Day</span>
+            <span class="league-card__schedule-value">Tuesdays</span>
+          </div>
+          <div class="league-card__schedule-item">
+            <span class="league-card__schedule-label">Time</span>
+            <span class="league-card__schedule-value">6:00 PM</span>
+          </div>
+          <div class="league-card__schedule-item">
+            <span class="league-card__schedule-label">Season</span>
+            <span class="league-card__schedule-value">May through September</span>
+          </div>
+        </div>
+        <p>The men's weekly league has been a Tuesday night fixture at Nahma for years. Competitive enough to keep things interesting. Relaxed enough that you will want to come back next week. Skill levels across the board are welcome.</p>
+      </article>
+
+      <!-- All Scramble -->
+      <article class="league-card">
+        <div class="league-card__num" aria-hidden="true">02</div>
+        <span class="open-badge">Open to All</span>
+        <span class="league-card__lbl">Wednesdays</span>
+        <h3 class="h4">All Scramble</h3>
+        <div class="league-card__schedule">
+          <div class="league-card__schedule-item">
+            <span class="league-card__schedule-label">Day</span>
+            <span class="league-card__schedule-value">Wednesdays</span>
+          </div>
+          <div class="league-card__schedule-item">
+            <span class="league-card__schedule-label">Time</span>
+            <span class="league-card__schedule-value">6:00 PM</span>
+          </div>
+          <div class="league-card__schedule-item">
+            <span class="league-card__schedule-label">Season</span>
+            <span class="league-card__schedule-value">May through September</span>
+          </div>
+        </div>
+        <p>The Wednesday scramble is open to everyone. Men, women, couples, visitors. The scramble format keeps the pace up and makes it easy to play with people you have never met. One of the best midweek things to do in the area.</p>
+      </article>
+
+      <!-- Women's League -->
+      <article class="league-card">
+        <div class="league-card__num" aria-hidden="true">03</div>
+        <span class="league-card__lbl">Thursdays</span>
+        <h3 class="h4">Women's League</h3>
+        <div class="league-card__schedule">
+          <div class="league-card__schedule-item">
+            <span class="league-card__schedule-label">Day</span>
+            <span class="league-card__schedule-value">Thursdays</span>
+          </div>
+          <div class="league-card__schedule-item">
+            <span class="league-card__schedule-label">Time</span>
+            <span class="league-card__schedule-value">6:00 PM</span>
+          </div>
+          <div class="league-card__schedule-item">
+            <span class="league-card__schedule-label">Season</span>
+            <span class="league-card__schedule-value">May through September</span>
+          </div>
+        </div>
+        <p>Thursday nights belong to the women's league. A consistent group of regulars, a nine-hole course with views of Big Bay de Noc, and a full bar waiting at the clubhouse after the round. New players are always welcome.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW TO JOIN ============ -->
+<section class="join">
+  <div class="wrap">
+    <div class="join__inner">
+      <div class="join__copy">
+        <div class="overline">Joining Is Simple</div>
+        <h2 class="h2">How to Join a League</h2>
+        <p>There is no registration form, no online portal, no paperwork to fill out. Joining a league at Nahma works the way everything else here works: show up, or give us a call.</p>
+        <p>If you want to know more before committing, call (906) 644-2648. Someone will tell you exactly what to expect on your first night and answer any questions.</p>
+      </div>
+
+      <div class="join__steps">
+        <div class="join-step">
+          <div class="join-step__num">1</div>
+          <div class="join-step__body">
+            <h4 class="h4">Call Ahead</h4>
+            <p>Give us a call at <a href="tel:+19066442648">(906) 644-2648</a> to let us know you are coming. Not required, but it helps us know to expect you on your first night.</p>
+          </div>
+        </div>
+        <div class="join-step">
+          <div class="join-step__num">2</div>
+          <div class="join-step__body">
+            <h4 class="h4">Show Up on League Night</h4>
+            <p>Arrive at the course by 6 PM on your league night. Tuesday for Men's, Wednesday for All Scramble, Thursday for Women's. Bring your clubs. That is all you need.</p>
+          </div>
+        </div>
+        <div class="join-step">
+          <div class="join-step__num">3</div>
+          <div class="join-step__body">
+            <h4 class="h4">Play Nine and Stick Around</h4>
+            <p>Nine holes takes about two hours. The clubhouse is open after with food and a full bar. That is where the real league experience happens.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA CLOSER ============ -->
+<section class="closer">
+  <div class="closer__inner">
+    <div class="overline overline--centered overline--dark">Ready to Play?</div>
+    <h2 class="h2">Join a League This Season</h2>
+    <p class="closer__lead">Three leagues, three nights a week, on one of the most scenic nine-hole courses in Michigan's Upper Peninsula. The season runs May through September.</p>
+    <div class="closer__ctas">
+      <a href="tel:+19066442648" class="btn btn--ghost btn--lg">Call (906) 644-2648</a>
+      <a href="/#rates" class="btn btn--ghost btn--lg">See Rates</a>
+      <a href="/the-course/" class="btn btn--ghost btn--lg">See the Course</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="logo" aria-label="Nahma Golf Club">
+          <div class="logo__rule"></div>
+          <div class="logo__mark">Nahma Golf Club</div>
+          <div class="logo__rule"></div>
+        </a>
+        <p class="footer__tag">Nine holes on the shore of Big Bay de Noc. Public course. Established 1922.</p>
+      </div>
+
+      <div class="footer__col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="/the-course/">The Course</a></li>
+          <li><a href="/#rates">Rates</a></li>
+          <li><a href="/#leagues">Leagues</a></li>
+          <li><a href="/#outings">Outings</a></li>
+          <li><a href="/#clubhouse">Clubhouse</a></li>
+          <li><a href="/about/">About</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h5>Visit</h5>
+        <div class="footer__addr">
+          8588 Ll Rd<br/>
+          Rapid River, MI 49878
+        </div>
+        <h5 style="margin-top:28px">Season</h5>
+        <div class="footer__addr">Open May through September</div>
+      </div>
+
+      <div class="footer__col">
+        <h5>Contact</h5>
+        <div class="footer__addr">
+          <a href="tel:+19066442648">(906) 644-2648</a><br/>
+          <a href="mailto:nahmagolfclub@gmail.com">nahmagolfclub@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="badge">No tee time required. Walk-ins welcome.</div>
+      <div>© 1922–2026 Nahma Golf Club · Nahma, Michigan</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
