@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact &amp; Directions | Nahma Golf Club — Rapid River, MI</title>
+<meta name="description" content="Contact Nahma Golf Club at (906) 644-2648. Located at 8588 Ll Rd, Rapid River, MI 49878. Open Mon–Fri 10 AM–9 PM, Sat 9 AM–9 PM, Sun 11 AM–9 PM. May through September. Walk-ins welcome." />
+<link rel="stylesheet" href="../css/main.css" />
+<style>
+  /* ============== HERO (green solid variant — Contact page) ============== */
+  .hero {
+    background: var(--color-green);
+    color: var(--color-white);
+    padding: 128px 0 144px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero__inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+    position: relative;
+    z-index: 2;
+  }
+  .hero__est {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .hero__est::before,
+  .hero__est::after {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 1px;
+    background: var(--color-terracotta);
+  }
+  .hero h1 {
+    margin: 0 0 24px;
+    color: var(--color-white);
+  }
+  .hero__sub {
+    font-size: 20px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+    margin: 0;
+    text-wrap: pretty;
+  }
+  .hero__tag {
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+  .hero__tag span {
+    padding: 0 18px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+  }
+  .hero__tag span:last-child { border-right: none; }
+  /* Watermark numeral decoration */
+  .hero__watermark {
+    position: absolute;
+    right: -4%;
+    bottom: -8%;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(280px, 40vw, 520px);
+    line-height: 1;
+    color: rgba(255,255,255,0.025);
+    letter-spacing: -0.04em;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ============== CONTACT MAIN ============== */
+  .contact-main {
+    background: var(--color-cream);
+    padding: 128px 0;
+  }
+  .contact-main__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 88px;
+    align-items: start;
+  }
+
+  /* ---- Phone block ---- */
+  .contact-phone {
+    margin-bottom: 56px;
+  }
+  .contact-phone .overline { margin-bottom: 20px; }
+  .phone-link {
+    display: inline-block;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(48px, 5.5vw, 72px);
+    letter-spacing: 0.06em;
+    color: var(--color-green);
+    line-height: 1;
+    margin-bottom: 12px;
+    transition: color 150ms ease;
+  }
+  .phone-link:hover { color: var(--color-terracotta); }
+  .phone-note {
+    font-size: 15px;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  /* ---- Address block ---- */
+  .contact-address {
+    margin-bottom: 56px;
+  }
+  .contact-address .overline { margin-bottom: 20px; }
+  .address-text {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-dark);
+    margin: 0 0 16px;
+  }
+  .address-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-green);
+    border-bottom: 1px solid var(--color-cream-dark);
+    padding-bottom: 2px;
+    transition: color 150ms ease, border-color 150ms ease;
+  }
+  .address-link:hover { color: var(--color-terracotta); border-color: var(--color-terracotta); }
+  .address-link .arrow { display: inline-block; transition: transform 150ms ease; }
+  .address-link:hover .arrow { transform: translateX(3px); }
+
+  /* ---- Email block ---- */
+  .contact-email {
+    margin-bottom: 0;
+  }
+  .contact-email .overline { margin-bottom: 20px; }
+  .email-link {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--color-green);
+    border-bottom: 1px solid var(--color-cream-dark);
+    padding-bottom: 2px;
+    transition: color 150ms ease, border-color 150ms ease;
+  }
+  .email-link:hover { color: var(--color-terracotta); border-color: var(--color-terracotta); }
+
+  /* ---- Right column: hours + tee time note ---- */
+  .hours-card {
+    background: var(--color-off-white);
+    border: 1px solid var(--color-cream-dark);
+    border-top: 4px solid var(--color-green);
+    padding: 40px 44px;
+    margin-bottom: 24px;
+  }
+  .hours-card .overline { margin-bottom: 24px; }
+  .hours-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .hours-table tr {
+    border-bottom: 1px solid var(--color-cream-dark);
+  }
+  .hours-table tr:last-child { border-bottom: none; }
+  .hours-table td {
+    padding: 13px 0;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--color-dark);
+  }
+  .hours-table td:first-child {
+    font-weight: 600;
+    width: 55%;
+  }
+  .hours-table td:last-child {
+    color: var(--color-text-muted);
+    text-align: right;
+  }
+  .season-note {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-cream-dark);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+  }
+  .season-note::before {
+    content: "";
+    display: block;
+    flex-shrink: 0;
+    width: 18px;
+    height: 1px;
+    background: var(--color-terracotta);
+  }
+
+  .walkin-card {
+    background: var(--color-green);
+    color: var(--color-white);
+    padding: 32px 44px;
+  }
+  .walkin-card .overline {
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 16px;
+  }
+  .walkin-card .overline::before,
+  .walkin-card .overline::after { background: var(--color-terracotta); }
+  .walkin-card p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.9);
+    margin: 0;
+  }
+  .walkin-card strong { color: var(--color-white); }
+
+  /* ============== DIRECTIONS / MAP ============== */
+  .directions {
+    background: var(--color-cream-dark);
+    padding: 120px 0;
+  }
+  .directions__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 72px;
+    align-items: start;
+  }
+  .directions__copy .overline { margin-bottom: 20px; }
+  .directions__copy h2 { margin: 0 0 28px; text-wrap: balance; }
+  .directions__copy p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--color-dark);
+    margin: 0 0 20px;
+  }
+  .directions__copy p:last-of-type { margin-bottom: 32px; }
+  .directions__detail {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .dir-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .dir-item .lbl {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+  .dir-item .val {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-dark);
+  }
+
+  /* ============== RESPONSIVE ============== */
+  @media (max-width: 1100px) {
+    .contact-main__grid { grid-template-columns: 1fr; gap: 64px; }
+    .directions__grid { grid-template-columns: 1fr; gap: 48px; }
+  }
+  @media (max-width: 680px) {
+    .contact-main { padding: 80px 0; }
+    .directions { padding: 80px 0; }
+    .hours-card { padding: 32px 28px; }
+    .walkin-card { padding: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav nav--solid">
+  <div class="nav__inner">
+    <a href="/" class="logo" aria-label="Nahma Golf Club">
+      <div class="logo__rule"></div>
+      <div class="logo__mark">Nahma Golf Club</div>
+      <div class="logo__rule"></div>
+    </a>
+    <div class="nav__links">
+      <a href="/the-course/">The Course</a>
+      <a href="/#rates">Rates</a>
+      <a href="/#leagues">Leagues</a>
+      <a href="/#outings">Outings</a>
+      <a href="/about/">About</a>
+    </div>
+    <div class="nav__cta">
+      <a href="/#rates" class="btn btn--nav-primary">See Rates</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ BREADCRUMB ============ -->
+<div class="crumbs">
+  <div class="crumbs__inner">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <span class="here">Contact &amp; Directions</span>
+  </div>
+</div>
+
+<!-- ============ SECTION 1 — HERO ============ -->
+<section class="hero">
+  <div class="hero__watermark" aria-hidden="true">NGC</div>
+  <div class="hero__inner">
+    <div class="hero__est">Nahma, Michigan &nbsp;·&nbsp; Upper Peninsula</div>
+    <h1 class="h-display">Contact &amp;<br/>Directions</h1>
+    <p class="hero__sub">Find us on the shore of Big Bay de Noc. Walk-ins always welcome.</p>
+    <div class="hero__tag">
+      <span>(906) 644-2648</span>
+      <span>Rapid River, MI</span>
+      <span>Open May–September</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2 — CONTACT MAIN ============ -->
+<section class="contact-main">
+  <div class="wrap">
+    <div class="contact-main__grid">
+
+      <!-- Left: NAP -->
+      <div>
+        <!-- Phone -->
+        <div class="contact-phone">
+          <div class="overline">Call Us</div>
+          <a href="tel:+19066442648" class="phone-link">(906) 644-2648</a>
+          <p class="phone-note">Large groups: please call ahead to plan your outing.</p>
+        </div>
+
+        <!-- Address -->
+        <div class="contact-address">
+          <div class="overline">Visit</div>
+          <p class="address-text">
+            8588 Ll Rd<br/>
+            Rapid River, MI 49878
+          </p>
+          <a href="https://maps.google.com/?q=8588+Ll+Rd,+Rapid+River,+MI+49878" target="_blank" rel="noopener" class="address-link">
+            Get Directions <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <!-- Email -->
+        <div class="contact-email">
+          <div class="overline">Email</div>
+          <a href="mailto:nahmagolfclub@gmail.com" class="email-link">nahmagolfclub@gmail.com</a>
+        </div>
+      </div>
+
+      <!-- Right: Hours + Walk-in note -->
+      <div>
+        <div class="hours-card">
+          <div class="overline">Hours</div>
+          <table class="hours-table">
+            <tbody>
+              <tr>
+                <td>Monday – Friday</td>
+                <td>10 AM – 9 PM</td>
+              </tr>
+              <tr>
+                <td>Saturday</td>
+                <td>9 AM – 9 PM</td>
+              </tr>
+              <tr>
+                <td>Sunday</td>
+                <td>11 AM – 9 PM</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="season-note">Open May through September only</div>
+        </div>
+
+        <div class="walkin-card">
+          <div class="overline overline--dark">Tee Times</div>
+          <p>
+            <strong>No reservation required.</strong> Walk-ins are welcome during regular hours — just show up and play. Large groups and outings should call ahead so we can be ready for you.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 3 — DIRECTIONS / MAP ============ -->
+<section class="directions">
+  <div class="wrap">
+    <div class="directions__grid">
+
+      <!-- Left: copy + details -->
+      <div class="directions__copy">
+        <div class="overline">Find Us</div>
+        <h2 class="h2">Getting Here</h2>
+        <p>Nahma Golf Club is located in Michigan's Upper Peninsula, along the southern shoreline of Big Bay de Noc — one of the most scenic stretches of water on Lake Michigan.</p>
+        <p>We sit about 20 miles east of Escanaba on US-2, then north on county roads toward the bay. If you're coming from the Lower Peninsula, the Mackinac Bridge puts you roughly 90 miles east on US-2.</p>
+
+        <div class="directions__detail">
+          <div class="dir-item">
+            <span class="lbl">Address</span>
+            <span class="val">8588 Ll Rd, Rapid River, MI 49878</span>
+          </div>
+          <div class="dir-item">
+            <span class="lbl">Nearest City</span>
+            <span class="val">Escanaba, MI (~20 miles west)</span>
+          </div>
+          <div class="dir-item">
+            <span class="lbl">County</span>
+            <span class="val">Delta County, Upper Peninsula</span>
+          </div>
+          <div class="dir-item">
+            <span class="lbl">GPS Coordinates</span>
+            <span class="val">45.8563° N, 86.6374° W</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 40px;">
+          <a href="https://maps.google.com/?q=8588+Ll+Rd,+Rapid+River,+MI+49878" target="_blank" rel="noopener" class="btn btn--primary">Open in Google Maps</a>
+        </div>
+      </div>
+
+      <!-- Right: map embed -->
+      <div>
+        <div class="map-frame">
+          <div class="map-frame__head">
+            <div class="map-frame__title">Nahma Golf Club</div>
+            <div class="map-frame__coords">45.8563, −86.6374</div>
+          </div>
+          <div class="map-frame__embed">
+            <iframe
+              title="Nahma Golf Club — 8588 Ll Rd, Rapid River, MI 49878"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2835.0!2d-86.63740!3d45.85630!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d4f3b3b3b3b3b3b%3A0x0!2s8588+Ll+Rd%2C+Rapid+River%2C+MI+49878!5e0!3m2!1sen!2sus!4v1747000000000!5m2!1sen!2sus"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <div class="map-frame__caption">
+            <span>Big Bay de Noc · Upper Peninsula · Michigan</span>
+            <a href="https://maps.google.com/?q=8588+Ll+Rd,+Rapid+River,+MI+49878" target="_blank" rel="noopener">Open in Maps →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="logo" aria-label="Nahma Golf Club">
+          <div class="logo__rule"></div>
+          <div class="logo__mark">Nahma Golf Club</div>
+          <div class="logo__rule"></div>
+        </a>
+        <p class="footer__tag">Nine holes on the shore of Big Bay de Noc. Public course. Established 1922.</p>
+      </div>
+
+      <div class="footer__col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="/the-course/">The Course</a></li>
+          <li><a href="/#rates">Rates</a></li>
+          <li><a href="/#leagues">Leagues</a></li>
+          <li><a href="/#outings">Outings</a></li>
+          <li><a href="/#clubhouse">Clubhouse</a></li>
+          <li><a href="/about/">About</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h5>Visit</h5>
+        <div class="footer__addr">
+          8588 Ll Rd<br/>
+          Rapid River, MI 49878
+        </div>
+        <h5 style="margin-top:28px">Season</h5>
+        <div class="footer__addr">Open May through September</div>
+      </div>
+
+      <div class="footer__col">
+        <h5>Contact</h5>
+        <div class="footer__addr">
+          <a href="tel:+19066442648">(906) 644-2648</a><br/>
+          <a href="mailto:nahmagolfclub@gmail.com">nahmagolfclub@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="badge">No tee time required. Walk-ins welcome.</div>
+      <div>© 1922–2026 Nahma Golf Club · Nahma, Michigan</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ SCHEMA — LocalBusiness / GolfCourse ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GolfCourse",
+  "name": "Nahma Golf Club",
+  "url": "http://nahmagolfclub.com/",
+  "telephone": "+19066442648",
+  "email": "nahmagolfclub@gmail.com",
+  "description": "Public 9-hole, par 36 golf course on the shoreline of Big Bay de Noc, Lake Michigan. Established 1922. Full-service clubhouse with food and bar. Open May through September. Walk-ins welcome.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "8588 Ll Rd",
+    "addressLocality": "Rapid River",
+    "addressRegion": "MI",
+    "postalCode": "49878",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "45.85630",
+    "longitude": "-86.63740"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "10:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "11:00",
+      "closes": "21:00"
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
