@@ -70,22 +70,6 @@
     border-right: 1px solid rgba(255,255,255,0.2);
   }
   .hero__tag span:last-child { border-right: none; }
-  /* Watermark numeral decoration */
-  .hero__watermark {
-    position: absolute;
-    right: -4%;
-    bottom: -8%;
-    font-family: var(--font-head);
-    font-weight: 700;
-    font-size: clamp(280px, 40vw, 520px);
-    line-height: 1;
-    color: rgba(255,255,255,0.025);
-    letter-spacing: -0.04em;
-    z-index: 1;
-    pointer-events: none;
-    user-select: none;
-  }
-
   /* ============== MISSION ============== */
   .mission {
     background: var(--color-cream);
@@ -305,7 +289,6 @@
 
 <!-- ============ SECTION 1 — HERO ============ -->
 <section class="hero">
-  <div class="hero__watermark" aria-hidden="true">1922</div>
   <div class="hero__inner">
     <div class="hero__est">Est. 1922 &nbsp;·&nbsp; Nahma, Michigan</div>
     <h1 class="h-display">About<br/>Nahma Golf Club</h1>
@@ -397,7 +380,7 @@
     <div class="contact__nap">
       <div>
         <span class="lbl">Visit</span>
-        <span class="val">8588 Ll Rd<br/>Rapid River, MI 49878</span>
+        <span class="val"><a href="https://www.google.com/maps/search/?api=1&amp;query=Nahma+Golf+Club&amp;query_place_id=ChIJ1WB78T5ITE0RqiPAKAn2RtE" target="_blank" rel="noopener">8588 Ll Rd<br/>Rapid River, MI 49878</a></span>
       </div>
       <div>
         <span class="lbl">Call</span>
@@ -439,8 +422,8 @@
       <div class="footer__col">
         <h5>Visit</h5>
         <div class="footer__addr">
-          8588 Ll Rd<br/>
-          Rapid River, MI 49878
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Nahma+Golf+Club&amp;query_place_id=ChIJ1WB78T5ITE0RqiPAKAn2RtE" target="_blank" rel="noopener">8588 Ll Rd<br/>
+          Rapid River, MI 49878</a>
         </div>
         <h5 style="margin-top:28px">Season</h5>
         <div class="footer__addr">Open May through September</div>

@@ -39,22 +39,6 @@
     margin: 0;
     text-wrap: pretty;
   }
-  /* Decorative watermark */
-  .blog-hero__watermark {
-    position: absolute;
-    right: -2%;
-    bottom: -12%;
-    font-family: var(--font-head);
-    font-weight: 700;
-    font-size: clamp(220px, 32vw, 440px);
-    line-height: 1;
-    color: rgba(255,255,255,0.025);
-    letter-spacing: -0.04em;
-    z-index: 1;
-    pointer-events: none;
-    user-select: none;
-  }
-
   /* ============ BLOG BODY ============ */
   .blog-body {
     background: var(--color-off-white);
@@ -350,7 +334,6 @@
 
 <!-- ============ HERO ============ -->
 <section class="blog-hero">
-  <div class="blog-hero__watermark" aria-hidden="true">Blog</div>
   <div class="blog-hero__inner">
     <div class="overline overline--dark overline--centered" style="justify-content:center">From the Course</div>
     <h1 class="h1">Golf Tips &amp; Stories<br/>from Nahma</h1>
@@ -368,7 +351,14 @@
         <div class="posts-label">Latest Posts</div>
 
         <!-- Post card: Best Golf Courses in Michigan's UP -->
-        <article class="post-card">
+        <article class="post-card" style="padding-top:0">
+          <a href="/blog/best-golf-courses-michigans-up/" tabindex="-1" aria-hidden="true">
+            <img
+              src="/photos/hero-aerial-bay.jpg"
+              alt="Aerial view of Nahma Golf Club along the shore of Big Bay de Noc"
+              style="display:block;width:calc(100% + 88px);margin-left:-44px;margin-top:0;margin-bottom:32px;height:220px;object-fit:cover;object-position:center 35%"
+            />
+          </a>
           <div class="post-card__meta">
             <span class="post-card__cat">UP Golf Guide</span>
             <span class="post-card__date">2026</span>
@@ -445,8 +435,8 @@
       <div class="footer__col">
         <h5>Visit</h5>
         <div class="footer__addr">
-          8588 Ll Rd<br/>
-          Rapid River, MI 49878
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Nahma+Golf+Club&amp;query_place_id=ChIJ1WB78T5ITE0RqiPAKAn2RtE" target="_blank" rel="noopener">8588 Ll Rd<br/>
+          Rapid River, MI 49878</a>
         </div>
         <h5 style="margin-top:28px">Season</h5>
         <div class="footer__addr">Open May through September</div>

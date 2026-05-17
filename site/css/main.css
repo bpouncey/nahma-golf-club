@@ -348,7 +348,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; padding
    BREADCRUMB
    ============================================================ */
 .crumbs {
-  padding: 108px 0 28px;
+  padding: 100px 0 16px;
   background: var(--color-cream);
 }
 .crumbs__inner {

@@ -6,6 +6,13 @@ This repo is the website project for Nahma Golf Club, a 9-hole public golf cours
 
 ---
 
+## Workflow & Context Management
+- **CRITICAL**: The main thread must act strictly as an orchestrator to avoid context rot and token bloat.
+- **MUST**: Delegate deep file analysis, heavy refactoring, and test execution to specialized sub-agents via the `Agent` tool.
+- **MUST NOT**: Accumulate massive tool outputs or logs in the primary conversation context window.
+
+---
+
 ## Current Build State (as of May 16, 2026)
 
 The site design is complete. Claude Design (claude.ai/design) produced pixel-perfect HTML/CSS prototypes for 4 pages. A handoff bundle was exported and extracted to `_handoff_tmp/nahma-golf-club/project/`.
