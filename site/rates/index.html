@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Rates & Fees | Nahma Golf Club — Golf from $18 in Michigan's Upper Peninsula</title>
+<meta name="description" content="Green fees from $18, gas cart rentals, and seasonal memberships at Nahma Golf Club — a public golf course on Big Bay de Noc in Michigan's Upper Peninsula. No tee time required." />
+<link rel="stylesheet" href="../css/main.css" />
+<style>
+  /* ============== HERO (green solid variant) ============== */
+  .hero {
+    background: var(--color-green);
+    color: var(--color-white);
+    padding: 128px 0 144px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero__inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+    position: relative;
+    z-index: 2;
+  }
+  .hero__est {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .hero__est::before,
+  .hero__est::after {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 1px;
+    background: var(--color-terracotta);
+  }
+  .hero h1 {
+    margin: 0 0 24px;
+    color: var(--color-white);
+  }
+  .hero__sub {
+    font-size: 20px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+    margin: 0;
+    text-wrap: pretty;
+  }
+  .hero__tag {
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+  .hero__tag span {
+    padding: 0 18px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+  }
+  .hero__tag span:last-child { border-right: none; }
+  .hero__watermark {
+    position: absolute;
+    right: -4%;
+    bottom: -8%;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(280px, 40vw, 520px);
+    line-height: 1;
+    color: rgba(255,255,255,0.025);
+    letter-spacing: -0.04em;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ============== INTRO PRICE CALLOUT ============== */
+  .price-intro {
+    background: var(--color-cream);
+    padding: 88px 0;
+    border-bottom: 1px solid var(--color-cream-dark);
+  }
+  .price-intro__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid var(--color-cream-dark);
+    background: var(--color-off-white);
+  }
+  .price-intro__cell {
+    padding: 40px 36px;
+    text-align: center;
+    border-right: 1px solid var(--color-cream-dark);
+  }
+  .price-intro__cell:last-child { border-right: none; }
+  .price-intro__num {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(52px, 5.5vw, 72px);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--color-terracotta);
+    margin-bottom: 10px;
+  }
+  .price-intro__lbl {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  /* ============== RATES SECTIONS (green fees, carts, memberships) ============== */
+  .rates-section {
+    padding: 104px 0;
+  }
+  .rates-section + .rates-section {
+    border-top: 1px solid var(--color-cream-dark);
+    padding-top: 104px;
+  }
+  .rates-section--alt {
+    background: var(--color-cream-dark);
+  }
+  .rates-section__head {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 64px;
+    align-items: start;
+    margin-bottom: 56px;
+  }
+  .rates-section__head-copy h2 { margin: 0 0 20px; }
+  .rates-section__head-copy p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--color-dark);
+    margin: 0;
+    text-wrap: pretty;
+  }
+  .rates-section__note {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 8px;
+  }
+  .note-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--color-text-muted);
+  }
+  .note-item::before {
+    content: "";
+    display: block;
+    flex-shrink: 0;
+    width: 18px;
+    height: 1px;
+    background: var(--color-terracotta);
+    margin-top: 10px;
+  }
+
+  /* ============== PRICE TABLE ============== */
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-body);
+  }
+  .price-table thead tr {
+    background: var(--color-green);
+    color: var(--color-white);
+  }
+  .price-table thead th {
+    padding: 16px 24px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .price-table thead th:not(:first-child) {
+    text-align: right;
+  }
+  .price-table tbody tr {
+    border-bottom: 1px solid var(--color-cream-dark);
+    background: var(--color-off-white);
+    transition: background-color 120ms ease;
+  }
+  .price-table tbody tr:hover { background: var(--color-cream); }
+  .price-table tbody td {
+    padding: 20px 24px;
+    font-size: 16px;
+    color: var(--color-dark);
+    vertical-align: middle;
+  }
+  .price-table tbody td:not(:first-child) {
+    text-align: right;
+    font-weight: 600;
+  }
+  .price-table .td-label {
+    font-weight: 500;
+  }
+  .price-table .td-price {
+    font-family: var(--font-head);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--color-terracotta);
+  }
+  .price-table .td-price-secondary {
+    font-family: var(--font-head);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--color-green);
+  }
+  .price-table tfoot td {
+    padding: 14px 24px;
+    font-size: 13px;
+    color: var(--color-text-muted);
+    font-style: italic;
+    border-top: 2px solid var(--color-cream-dark);
+    background: var(--color-cream);
+  }
+
+  /* Member badge in column header */
+  .th-member {
+    color: rgba(255,255,255,0.75);
+  }
+
+  /* ============== EXTRAS GRID (trail fee, storage) ============== */
+  .extras-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .extra-card {
+    background: var(--color-off-white);
+    border: 1px solid var(--color-cream-dark);
+    border-top: 3px solid var(--color-green);
+    padding: 28px 28px 24px;
+  }
+  .extra-card__price {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: 0.04em;
+    color: var(--color-terracotta);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .extra-card__title {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-dark);
+    margin-bottom: 8px;
+  }
+  .extra-card__desc {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+  .extra-card--warning {
+    border-top-color: var(--color-terracotta);
+    background: var(--color-terracotta-light);
+    border-color: rgba(184,92,56,0.25);
+  }
+  .extra-card--warning .extra-card__title { color: var(--color-terracotta); }
+  .extra-card--warning .extra-card__desc { color: var(--color-dark); }
+
+  /* ============== MEMBERSHIP TABLES ============== */
+  .membership-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .membership-block h3 {
+    font-size: 13px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin: 0 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .membership-block h3::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--color-cream-dark);
+  }
+  .membership-block.senior h3 { color: var(--color-green); }
+  .membership-block.senior h3::after { background: rgba(28,56,41,0.2); }
+
+  /* ============== VALUE CALLOUT ============== */
+  .value-callout {
+    background: var(--color-green);
+    color: var(--color-white);
+    padding: 72px 0;
+    text-align: center;
+  }
+  .value-callout__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+  }
+  .value-callout p {
+    font-size: 18px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.85);
+    margin: 0 0 36px;
+    text-wrap: pretty;
+  }
+  .value-callout .overline {
+    color: rgba(255,255,255,0.6);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .value-callout .overline--dark::before,
+  .value-callout .overline--dark::after { background: var(--color-terracotta); }
+  .value-callout h2 { color: var(--color-white); margin: 0 0 28px; }
+  .value-callout__ctas {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  /* ============== CONTACT CTA ============== */
+  .rates-contact {
+    background: var(--color-cream);
+    padding: 96px 0 104px;
+    text-align: center;
+  }
+  .rates-contact__inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+  }
+  .rates-contact .overline { margin-left: auto; margin-right: auto; }
+  .rates-contact h2 { margin: 0 0 20px; }
+  .rates-contact p {
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--color-dark);
+    margin: 0 0 40px;
+    text-wrap: pretty;
+  }
+  .rates-contact__ctas {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .rates-contact__nap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 680px;
+    margin: 48px auto 0;
+    padding-top: 48px;
+    border-top: 1px solid var(--color-cream-dark);
+    text-align: left;
+  }
+  .rates-contact__nap > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .rates-contact__nap .lbl {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+  .rates-contact__nap .val {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--color-dark);
+  }
+  .rates-contact__nap a { transition: color 150ms ease; }
+  .rates-contact__nap a:hover { color: var(--color-terracotta); }
+
+  /* ============== RESPONSIVE ============== */
+  @media (max-width: 1100px) {
+    .rates-section__head { grid-template-columns: 1fr; gap: 40px; }
+    .membership-grid { grid-template-columns: 1fr; gap: 48px; }
+    .extras-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 760px) {
+    .price-intro__grid { grid-template-columns: 1fr; }
+    .price-intro__cell { border-right: none; border-bottom: 1px solid var(--color-cream-dark); }
+    .price-intro__cell:last-child { border-bottom: none; }
+    .extras-grid { grid-template-columns: 1fr; }
+    .rates-contact__nap { grid-template-columns: 1fr; gap: 24px; }
+    .rates-section { padding: 72px 0; }
+    .rates-section + .rates-section { padding-top: 72px; }
+  }
+  @media (max-width: 600px) {
+    .price-table thead th,
+    .price-table tbody td { padding: 14px 16px; }
+    .price-table .td-price,
+    .price-table .td-price-secondary { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav nav--solid">
+  <div class="nav__inner">
+    <a href="/" class="logo" aria-label="Nahma Golf Club">
+      <div class="logo__rule"></div>
+      <div class="logo__mark">Nahma Golf Club</div>
+      <div class="logo__rule"></div>
+    </a>
+    <div class="nav__links">
+      <a href="/the-course/">The Course</a>
+      <a href="/rates/" class="is-active">Rates</a>
+      <a href="/#leagues">Leagues</a>
+      <a href="/#outings">Outings</a>
+      <a href="/about/">About</a>
+    </div>
+    <div class="nav__cta">
+      <a href="tel:+19066442648" class="btn btn--nav-primary">Call to Book</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ BREADCRUMB ============ -->
+<div class="crumbs">
+  <div class="crumbs__inner">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <span class="here">Rates &amp; Fees</span>
+  </div>
+</div>
+
+<!-- ============ SECTION 1 — HERO ============ -->
+<section class="hero">
+  <div class="hero__watermark" aria-hidden="true">$18</div>
+  <div class="hero__inner">
+    <div class="hero__est">Est. 1922 &nbsp;·&nbsp; Nahma, Michigan</div>
+    <h1 class="h-display">Rates<br/>&amp; Fees</h1>
+    <p class="hero__sub">Affordable golf on the shore of Big Bay de Noc. Green fees start at $18. No tee time required. Walk-ins always welcome.</p>
+    <div class="hero__tag">
+      <span>9 Holes — $18</span>
+      <span>18 Holes — $28</span>
+      <span>No Tee Time Required</span>
+      <span>Public Course</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTRO PRICE CALLOUT ============ -->
+<div class="price-intro">
+  <div class="wrap">
+    <div class="price-intro__grid">
+      <div class="price-intro__cell">
+        <div class="price-intro__num">$18</div>
+        <div class="price-intro__lbl">9-Hole Green Fee</div>
+      </div>
+      <div class="price-intro__cell">
+        <div class="price-intro__num">$28</div>
+        <div class="price-intro__lbl">18-Hole Green Fee</div>
+      </div>
+      <div class="price-intro__cell">
+        <div class="price-intro__num">$450</div>
+        <div class="price-intro__lbl">Season Membership</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SECTION 2 — GREEN FEES ============ -->
+<section class="rates-section">
+  <div class="wrap">
+    <div class="rates-section__head">
+      <div class="rates-section__head-copy">
+        <div class="overline">Green Fees</div>
+        <h2 class="h2">On the Course</h2>
+        <p>Nine holes of golf on the shoreline of Big Bay de Noc, established in 1922. Show up and play. No membership required, no tee time needed.</p>
+      </div>
+      <div class="rates-section__note">
+        <div class="note-item">18-hole play means replaying the same 9-hole course. Nahma does not have a separate 18-hole layout.</div>
+        <div class="note-item">UPGA (Upper Peninsula Golf Association) members receive a discounted rate. Membership with UPGA is separate from a Nahma Golf Club membership.</div>
+        <div class="note-item">Walk-ins are always welcome. Large groups should call ahead.</div>
+      </div>
+    </div>
+
+    <table class="price-table" aria-label="Green fee rates">
+      <thead>
+        <tr>
+          <th>Round</th>
+          <th>Regular</th>
+          <th class="th-member">UPGA Members</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-label">9 Holes</td>
+          <td><span class="td-price">$18.00</span></td>
+          <td><span class="td-price-secondary">$13.00</span></td>
+        </tr>
+        <tr>
+          <td class="td-label">18 Holes</td>
+          <td><span class="td-price">$28.00</span></td>
+          <td><span class="td-price-secondary">$23.00</span></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">18-hole play is a replay of the 9-hole course. Credit cards, debit cards, and NFC mobile payments accepted.</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</section>
+
+<!-- ============ SECTION 3 — CART RENTALS ============ -->
+<section class="rates-section rates-section--alt">
+  <div class="wrap">
+    <div class="rates-section__head">
+      <div class="rates-section__head-copy">
+        <div class="overline">Cart Rentals</div>
+        <h2 class="h2">Gas Cart Rentals</h2>
+        <p>Gas carts are available for rent per round. Members receive a discounted cart rate. Trail fees apply for those who bring their own cart.</p>
+      </div>
+      <div class="rates-section__note">
+        <div class="note-item">No carry-ons allowed. Personal carts must pay the annual trail fee.</div>
+        <div class="note-item">Cart shed storage is available for the 12-month season.</div>
+        <div class="note-item">Members listed here are Nahma Golf Club members, not UPGA members.</div>
+      </div>
+    </div>
+
+    <table class="price-table" aria-label="Gas cart rental rates">
+      <thead>
+        <tr>
+          <th>Round</th>
+          <th>Regular</th>
+          <th class="th-member">Members</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-label">9 Holes</td>
+          <td><span class="td-price">$14.00</span></td>
+          <td><span class="td-price-secondary">$12.00</span></td>
+        </tr>
+        <tr>
+          <td class="td-label">18 Holes</td>
+          <td><span class="td-price">$24.00</span></td>
+          <td><span class="td-price-secondary">$20.00</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="extras-grid">
+      <div class="extra-card">
+        <div class="extra-card__price">$50</div>
+        <div class="extra-card__title">Annual Trail Fee</div>
+        <p class="extra-card__desc">For members who bring their own gas cart onto the course. Paid once per season.</p>
+      </div>
+      <div class="extra-card">
+        <div class="extra-card__price">$150</div>
+        <div class="extra-card__title">Cart Shed Storage</div>
+        <p class="extra-card__desc">Secure cart shed storage for the full 12-month year. Contact the club for availability.</p>
+      </div>
+      <div class="extra-card extra-card--warning">
+        <div class="extra-card__title">No Carry-Ons</div>
+        <p class="extra-card__desc">Personal carts may not be brought on the course without the annual trail fee. No carry-on carts allowed under any circumstances.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 4 — MEMBERSHIPS ============ -->
+<section class="rates-section">
+  <div class="wrap">
+    <div class="rates-section__head">
+      <div class="rates-section__head-copy">
+        <div class="overline">Memberships</div>
+        <h2 class="h2">Season Memberships</h2>
+        <p>A Nahma Golf Club membership pays for itself quickly. Members get discounted green fees, discounted cart rentals, and the satisfaction of calling this place home for the season.</p>
+      </div>
+      <div class="rates-section__note">
+        <div class="note-item">Memberships cover the full season, May through September.</div>
+        <div class="note-item">Member cart discounts apply automatically at checkout. No card required.</div>
+        <div class="note-item">Contact the club to inquire about membership availability and payment options.</div>
+      </div>
+    </div>
+
+    <div class="membership-grid">
+      <div class="membership-block">
+        <h3>Age 59 and Under</h3>
+        <table class="price-table" aria-label="Membership rates for age 59 and under">
+          <thead>
+            <tr>
+              <th>Membership Type</th>
+              <th>Season Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-label">Single</td>
+              <td><span class="td-price">$450</span></td>
+            </tr>
+            <tr>
+              <td class="td-label">Couple</td>
+              <td><span class="td-price">$525</span></td>
+            </tr>
+            <tr>
+              <td class="td-label">Family <span style="font-size:13px;font-weight:400;color:var(--color-text-muted)">(children 17 &amp; under)</span></td>
+              <td><span class="td-price">$550</span></td>
+            </tr>
+            <tr>
+              <td class="td-label">College Student <span style="font-size:13px;font-weight:400;color:var(--color-text-muted)">(25 &amp; under)</span></td>
+              <td><span class="td-price">$125</span></td>
+            </tr>
+            <tr>
+              <td class="td-label">High School Student <span style="font-size:13px;font-weight:400;color:var(--color-text-muted)">(17 &amp; under)</span></td>
+              <td><span class="td-price">$75</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="membership-block senior">
+        <h3>Senior — Age 60+</h3>
+        <table class="price-table" aria-label="Senior membership rates for age 60 and over">
+          <thead>
+            <tr>
+              <th>Membership Type</th>
+              <th>Season Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-label">Single</td>
+              <td><span class="td-price">$425</span></td>
+            </tr>
+            <tr>
+              <td class="td-label">Couple</td>
+              <td><span class="td-price">$500</span></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">Senior rate applies to members age 60 and over.</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <!-- Value illustration -->
+        <div style="margin-top:24px;padding:24px 24px 20px;background:var(--color-green-light);border-left:3px solid var(--color-terracotta)">
+          <div style="font-family:var(--font-body);font-weight:600;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-green-dark);margin-bottom:10px">Membership Value</div>
+          <p style="font-size:14px;line-height:1.6;color:var(--color-dark);margin:0">At $18 per 9-hole round, a single membership pays for itself after 25 rounds. Play more and you're saving on every visit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 5 — VALUE / OUTING CTA ============ -->
+<section class="value-callout">
+  <div class="value-callout__inner">
+    <div class="overline overline--dark overline--centered">Group Outings</div>
+    <h2 class="h2">Planning a Group Outing?</h2>
+    <p>Private outings are available throughout the season. The clubhouse has a full bar, food, pizza, and space for your group after the round. Call or email to check availability and discuss pricing for large groups.</p>
+    <div class="value-callout__ctas">
+      <a href="tel:+19066442648" class="btn btn--ghost btn--lg">(906) 644-2648</a>
+      <a href="mailto:nahmagolfclub@gmail.com" class="btn btn--ghost btn--lg">Email the Club</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 6 — CONTACT ============ -->
+<section class="rates-contact">
+  <div class="rates-contact__inner">
+    <div class="overline overline--centered">Questions</div>
+    <h2 class="h2">Ready to Play?</h2>
+    <p>No tee time required. Show up and play. For group bookings, membership questions, or cart storage inquiries, reach out directly.</p>
+    <div class="rates-contact__ctas">
+      <a href="tel:+19066442648" class="btn btn--primary btn--lg">(906) 644-2648</a>
+      <a href="/the-course/" class="btn btn--secondary btn--lg">See the Course</a>
+    </div>
+    <div class="rates-contact__nap">
+      <div>
+        <span class="lbl">Visit</span>
+        <span class="val">8588 Ll Rd<br/>Rapid River, MI 49878</span>
+      </div>
+      <div>
+        <span class="lbl">Call</span>
+        <span class="val"><a href="tel:+19066442648">(906) 644-2648</a></span>
+      </div>
+      <div>
+        <span class="lbl">Email</span>
+        <span class="val"><a href="mailto:nahmagolfclub@gmail.com">nahmagolfclub@gmail.com</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="logo" aria-label="Nahma Golf Club">
+          <div class="logo__rule"></div>
+          <div class="logo__mark">Nahma Golf Club</div>
+          <div class="logo__rule"></div>
+        </a>
+        <p class="footer__tag">Nine holes on the shore of Big Bay de Noc. Public course. Established 1922.</p>
+      </div>
+
+      <div class="footer__col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="/the-course/">The Course</a></li>
+          <li><a href="/rates/">Rates &amp; Fees</a></li>
+          <li><a href="/#leagues">Leagues</a></li>
+          <li><a href="/#outings">Outings</a></li>
+          <li><a href="/#clubhouse">Clubhouse</a></li>
+          <li><a href="/about/">About</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h5>Visit</h5>
+        <div class="footer__addr">
+          8588 Ll Rd<br/>
+          Rapid River, MI 49878
+        </div>
+        <h5 style="margin-top:28px">Season</h5>
+        <div class="footer__addr">Open May through September</div>
+      </div>
+
+      <div class="footer__col">
+        <h5>Contact</h5>
+        <div class="footer__addr">
+          <a href="tel:+19066442648">(906) 644-2648</a><br/>
+          <a href="mailto:nahmagolfclub@gmail.com">nahmagolfclub@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="badge">No tee time required. Walk-ins welcome.</div>
+      <div>© 1922–2026 Nahma Golf Club · Nahma, Michigan</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
