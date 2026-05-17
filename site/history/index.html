@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>History | Nahma Golf Club — Est. 1922, Michigan's Upper Peninsula</title>
+<meta name="description" content="Nahma Golf Club was established in 1922, the second oldest golf course in Delta County. Over a century of public golf on the shore of Big Bay de Noc, Upper Peninsula, Michigan." />
+<link rel="stylesheet" href="../css/main.css" />
+<style>
+  /* ============== HERO (green solid variant — History page) ============== */
+  .hero {
+    background: var(--color-green);
+    color: var(--color-white);
+    padding: 128px 0 144px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero__inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+    position: relative;
+    z-index: 2;
+  }
+  .hero__est {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .hero__est::before,
+  .hero__est::after {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 1px;
+    background: var(--color-terracotta);
+  }
+  .hero h1 {
+    margin: 0 0 24px;
+    color: var(--color-white);
+  }
+  .hero__sub {
+    font-size: 20px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+    margin: 0;
+    text-wrap: pretty;
+  }
+  .hero__tag {
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+  .hero__tag span {
+    padding: 0 18px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+  }
+  .hero__tag span:last-child { border-right: none; }
+  /* Watermark numeral decoration */
+  .hero__watermark {
+    position: absolute;
+    right: -4%;
+    bottom: -8%;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(280px, 40vw, 520px);
+    line-height: 1;
+    color: rgba(255,255,255,0.025);
+    letter-spacing: -0.04em;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ============== VINTAGE PHOTO FEATURE ============== */
+  .vintage {
+    background: var(--color-green-dark);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .vintage__img {
+    width: 100%;
+    max-height: 560px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    opacity: 0.88;
+  }
+  .vintage__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 28px var(--pad-x);
+    background: linear-gradient(to top, rgba(18,37,25,0.88) 0%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+  }
+  .vintage__caption-text {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+  }
+  .vintage__caption-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.15);
+  }
+
+  /* ============== FOUNDING STORY ============== */
+  .founding {
+    background: var(--color-cream);
+    padding: 128px 0;
+  }
+  .founding__grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 88px;
+    align-items: start;
+  }
+  .founding__copy h2 {
+    margin: 0 0 36px;
+    text-wrap: balance;
+  }
+  .founding__copy p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-dark);
+    margin: 0 0 22px;
+  }
+  .founding__copy p:last-child { margin-bottom: 0; }
+
+  .founding__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .f-card {
+    background: var(--color-off-white);
+    border: 1px solid var(--color-cream-dark);
+    border-top: 4px solid var(--color-green);
+    padding: 32px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: border-color 200ms ease;
+  }
+  .f-card:hover { border-top-color: var(--color-terracotta); }
+  .f-card__lbl {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .f-card__lbl::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 1px;
+    background: var(--color-terracotta);
+  }
+  .f-card h3 { margin: 0; font-size: 24px; letter-spacing: 0.05em; }
+  .f-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-dark);
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  /* ============== FACTS BAR ============== */
+  .facts {
+    background: var(--color-cream-dark);
+    padding: 120px 0;
+  }
+  .facts__head {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+  .facts__head .overline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .facts__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    max-width: 960px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(28,56,41,0.15);
+    border-bottom: 1px solid rgba(28,56,41,0.15);
+    padding: 48px 0;
+  }
+  .fact {
+    padding: 0 20px;
+    text-align: center;
+    border-right: 1px solid rgba(28,56,41,0.15);
+  }
+  .fact:last-child { border-right: none; }
+  .fact__num {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(48px, 4.6vw, 68px);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: var(--color-terracotta);
+    margin-bottom: 14px;
+    white-space: nowrap;
+  }
+  .fact__lbl {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-green-dark);
+  }
+
+  /* ============== COURSE DESIGN SECTION ============== */
+  .design {
+    background: var(--color-off-white);
+    padding: 128px 0;
+  }
+  .design__inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+  }
+  .design .overline { margin-bottom: 24px; }
+  .design h2 {
+    margin: 0 0 40px;
+    text-wrap: balance;
+  }
+  .design__body p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-dark);
+    margin: 0 0 24px;
+  }
+  .design__body p:last-child { margin-bottom: 0; }
+  .design__pull {
+    margin: 56px 0;
+    padding: 40px 48px;
+    border-left: 4px solid var(--color-terracotta);
+    background: var(--color-terracotta-light);
+  }
+  .design__pull p {
+    font-family: var(--font-head);
+    font-size: clamp(22px, 2.6vw, 32px);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: var(--color-green-dark);
+    margin: 0;
+  }
+
+  /* ============== COMMUNITY SECTION ============== */
+  .community {
+    background: var(--color-green);
+    color: var(--color-white);
+    padding: 128px 0;
+  }
+  .community__inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+    text-align: center;
+  }
+  .community .overline {
+    color: rgba(255,255,255,0.55);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px;
+  }
+  .community .overline::before,
+  .community .overline::after {
+    background: var(--color-terracotta);
+  }
+  .community h2 {
+    color: var(--color-white);
+    margin: 0 0 36px;
+    text-wrap: balance;
+  }
+  .community__body p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.82);
+    margin: 0 0 22px;
+  }
+  .community__body p:last-child { margin-bottom: 0; }
+  .community__photo {
+    margin-top: 72px;
+    position: relative;
+  }
+  .community__photo img {
+    width: 100%;
+    max-height: 440px;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+  }
+  .community__photo-border {
+    position: absolute;
+    inset: 12px 12px -12px -12px;
+    border: 2px solid rgba(184,92,56,0.4);
+    pointer-events: none;
+  }
+
+  /* ============== CTA ============== */
+  .cta {
+    background: var(--color-cream);
+    padding: 120px 0 128px;
+    text-align: center;
+  }
+  .cta__inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+  }
+  .cta .overline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta h2 { margin: 0 0 20px; text-wrap: balance; }
+  .cta__sub {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin: 0 0 48px;
+  }
+  .cta__actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .cta__nap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 720px;
+    margin: 64px auto 0;
+    padding-top: 48px;
+    border-top: 1px solid var(--color-cream-dark);
+    text-align: left;
+  }
+  .cta__nap > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .cta__nap .lbl {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+  .cta__nap .val {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--color-dark);
+  }
+  .cta__nap a { transition: color 150ms ease; }
+  .cta__nap a:hover { color: var(--color-terracotta); }
+
+  /* ============== RESPONSIVE — PAGE-SPECIFIC ============== */
+  @media (max-width: 1100px) {
+    .founding__grid { grid-template-columns: 1fr; gap: 64px; }
+    .facts__grid { grid-template-columns: repeat(2, 1fr); gap: 32px 0; padding: 32px 0; }
+    .fact { padding: 16px 12px; border-right: 1px solid rgba(28,56,41,0.15); }
+    .fact:nth-child(2) { border-right: none; }
+    .fact:nth-child(-n+2) { border-bottom: 1px solid rgba(28,56,41,0.15); }
+    .design__pull { padding: 32px 36px; }
+  }
+  @media (max-width: 768px) {
+    .vintage__caption { padding: 20px 24px; }
+    .design__inner { padding: 0 24px; }
+    .community__inner { padding: 0 24px; }
+  }
+  @media (max-width: 680px) {
+    .founding, .design, .community, .facts { padding-top: 80px; padding-bottom: 80px; }
+    .cta { padding-top: 80px; padding-bottom: 80px; }
+    .cta__nap { grid-template-columns: 1fr; gap: 24px; }
+    .design__pull { margin: 40px 0; padding: 28px 28px; }
+    .community__photo { margin-top: 48px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav nav--solid">
+  <div class="nav__inner">
+    <a href="/" class="logo" aria-label="Nahma Golf Club">
+      <div class="logo__rule"></div>
+      <div class="logo__mark">Nahma Golf Club</div>
+      <div class="logo__rule"></div>
+    </a>
+    <div class="nav__links">
+      <a href="/the-course/">The Course</a>
+      <a href="/#rates">Rates</a>
+      <a href="/#leagues">Leagues</a>
+      <a href="/#outings">Outings</a>
+      <a href="/about/">About</a>
+    </div>
+    <div class="nav__cta">
+      <a href="/#rates" class="btn btn--nav-primary">See Rates</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ BREADCRUMB ============ -->
+<div class="crumbs">
+  <div class="crumbs__inner">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <span class="here">History</span>
+  </div>
+</div>
+
+<!-- ============ SECTION 1 — HERO ============ -->
+<section class="hero">
+  <div class="hero__watermark" aria-hidden="true">1922</div>
+  <div class="hero__inner">
+    <div class="hero__est">Est. 1922 &nbsp;·&nbsp; Delta County, Michigan</div>
+    <h1 class="h-display">Our<br/>History</h1>
+    <p class="hero__sub">Over a century of public golf on the shore of Big Bay de Noc. The same course. The same community. Since 1922.</p>
+    <div class="hero__tag">
+      <span>Est. 1922</span>
+      <span>2nd Oldest in Delta County</span>
+      <span>Big Bay de Noc</span>
+      <span>Public Course</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2 — VINTAGE PHOTO ============ -->
+<div class="vintage">
+  <img
+    class="vintage__img"
+    src="../photos/setting-vintage-1922.jpg"
+    alt="Nahma Golf Club — vintage photograph of the course on Big Bay de Noc"
+    width="1280"
+    height="560"
+    fetchpriority="high"
+  />
+  <div class="vintage__caption">
+    <span class="vintage__caption-text">Nahma Golf Club, Est. 1922 &nbsp;·&nbsp; Big Bay de Noc, Upper Peninsula, Michigan</span>
+    <span class="vintage__caption-line" aria-hidden="true"></span>
+  </div>
+</div>
+
+<!-- ============ SECTION 3 — FOUNDING STORY ============ -->
+<section class="founding">
+  <div class="wrap">
+    <div class="founding__grid">
+      <div class="founding__copy">
+        <div class="overline">The Founding</div>
+        <h2 class="h2">Born on the Bay. Built in 1922.</h2>
+        <p>Nahma Golf Club was established in 1922, making it the second oldest golf course in Delta County. The course was laid out along the shoreline of Big Bay de Noc, a stretch of Lake Michigan that remains one of the most scenic settings in the Upper Peninsula. More than a century later, that is still the defining fact about this place.</p>
+        <p>The founders chose this site deliberately. The flat terrain along the bay made for a natural course layout, and the water on three sides shaped both the visual character of the holes and the kind of golf they set out to offer. This was always meant to be a public course, open to anyone who wanted to play.</p>
+        <p>That original intention has held for over a hundred years. Nahma Golf Club has never gone private. It has never become a resort operation. It has remained what it was built to be: a public course on the bay, open to the community.</p>
+      </div>
+
+      <div class="founding__sidebar">
+        <article class="f-card">
+          <span class="f-card__lbl">Distinction</span>
+          <h3 class="h4">Second Oldest in Delta County</h3>
+          <p>Established in 1922, Nahma Golf Club is the second oldest golf course in Delta County, Michigan. A legacy that no new course can replicate.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__lbl">Setting</span>
+          <h3 class="h4">Big Bay de Noc Shoreline</h3>
+          <p>The course was built on the shore of Big Bay de Noc, a protected bay of Lake Michigan. That same water defines the course today, with open lake views on multiple holes.</p>
+        </article>
+
+        <article class="f-card">
+          <span class="f-card__lbl">Legacy</span>
+          <h3 class="h4">100+ Years of Public Golf</h3>
+          <p>Every generation of Delta County golfers has had access to this course. No membership wall. No dress code. Just public golf on one of the most scenic pieces of land in the Upper Peninsula.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 4 — FACTS BAR ============ -->
+<section class="facts">
+  <div class="wrap">
+    <div class="facts__head">
+      <div class="overline overline--centered">By the Numbers</div>
+      <h2 class="h2">A Century in Facts</h2>
+    </div>
+    <div class="facts__grid">
+      <div class="fact">
+        <div class="fact__num">1922</div>
+        <div class="fact__lbl">Year Founded</div>
+      </div>
+      <div class="fact">
+        <div class="fact__num">100+</div>
+        <div class="fact__lbl">Years of Play</div>
+      </div>
+      <div class="fact">
+        <div class="fact__num">2nd</div>
+        <div class="fact__lbl">Oldest in Delta County</div>
+      </div>
+      <div class="fact">
+        <div class="fact__num">9</div>
+        <div class="fact__lbl">Original Holes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 5 — COURSE DESIGN ============ -->
+<section class="design">
+  <div class="design__inner">
+    <div class="overline">The Design</div>
+    <h2 class="h2">Classic Layout. Historic Greens.</h2>
+    <div class="design__body">
+      <p>The course design reflects its era. Nine holes, par 36, built on flat terrain along the water. At 2,875 yards it is walkable from the first tee to the last green, a layout that rewards shot-making over raw distance. Players who want to walk the course will find it comfortable in any condition.</p>
+
+      <div class="design__pull">
+        <p>The dish-shaped greens are not a quirk. They are a feature of the original 1922 design, and one of the elements that makes Nahma distinctive among courses in the Upper Peninsula.</p>
+      </div>
+
+      <p>Older, round, dish-shaped greens were a deliberate choice of the era. They channel the ball toward the center of the green, rewarding approach shots that find the right entry angle. Players who have only experienced modern bentgrass greens often find the classic dish greens a welcome change of pace. They read differently and play differently, and that is the point.</p>
+      <p>The flat terrain along Big Bay de Noc was part of the site selection. The course was designed to be accessible to everyone in the community, not just skilled golfers. That accessibility is baked into the layout itself. Wide fairways, open design, and a pace of play that fits any skill level. It was built this way on purpose, and it has stayed this way for over a century.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 6 — COMMUNITY ANCHOR ============ -->
+<section class="community">
+  <div class="community__inner">
+    <div class="overline overline--centered">Community</div>
+    <h2 class="h2">A Century of Delta County Golf</h2>
+    <div class="community__body">
+      <p>Nahma Golf Club has outlasted every economic cycle, every difficult season, and every change in the region. It has done that because the people of Delta County have kept coming back. Leagues, scrambles, outings, and family rounds. Generation after generation.</p>
+      <p>The men's league has run on Tuesday evenings. The women's league on Thursdays. The all-scramble on Wednesdays, open to everyone. Private outings have gathered company groups, families, and friends on this course for decades. The clubhouse has been the gathering point after every round.</p>
+      <p>That continuity is not accidental. It is the result of a course that was built with the community in mind from the beginning and has stayed true to that original purpose. The same nine holes. The same bay. The same public access that has been here since 1922.</p>
+    </div>
+    <div class="community__photo" aria-hidden="false">
+      <img
+        src="../photos/course-flag-bay.jpg"
+        alt="Nahma Golf Club hole with flag and Big Bay de Noc in the background"
+        width="900"
+        height="440"
+        loading="lazy"
+      />
+      <div class="community__photo-border" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 7 — CTA ============ -->
+<section class="cta">
+  <div class="cta__inner">
+    <div class="overline overline--centered">Come Play</div>
+    <h2 class="h2">Be Part of the Next Century</h2>
+    <p class="cta__sub">Green fees from $18. No tee time required. Walk-ins welcome May through September on the shore of Big Bay de Noc.</p>
+    <div class="cta__actions">
+      <a href="/#rates" class="btn btn--primary btn--lg">See Rates and Green Fees</a>
+      <a href="/the-course/" class="btn btn--secondary btn--lg">Explore the Course</a>
+      <a href="/about/" class="btn btn--secondary btn--lg">About Nahma</a>
+    </div>
+    <div class="cta__nap">
+      <div>
+        <span class="lbl">Visit</span>
+        <span class="val">8588 Ll Rd<br/>Rapid River, MI 49878</span>
+      </div>
+      <div>
+        <span class="lbl">Call</span>
+        <span class="val"><a href="tel:+19066442648">(906) 644-2648</a></span>
+      </div>
+      <div>
+        <span class="lbl">Email</span>
+        <span class="val"><a href="mailto:nahmagolfclub@gmail.com">nahmagolfclub@gmail.com</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="logo" aria-label="Nahma Golf Club">
+          <div class="logo__rule"></div>
+          <div class="logo__mark">Nahma Golf Club</div>
+          <div class="logo__rule"></div>
+        </a>
+        <p class="footer__tag">Nine holes on the shore of Big Bay de Noc. Public course. Established 1922.</p>
+      </div>
+
+      <div class="footer__col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="/the-course/">The Course</a></li>
+          <li><a href="/#rates">Rates</a></li>
+          <li><a href="/#leagues">Leagues</a></li>
+          <li><a href="/#outings">Outings</a></li>
+          <li><a href="/#clubhouse">Clubhouse</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/history/">History</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h5>Visit</h5>
+        <div class="footer__addr">
+          8588 Ll Rd<br/>
+          Rapid River, MI 49878
+        </div>
+        <h5 style="margin-top:28px">Season</h5>
+        <div class="footer__addr">Open May through September</div>
+      </div>
+
+      <div class="footer__col">
+        <h5>Contact</h5>
+        <div class="footer__addr">
+          <a href="tel:+19066442648">(906) 644-2648</a><br/>
+          <a href="mailto:nahmagolfclub@gmail.com">nahmagolfclub@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="badge">No tee time required. Walk-ins welcome.</div>
+      <div>© 1922–2026 Nahma Golf Club · Nahma, Michigan</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
