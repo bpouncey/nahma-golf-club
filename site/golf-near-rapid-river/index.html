@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Golf Near Rapid River, MI | Nahma Golf Club</title>
+<meta name="description" content="Golf near Rapid River, MI. Nahma Golf Club is less than 5 miles south on Big Bay de Noc. Public course, est. 1922. Green fees from $18. No tee time required." />
+<link rel="stylesheet" href="../css/main.css" />
+<style>
+  /* SECTION 1 — HERO (green centered hero) */
+  .hero {
+    background: var(--color-green);
+    color: var(--color-white);
+    padding: 112px 0 128px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero__inner {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+    position: relative;
+    z-index: 2;
+  }
+  .hero .overline {
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .hero h1 {
+    margin: 0 0 24px;
+    color: var(--color-white);
+  }
+  .hero__sub {
+    font-size: 20px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+    margin: 0;
+    text-wrap: pretty;
+  }
+  .hero__pin {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+  }
+  .hero__pin::before,
+  .hero__pin::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--color-terracotta);
+  }
+
+  /* SECTION 2 — DISTANCE */
+  .distance { background: var(--color-cream); }
+  .distance__grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .distance__copy h2  { margin: 0 0 32px; text-wrap: balance; }
+  .distance__copy p   { font-size: 18px; line-height: 1.7; color: var(--color-dark); margin: 0 0 22px; }
+  .distance__copy p:last-of-type { margin-bottom: 0; }
+  .distance__route {
+    margin-top: 36px;
+    padding: 28px 32px;
+    border: 1px solid var(--color-cream-dark);
+    background: var(--color-off-white);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 36px;
+  }
+  .distance__route .item  { display: flex; flex-direction: column; gap: 4px; min-width: 120px; }
+  .distance__route .lbl   { font-family: var(--font-body); font-weight: 600; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-text-muted); }
+  .distance__route .val   { font-family: var(--font-head); font-weight: 700; font-size: 24px; letter-spacing: 0.04em; color: var(--color-green); line-height: 1; }
+
+  /* SECTION 3 — COURSE DETAILS */
+  .details { background: var(--color-cream-dark); padding: 120px 0; }
+  .details__head { text-align: center; margin-bottom: 64px; }
+  .details__head .overline { margin-left: auto; margin-right: auto; }
+  .details__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    max-width: 1180px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(28, 56, 41, 0.18);
+    border-bottom: 1px solid rgba(28, 56, 41, 0.18);
+  }
+  .detail {
+    padding: 40px 24px;
+    text-align: left;
+    border-right: 1px solid rgba(28, 56, 41, 0.18);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 200px;
+  }
+  .detail:last-child { border-right: none; }
+  .detail__lbl {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(22px, 2.2vw, 30px);
+    line-height: 1.05;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+  }
+  .detail__note { font-size: 13px; line-height: 1.55; color: var(--color-dark); margin-top: auto; }
+  .detail__idx  { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; color: var(--color-text-muted); text-transform: uppercase; }
+
+  /* SECTION 4 — GETTING HERE */
+  .getting { background: var(--color-cream); }
+  .getting__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .getting__copy h2 { margin: 0 0 32px; text-wrap: balance; }
+  .getting__copy p  { font-size: 17px; line-height: 1.7; color: var(--color-dark); margin: 0 0 24px; }
+  .getting__steps {
+    margin: 32px 0 36px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--color-cream-dark);
+  }
+  .getting__steps li {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 18px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-cream-dark);
+  }
+  .getting__steps .step  { font-family: var(--font-head); font-weight: 700; font-size: 24px; color: var(--color-terracotta); line-height: 1; letter-spacing: 0.04em; }
+  .getting__steps .body  { font-size: 15px; line-height: 1.55; color: var(--color-dark); }
+  .getting__steps .body strong { font-weight: 600; color: var(--color-green); }
+  .getting__nap {
+    margin-bottom: 28px;
+    padding: 24px 28px;
+    background: var(--color-off-white);
+    border: 1px solid var(--color-cream-dark);
+    border-left: 3px solid var(--color-green);
+  }
+  .getting__nap .lbl  { font-family: var(--font-body); font-weight: 600; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 6px; }
+  .getting__nap .addr { font-size: 15px; line-height: 1.6; color: var(--color-dark); }
+
+  /* SECTION 5 — LOCAL CONTEXT */
+  .local { background: var(--color-cream-dark); padding: 120px 0; }
+  .local__inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+    text-align: center;
+  }
+  .local .overline { margin-left: auto; margin-right: auto; }
+  .local h2        { margin: 0 0 36px; text-wrap: balance; }
+  .local p         { font-size: 19px; line-height: 1.7; color: var(--color-dark); margin: 0 0 24px; text-align: left; text-wrap: pretty; }
+  .local p:last-child { margin-bottom: 0; }
+
+  /* SECTION 6 — CLOSING CTA */
+  .closer {
+    background: var(--color-green-dark);
+    color: var(--color-white);
+    padding: 104px 0;
+    text-align: center;
+  }
+  .closer .overline { color: rgba(255, 255, 255, 0.75); }
+  .closer h2  { color: var(--color-white); margin: 0 0 24px; text-wrap: balance; }
+  .closer p   { font-size: 18px; line-height: 1.6; color: rgba(255, 255, 255, 0.85); margin: 0 0 36px; }
+
+  /* RESPONSIVE — page-specific overrides */
+  @media (max-width: 1100px) {
+    .distance__grid,
+    .getting__grid  { grid-template-columns: 1fr; gap: 56px; }
+    .details__grid  { grid-template-columns: repeat(2, 1fr); gap: 0; }
+    .detail         { border-right: 1px solid rgba(28, 56, 41, 0.18); border-bottom: 1px solid rgba(28, 56, 41, 0.18); }
+    .detail:nth-child(2) { border-right: none; }
+    .detail:nth-child(5) { grid-column: 1 / -1; }
+  }
+  @media (max-width: 680px) {
+    .details, .getting, .local, .closer { padding-top: 80px; padding-bottom: 80px; }
+    .details__grid  { grid-template-columns: 1fr; }
+    .detail         { border-right: none; }
+    .detail:nth-child(5) { grid-column: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav nav--solid">
+  <div class="nav__inner">
+    <a href="/" class="logo" aria-label="Nahma Golf Club">
+      <div class="logo__rule"></div>
+      <div class="logo__mark">Nahma Golf Club</div>
+      <div class="logo__rule"></div>
+    </a>
+    <div class="nav__links">
+      <a href="/the-course/">The Course</a>
+      <a href="/#rates">Rates</a>
+      <a href="/#leagues">Leagues</a>
+      <a href="/#outings">Outings</a>
+      <a href="/about/">About</a>
+    </div>
+    <div class="nav__cta">
+      <a href="/#rates" class="btn btn--nav-primary">See Rates</a>
+    </div>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="crumbs">
+  <div class="crumbs__inner">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <a href="/about/">Visit</a>
+    <span class="sep">/</span>
+    <span class="here">Golf Near Rapid River</span>
+  </div>
+</div>
+
+<!-- SECTION 1 — HERO -->
+<section class="hero">
+  <div class="hero__inner">
+    <div class="overline overline--centered">Right Here in Rapid River, MI</div>
+    <h1 class="h-display">Golf Near<br/>Rapid River, Michigan</h1>
+    <p class="hero__sub">Nahma Golf Club is less than 5 miles from downtown Rapid River, on the shore of Big Bay de Noc. Established in 1922.</p>
+  </div>
+  <div class="hero__pin" aria-hidden="true">45°51'N · 086°37'W</div>
+</section>
+
+<!-- SECTION 2 — DISTANCE & CONTEXT -->
+<section class="section distance">
+  <div class="wrap">
+    <div class="distance__grid">
+      <div class="distance__copy">
+        <div class="overline">From Rapid River</div>
+        <h2 class="h2">Less Than 5 Miles<br/>to Big Bay de Noc</h2>
+        <p>Nahma Golf Club sits at 8588 Ll Road, just south of US-2 and less than 5 miles from downtown Rapid River. If you live in Rapid River or are passing through on US-2, the course is closer than most people realize. The turn is there and back before most golfers finish debating where to play.</p>
+        <p>The course is on the shore of Big Bay de Noc, the northern arm of Green Bay on Lake Michigan. It was established in 1922, making it one of the oldest public courses in the Upper Peninsula and the second oldest in Delta County. Nine holes, par 36, 2,875 yards. Public access, no tee time required, green fees from $18.</p>
+        <p>For Rapid River residents, Nahma is your home course. It has been here longer than most of the buildings on US-2, and it is still the only golf course in the area where you tee off with a view of the bay.</p>
+      </div>
+
+      <div>
+        <div class="map-frame">
+          <div class="map-frame__head">
+            <div class="map-frame__title">Rapid River → Nahma</div>
+            <div class="map-frame__coords">Delta County, MI</div>
+          </div>
+          <div class="map-frame__embed">
+            <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map showing the short route from Rapid River on US-2 south on Ll Road to Nahma Golf Club on Big Bay de Noc, less than 5 miles">
+              <defs>
+                <pattern id="waterHatch1" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                  <line x1="0" y1="5" x2="10" y2="5" stroke="#5a7a8a" stroke-width="0.4" opacity="0.5"/>
+                </pattern>
+              </defs>
+
+              <!-- Land base -->
+              <rect width="800" height="600" fill="#F4EFE6"/>
+
+              <!-- Big Bay de Noc (wider body of water filling the lower portion) -->
+              <path d="M 0 420 Q 100 400 280 390 Q 460 382 620 395 Q 720 405 800 415 L 800 600 L 0 600 Z" fill="#bccdd3"/>
+              <path d="M 0 420 Q 100 400 280 390 Q 460 382 620 395 Q 720 405 800 415 L 800 600 L 0 600 Z" fill="url(#waterHatch1)"/>
+
+              <!-- Coastline stroke -->
+              <path d="M 0 420 Q 100 400 280 390 Q 460 382 620 395 Q 720 405 800 415"
+                    stroke="#1C3829" stroke-width="1" fill="none" opacity="0.4"/>
+
+              <!-- US-2 (horizontal road across the upper portion) -->
+              <line x1="0" y1="200" x2="800" y2="200" stroke="#B85C38" stroke-width="4"/>
+              <line x1="0" y1="210" x2="800" y2="210" stroke="#F4EFE6" stroke-width="1.5"/>
+              <text x="60" y="188" font-family="JetBrains Mono, monospace" font-size="12" fill="#B85C38" letter-spacing="3">US-2</text>
+
+              <!-- Ll Road (vertical road heading south from US-2 to the course) -->
+              <line x1="420" y1="205" x2="420" y2="370" stroke="#1A1A18" stroke-width="2" stroke-dasharray="8,4"/>
+              <text x="430" y="290" font-family="JetBrains Mono, monospace" font-size="11" fill="#1A1A18" letter-spacing="2">LL RD</text>
+
+              <!-- Route highlight: US-2 short jog then south on Ll Rd -->
+              <path d="M 260 200 L 420 200 L 420 370"
+                    stroke="#B85C38" stroke-width="3" fill="none" stroke-dasharray="9,5" stroke-linecap="round"/>
+
+              <!-- Rapid River marker -->
+              <circle cx="260" cy="200" r="7" fill="#1C3829"/>
+              <circle cx="260" cy="200" r="3" fill="#F4EFE6"/>
+              <text x="155" y="178" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="15" fill="#1A1A18" letter-spacing="2">RAPID RIVER</text>
+
+              <!-- Distance badge along the route -->
+              <g transform="translate(348, 290)">
+                <rect x="-38" y="-13" width="76" height="26" fill="#F4EFE6" stroke="#B85C38" stroke-width="1"/>
+                <text x="0" y="5" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="15" fill="#B85C38" text-anchor="middle" letter-spacing="2">&lt; 5 MI</text>
+              </g>
+
+              <!-- Nahma Golf Club pin -->
+              <g transform="translate(420, 370)">
+                <line x1="0" y1="-26" x2="0" y2="0" stroke="#1A1A18" stroke-width="1.5"/>
+                <polygon points="0,-26 18,-22 0,-16" fill="#B85C38"/>
+                <circle r="3.5" fill="#1A1A18"/>
+              </g>
+              <text x="448" y="355" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="15" fill="#1A1A18" letter-spacing="2">NAHMA</text>
+              <text x="448" y="373" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="15" fill="#1A1A18" letter-spacing="2">GOLF CLUB</text>
+
+              <!-- Bay label -->
+              <text x="300" y="510" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="22" fill="#3a5a6a" text-anchor="middle" letter-spacing="5">BIG BAY DE NOC</text>
+
+              <!-- North compass -->
+              <g transform="translate(740, 70)">
+                <circle r="22" fill="#F4EFE6" stroke="#6B7264" stroke-width="1"/>
+                <polygon points="0,-15 4,-2 0,-5 -4,-2" fill="#B85C38"/>
+                <polygon points="0,15 4,2 0,5 -4,2" fill="#6B7264"/>
+                <text x="0" y="-26" font-family="JetBrains Mono, monospace" font-size="10" fill="#B85C38" text-anchor="middle" font-weight="500">N</text>
+              </g>
+
+              <!-- Scale bar -->
+              <g transform="translate(40, 78)">
+                <line x1="0" y1="0" x2="60" y2="0" stroke="#1A1A18" stroke-width="2"/>
+                <line x1="0" y1="-4" x2="0" y2="4" stroke="#1A1A18" stroke-width="2"/>
+                <line x1="30" y1="-3" x2="30" y2="3" stroke="#1A1A18" stroke-width="1"/>
+                <line x1="60" y1="-4" x2="60" y2="4" stroke="#1A1A18" stroke-width="2"/>
+                <text x="30" y="-9" font-family="JetBrains Mono, monospace" font-size="9" fill="#6B7264" text-anchor="middle" letter-spacing="1">2 MILES</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="distance__route">
+          <div class="item">
+            <span class="lbl">Distance</span>
+            <span class="val">&lt; 5 mi</span>
+          </div>
+          <div class="item">
+            <span class="lbl">Drive Time</span>
+            <span class="val">5–8 min</span>
+          </div>
+          <div class="item">
+            <span class="lbl">Route</span>
+            <span class="val">US-2 → Ll Rd</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 — COURSE DETAILS -->
+<section class="details">
+  <div class="wrap">
+    <div class="details__head">
+      <div class="overline overline--centered">About the Course</div>
+      <h2 class="h2">A Genuine Lakeside Course</h2>
+    </div>
+
+    <div class="details__grid">
+      <div class="detail">
+        <span class="detail__idx">01</span>
+        <span class="detail__lbl">9 Holes</span>
+        <span class="detail__note">Par 36, 2,875 yards. Replay the course for 18 holes at the 18-hole rate.</span>
+      </div>
+      <div class="detail">
+        <span class="detail__idx">02</span>
+        <span class="detail__lbl">Est. 1922</span>
+        <span class="detail__note">Second oldest golf course in Delta County. The dish-shaped greens have been here over a century.</span>
+      </div>
+      <div class="detail">
+        <span class="detail__idx">03</span>
+        <span class="detail__lbl">$18</span>
+        <span class="detail__note">Green fees from $18 for 9 holes. UPGA members play at discounted rates. 18 holes from $28.</span>
+      </div>
+      <div class="detail">
+        <span class="detail__idx">04</span>
+        <span class="detail__lbl">Big Bay<br/>de Noc</span>
+        <span class="detail__note">The bay is visible from the course. No other public course in the area can say the same.</span>
+      </div>
+      <div class="detail">
+        <span class="detail__idx">05</span>
+        <span class="detail__lbl">Walk In</span>
+        <span class="detail__note">No tee time required. Show up and play. Open May through September. Large groups: call ahead.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 — GETTING HERE -->
+<section class="section getting" id="directions">
+  <div class="wrap">
+    <div class="getting__grid">
+      <div class="getting__copy">
+        <div class="overline">Directions</div>
+        <h2 class="h2">From Rapid River,<br/>You're Already Close</h2>
+        <p>From downtown Rapid River: head east on US-2 toward the Ll Road junction. Turn south onto Ll Road. Nahma Golf Club is at 8588 Ll Rd on your left, on the shore of Big Bay de Noc. The whole drive is under 10 minutes.</p>
+        <p>If you are coming off M-35 or US-2 from the west, the turn onto Ll Road comes before you reach Rapid River proper. Watch for the signs on US-2.</p>
+
+        <ol class="getting__steps">
+          <li>
+            <span class="step">01</span>
+            <span class="body">From downtown Rapid River, <strong>head east on US-2</strong> toward the Ll Road junction.</span>
+          </li>
+          <li>
+            <span class="step">02</span>
+            <span class="body">Turn <strong>south onto Ll Road</strong>. The turn is less than 5 miles from Rapid River.</span>
+          </li>
+          <li>
+            <span class="step">03</span>
+            <span class="body"><strong>Nahma Golf Club is on your left</strong>, on the shore of Big Bay de Noc.</span>
+          </li>
+        </ol>
+
+        <div class="getting__nap">
+          <div class="lbl">Address</div>
+          <div class="addr">8588 Ll Rd, Rapid River, MI 49878<br/>(906) 644-2648</div>
+        </div>
+
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=8588+Ll+Rd+Rapid+River+MI+49878" target="_blank" rel="noopener" class="btn btn--primary btn--lg">Get Directions</a>
+      </div>
+
+      <div>
+        <div class="map-frame">
+          <div class="map-frame__head">
+            <div class="map-frame__title">Course Location</div>
+            <div class="map-frame__coords">8588 Ll Rd · Rapid River, MI</div>
+          </div>
+          <div class="map-frame__embed" style="aspect-ratio:1/1.05">
+            <svg viewBox="0 0 800 840" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Detail map showing Nahma Golf Club at 8588 Ll Rd, just south of US-2, on the shore of Big Bay de Noc">
+              <defs>
+                <pattern id="waterHatch2" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                  <line x1="0" y1="5" x2="10" y2="5" stroke="#5a7a8a" stroke-width="0.4" opacity="0.5"/>
+                </pattern>
+                <pattern id="fairwayHatch" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)">
+                  <rect width="6" height="6" fill="#cfdcc8"/>
+                  <line x1="0" y1="3" x2="6" y2="3" stroke="#1C3829" stroke-width="0.3" opacity="0.5"/>
+                </pattern>
+              </defs>
+              <rect width="800" height="840" fill="#F4EFE6"/>
+              <path d="M 0 540 Q 200 510 380 530 Q 540 545 700 525 Q 760 518 800 530 L 800 840 L 0 840 Z" fill="#bccdd3"/>
+              <path d="M 0 540 Q 200 510 380 530 Q 540 545 700 525 Q 760 518 800 530 L 800 840 L 0 840 Z" fill="url(#waterHatch2)"/>
+              <path d="M 0 540 Q 200 510 380 530 Q 540 545 700 525 Q 760 518 800 530" stroke="#1C3829" stroke-width="1" fill="none" opacity="0.4"/>
+              <line x1="0" y1="230" x2="800" y2="230" stroke="#B85C38" stroke-width="4"/>
+              <line x1="0" y1="240" x2="800" y2="240" stroke="#F4EFE6" stroke-width="1.5"/>
+              <text x="60" y="218" font-family="JetBrains Mono, monospace" font-size="12" fill="#B85C38" letter-spacing="3">US-2</text>
+              <line x1="420" y1="235" x2="420" y2="500" stroke="#1A1A18" stroke-width="2"/>
+              <text x="430" y="330" font-family="JetBrains Mono, monospace" font-size="11" fill="#1A1A18" letter-spacing="2">LL RD</text>
+              <polygon points="330,420 510,420 530,500 350,500" fill="url(#fairwayHatch)" stroke="#1C3829" stroke-width="1" opacity="0.9"/>
+              <g transform="translate(420, 470)">
+                <line x1="0" y1="-32" x2="0" y2="0" stroke="#1A1A18" stroke-width="2"/>
+                <polygon points="0,-32 22,-26 0,-20" fill="#B85C38"/>
+                <circle r="4" fill="#1A1A18"/>
+              </g>
+              <g transform="translate(560, 460)">
+                <line x1="-60" y1="0" x2="0" y2="0" stroke="#6B7264" stroke-width="0.5"/>
+                <text x="6" y="-6" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="18" fill="#1A1A18" letter-spacing="2">NAHMA GOLF CLUB</text>
+                <text x="6" y="14" font-family="JetBrains Mono, monospace" font-size="11" fill="#6B7264" letter-spacing="1">8588 LL RD</text>
+              </g>
+              <!-- Rapid River marker on US-2 -->
+              <circle cx="200" cy="230" r="5" fill="#6B7264"/>
+              <text x="100" y="218" font-family="JetBrains Mono, monospace" font-size="10" fill="#6B7264" letter-spacing="1.5">RAPID RIVER</text>
+              <text x="400" y="720" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="28" fill="#3a5a6a" text-anchor="middle" letter-spacing="6">BIG BAY DE NOC</text>
+              <g transform="translate(740, 80)">
+                <circle r="22" fill="#F4EFE6" stroke="#6B7264" stroke-width="1"/>
+                <polygon points="0,-15 4,-2 0,-5 -4,-2" fill="#B85C38"/>
+                <polygon points="0,15 4,2 0,5 -4,2" fill="#6B7264"/>
+                <text x="0" y="-26" font-family="JetBrains Mono, monospace" font-size="10" fill="#B85C38" text-anchor="middle" font-weight="500">N</text>
+              </g>
+              <g transform="translate(50, 800)">
+                <line x1="0" y1="0" x2="120" y2="0" stroke="#1A1A18" stroke-width="2"/>
+                <line x1="0" y1="-4" x2="0" y2="4" stroke="#1A1A18" stroke-width="2"/>
+                <line x1="60" y1="-3" x2="60" y2="3" stroke="#1A1A18" stroke-width="1"/>
+                <line x1="120" y1="-4" x2="120" y2="4" stroke="#1A1A18" stroke-width="2"/>
+                <text x="60" y="-9" font-family="JetBrains Mono, monospace" font-size="9" fill="#6B7264" text-anchor="middle" letter-spacing="1">1 MILE</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5 — LOCAL CONTEXT -->
+<section class="local">
+  <div class="local__inner">
+    <div class="overline overline--centered">For Rapid River Regulars</div>
+    <h2 class="h2">A Day on the Bay,<br/>Start to Finish</h2>
+    <p>Rapid River sits at the edge of some of the best fishing and hunting territory in the Upper Peninsula, and the outdoor culture here runs deep. A round at Nahma fits the same rhythm. Show up when you want, pay $18, walk nine holes along the shore of Big Bay de Noc, and be back in Rapid River before lunch.</p>
+    <p>The <a href="/#clubhouse" class="clink">Nahma clubhouse</a> has a full bar, sandwiches, and pizza open the same hours as the course. Post-round drinks on the property, no need to drive back to town first. For Rapid River residents who want something more than a round here and there, three weekly <a href="/#leagues" class="clink">leagues</a> run throughout the season: Men's on Tuesdays at 6 PM, Scramble on Wednesdays at 6 PM, Women's on Thursdays at 6 PM.</p>
+    <p>Delta County does not have many courses, and none of the others are on the water. If you are from Rapid River and you have not played Nahma, the course has been here since 1922 waiting for you to find it. It is the closest public golf course to your front door, and it happens to be one of the best views in the county.</p>
+  </div>
+</section>
+
+<!-- SECTION 6 — CLOSING CTA -->
+<section class="closer">
+  <div class="closer__inner">
+    <div class="overline overline--centered overline--dark">Plan Your Round</div>
+    <h2 class="h2">Golf Near Rapid River<br/>on the Shore of Big Bay de Noc</h2>
+    <p>Green fees from $18. No tee time required. Open May through September.<br/>Call us at (906) 644-2648.</p>
+    <div class="closer__ctas">
+      <a href="/#rates" class="btn btn--ghost btn--lg">Green Fees From $18</a>
+      <a href="tel:+19066442648" class="btn btn--ghost btn--lg">Call (906) 644-2648</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="logo" aria-label="Nahma Golf Club">
+          <div class="logo__rule"></div>
+          <div class="logo__mark">Nahma Golf Club</div>
+          <div class="logo__rule"></div>
+        </a>
+        <p class="footer__tag">Nine holes on the shore of Big Bay de Noc. Public course. Established 1922.</p>
+      </div>
+
+      <div class="footer__col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="/the-course/">The Course</a></li>
+          <li><a href="/#rates">Rates</a></li>
+          <li><a href="/#leagues">Leagues</a></li>
+          <li><a href="/#outings">Outings</a></li>
+          <li><a href="/#clubhouse">Clubhouse</a></li>
+          <li><a href="/about/">About</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h5>Visit</h5>
+        <div class="footer__addr">
+          8588 Ll Rd<br/>
+          Rapid River, MI 49878
+        </div>
+        <h5 style="margin-top:28px">Season</h5>
+        <div class="footer__addr">Open May through September</div>
+      </div>
+
+      <div class="footer__col">
+        <h5>Contact</h5>
+        <div class="footer__addr">
+          <a href="tel:+19066442648">(906) 644-2648</a><br/>
+          <a href="mailto:nahmagolfclub@gmail.com">nahmagolfclub@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="badge">No tee time required. Walk-ins welcome.</div>
+      <div>© 1922–2026 Nahma Golf Club · Nahma, Michigan</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
