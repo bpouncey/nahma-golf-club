@@ -87,6 +87,14 @@
   .distance__route .lbl   { font-family: var(--font-body); font-weight: 600; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-text-muted); }
   .distance__route .val   { font-family: var(--font-head); font-weight: 700; font-size: 24px; letter-spacing: 0.04em; color: var(--color-green); line-height: 1; }
 
+  .distance__photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    margin-bottom: 24px;
+  }
+
   /* SECTION 3 — COURSE DETAILS */
   .details { background: var(--color-cream-dark); padding: 120px 0; }
   .details__head { text-align: center; margin-bottom: 64px; }
@@ -240,7 +248,7 @@
 <section class="hero">
   <div class="hero__inner">
     <div class="overline overline--centered">37 Miles from Escanaba, MI</div>
-    <h1 class="h-display">Golf Near<br/>Escanaba, Michigan</h1>
+    <h1 class="h-display">Lakeside Golf Near<br/>Escanaba, Michigan</h1>
     <p class="hero__sub">Nahma Golf Club is your closest lakeside course, on the shore of Big Bay de Noc, established in 1922.</p>
   </div>
   <div class="hero__pin" aria-hidden="true">45°55'N · 086°41'W</div>
@@ -253,22 +261,17 @@
       <div class="distance__copy">
         <div class="overline">From Escanaba</div>
         <h2 class="h2">About 40 Minutes to<br/>Big Bay de Noc</h2>
-        <p>Nahma Golf Club is approximately 37 miles from downtown Escanaba, about a 40-minute drive heading east on US-2 to Ll Road in Rapid River. It is the closest public golf course with a lakeside setting in the region.</p>
-        <p>The course sits on the shore of Big Bay de Noc, the northern arm of Green Bay. Established in 1922, it is the second oldest golf course in Delta County. Nine holes, par 36, 2,875 yards. Public access, no tee time required, green fees starting at $18.</p>
-        <p>Escanaba golfers who have driven past the signs on US-2 and never stopped are the ones who are most surprised when they finally play. It is not what you expect from a course this close to the water.</p>
+        <p>Escanaba Country Club and Highland Golf Club are both solid courses — landlocked, well-maintained, comfortable. Nahma Golf Club is the other kind. Forty minutes east on US-2, right on the shore of Big Bay de Noc, the difference shows up the moment you step off the first tee. The bay is right there. Not a glimpse through the trees — the actual water, visible across most of the course.</p>
+        <p>The drive from Escanaba runs east on US-2 through the edge of the Hiawatha National Forest, where logging truck traffic is regular and deer crossings are not rare, especially in the morning. You cross near the mouth of the Escanaba River before the road hugs the northern shoreline of Little Bay de Noc. By the time you turn south on Ll Road, you are already in a different part of the county. On peak summer afternoons, the constant lake breeze off Big Bay de Noc keeps things noticeably cooler than the inland courses you left behind. Nine holes, par 36, 2,875 yards. Established in 1922. Green fees from $18.</p>
+        <p>Most Escanaba golfers who make the drive say the same thing: they should have done it sooner. The course has been sitting out there for over a hundred years. It is not going anywhere.</p>
       </div>
 
       <div>
-        <div class="map-frame">
-          <div class="map-frame__head">
-            <div class="map-frame__title">Escanaba → Nahma</div>
-            <div class="map-frame__coords">Delta County, MI</div>
-          </div>
-          <div class="map-frame__embed">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d177906.4478013856!2d-87.01325255367797!3d45.83552149283002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x4d4d965e4edc0e1f%3A0x2de55ccbd7cb6ff6!2sEscanaba%2C%20Michigan%2049829!3m2!1d45.745246599999994!2d-87.0645801!4m5!1s0x4d4c483ef17b60d5%3A0xd146f60928c023aa!2sNahma%20Golf%20Course%2C%208588%20Ll%20Rd%2C%20Rapid%20River%2C%20MI%2049878!3m2!1d45.856273599999994!2d-86.63740969999999!5e0!3m2!1sen!2sus!4v1779045412345!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-
+        <img
+          src="../photos/course-flag-bay.jpg"
+          alt="Golf flag on the fairway at Nahma Golf Club with Big Bay de Noc visible in the background — the view that separates this course from every inland option near Escanaba"
+          class="distance__photo"
+        />
         <div class="distance__route">
           <div class="item">
             <span class="lbl">Distance</span>
@@ -333,7 +336,7 @@
       <div class="getting__copy">
         <div class="overline">Directions</div>
         <h2 class="h2">How to Get Here<br/>from Escanaba</h2>
-        <p>From Escanaba: take Ludington St, Stephenson Ave, and Washington Ave to US-2 E, then follow US-2 E for about 32 miles east toward Rapid River. Turn right onto Ll Rd/Main St. Nahma Golf Club is at 8588 Ll Rd, Rapid River, MI 49878. The course is on the left, on the shore of Big Bay de Noc. About 37 miles and 40 minutes total.</p>
+        <p>From downtown Escanaba, take Ludington St to Stephenson Ave and work your way to US-2 E (about 1.8 miles to the on-ramp). From there, follow US-2 east for roughly 32 miles — you are driving through the edge of the Hiawatha National Forest, so keep an eye out for logging trucks and deer, especially in the early morning. Turn right onto Ll Rd/Main St. Nahma Golf Club is on the left at 8588 Ll Rd after 3.4 miles, right at the water. Total drive is about 37 miles and 40 minutes.</p>
 
         <ol class="getting__steps">
           <li>
@@ -379,7 +382,7 @@
     <div class="overline overline--centered">For Escanaba Regulars</div>
     <h2 class="h2">More Than a Golf Course</h2>
     <p>The Nahma <a href="/clubhouse/" class="clink">clubhouse</a> is the right place for lunch before a round or a cold beer and pizza after the 9th hole. Full bar, sandwiches, pizza, open the same hours as the course. If you are looking for something to do in the Escanaba area that is not another trip to the waterfront or a drive downstate, this is the answer.</p>
-    <p>Three weekly <a href="/leagues/" class="clink">leagues</a> run throughout the season (Tuesdays, Wednesdays, Thursdays) for golfers who want more than a round here and there. Seasonal memberships are available starting at $75 for students and $425 for seniors. If you are playing regularly from Escanaba, a membership pays for itself quickly.</p>
+    <p>Three weekly <a href="/leagues/" class="clink">leagues</a> run throughout the season (Tuesdays, Wednesdays, Thursdays) for golfers who want more than a round here and there. Seasonal memberships are available starting at $75 for students and $425 for seniors. Whether you are commuting east from Escanaba, meeting friends halfway from <a href="/golf-near-gladstone/" class="clink">Gladstone</a>, or driving down from <a href="/golf-near-manistique/" class="clink">Manistique</a>, a membership pays for itself quickly — and the lakeside setting makes the drive worth it every time.</p>
   </div>
 </section>
 

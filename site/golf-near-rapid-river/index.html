@@ -86,6 +86,13 @@
   .distance__route .item  { display: flex; flex-direction: column; gap: 4px; min-width: 120px; }
   .distance__route .lbl   { font-family: var(--font-body); font-weight: 600; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-text-muted); }
   .distance__route .val   { font-family: var(--font-head); font-weight: 700; font-size: 24px; letter-spacing: 0.04em; color: var(--color-green); line-height: 1; }
+  .distance__photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    margin-bottom: 24px;
+  }
 
   /* SECTION 3 — COURSE DETAILS */
   .details { background: var(--color-cream-dark); padding: 120px 0; }
@@ -240,7 +247,7 @@
 <section class="hero">
   <div class="hero__inner">
     <div class="overline overline--centered">Right Here in Rapid River, MI</div>
-    <h1 class="h-display">Golf Near<br/>Rapid River, Michigan</h1>
+    <h1 class="h-display">Lakeside Golf Near<br/>Rapid River, Michigan</h1>
     <p class="hero__sub">Nahma Golf Club is about 20 miles from downtown Rapid River, on the shore of Big Bay de Noc. Established in 1922.</p>
   </div>
 </section>
@@ -252,20 +259,17 @@
       <div class="distance__copy">
         <div class="overline">From Rapid River</div>
         <h2 class="h2">20 Miles<br/>to Big Bay de Noc</h2>
-        <p>Nahma Golf Club sits at 8588 Ll Road, just south of US-2 and about 20 miles from downtown Rapid River. If you live in Rapid River or are passing through on US-2, the course is closer than most people realize. The turn is there and back before most golfers finish debating where to play.</p>
-        <p>The course is on the shore of Big Bay de Noc, the northern arm of Green Bay on Lake Michigan. It was established in 1922, making it one of the oldest public courses in the Upper Peninsula and the second oldest in Delta County. Nine holes, par 36, 2,875 yards. Public access, no tee time required, green fees from $18.</p>
+        <p>Rapid River does not have its own municipal golf course. The nearest dedicated option is Gladstone Golf Club over in Delta County — a solid 18-hole layout, but that is 20 minutes west on US-2 in the opposite direction. Nahma Golf Club is roughly the same distance east, technically carries a Rapid River address, and it sits directly on Big Bay de Noc. By every reasonable measure, this is the local course for anyone living in Rapid River who plays golf.</p>
+        <p>The drive out runs east on US-2 through the heart of the Hiawatha National Forest. The 24th Road connector cuts south off the highway and quiets down fast — narrow blacktop through active wildlife corridors, so keep your speed down and watch the tree lines. At Ll Road, take the sharp right down to the bay. On summer afternoons, the lake breeze off the water runs steady and keeps the course noticeably cooler than the inland air you left on the highway. The bay is right there from most holes — not a glimpse, the whole thing. Nine holes, par 36, 2,875 yards. Green fees from $18.</p>
+        <p>Established in 1922, which puts it well over a century old — the second oldest public course in Delta County. Most Rapid River residents are physically closer to this course than they are to any gas station on US-2. If you have not played it yet, the drive takes about 23 minutes.</p>
       </div>
 
       <div>
-        <div class="map-frame">
-          <div class="map-frame__head">
-            <div class="map-frame__title">Rapid River → Nahma</div>
-            <div class="map-frame__coords">Delta County, MI</div>
-          </div>
-        <div class="map-frame__embed">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d177754.5896368385!2d-86.95135119645008!3d45.883003198731274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x4d4dc61b8b268445%3A0x9dbe137252e0f145!2sRapid%20River%2C%20Michigan%2049878!3m2!1d45.9266383!2d-86.9670603!4m5!1s0x4d4c483ef17b60d5%3A0xd146f60928c023aa!2sNahma%20Golf%20Course%2C%208588%20Ll%20Rd%2C%20Rapid%20River%2C%20MI%2049878!3m2!1d45.856273599999994!2d-86.63740969999999!5e0!3m2!1sen!2sus!4v1779045491698!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-
+        <img
+          src="../photos/course-flag-bay.jpg"
+          alt="A pin flag on the fairway at Nahma Golf Club with Big Bay de Noc stretching out behind it — the course Rapid River locals have had in their backyard since 1922"
+          class="distance__photo"
+        />
         <div class="distance__route">
           <div class="item">
             <span class="lbl">Distance</span>
@@ -330,8 +334,8 @@
       <div class="getting__copy">
         <div class="overline">Directions</div>
         <h2 class="h2">From Rapid River,<br/>You're Already Close</h2>
-        <p>From downtown Rapid River: head east on US-2 for about 17 miles, then turn right onto 24th Rd. After 1.7 miles, take a sharp right onto Ll Rd/Main St. Nahma Golf Club is at 8588 Ll Rd on your left, on the shore of Big Bay de Noc. The whole drive is about 23 minutes.</p>
-        <p>If you are coming off M-35 or US-2 from the west, stay on US-2 east past Rapid River and watch for the 24th Rd turnoff on your right.</p>
+        <p>From downtown Rapid River, head east on US-2 — you are driving through Hiawatha National Forest here, so keep an eye out for deer, especially in the morning. After about 16.6 miles, the 24th Road turnoff comes up on your right. This is the local shortcut Rapid River regulars use: it cuts south off the highway and through active wildlife corridors before landing you on Ll Road. The secondary road is narrower than US-2 and the shoulders are gravel, so keep your speed reasonable. Take the sharp right at Ll Road and drive 2.3 miles to the course on your left. The whole drive is about 23 minutes.</p>
+        <p>If you are coming off M-35 or US-2 from the west, stay on US-2 east through town and watch for the 24th Rd turnoff on your right.</p>
 
         <ol class="getting__steps">
           <li>
@@ -377,7 +381,7 @@
     <div class="overline overline--centered">For Rapid River Regulars</div>
     <h2 class="h2">A Day on the Bay,<br/>Start to Finish</h2>
     <p>Rapid River sits at the edge of some of the best fishing and hunting territory in the Upper Peninsula, and the outdoor culture here runs deep. A round at Nahma fits the same rhythm. Show up when you want, pay $18, walk nine holes along the shore of Big Bay de Noc, and be back in Rapid River before lunch.</p>
-    <p>The <a href="/clubhouse/" class="clink">Nahma clubhouse</a> has a full bar, sandwiches, and pizza open the same hours as the course. Post-round drinks on the property, no need to drive back to town first. For Rapid River residents who want something more than a round here and there, three weekly <a href="/leagues/" class="clink">leagues</a> run throughout the season: Men's on Tuesdays at 6 PM, Scramble on Wednesdays at 6 PM, Women's on Thursdays at 6 PM.</p>
+    <p>The <a href="/clubhouse/" class="clink">Nahma clubhouse</a> has a full bar, sandwiches, and pizza open the same hours as the course. Post-round drinks on the property, no need to drive back to town first. For anyone who wants something more than a round here and there, three weekly <a href="/leagues/" class="clink">leagues</a> run throughout the season: Men's on Tuesdays at 6 PM, Scramble on Wednesdays at 6 PM, Women's on Thursdays at 6 PM. Whether you are a Rapid River local, driving over from <a href="/golf-near-escanaba/" class="clink">Escanaba</a>, or meeting friends from <a href="/golf-near-gladstone/" class="clink">Gladstone</a> or <a href="/golf-near-garden/" class="clink">Garden</a>, league membership runs $35 for the season — and every round ends with the bay right outside the clubhouse window.</p>
     <p>Delta County does not have many courses, and none of the others are on the water. If you are from Rapid River and you have not played Nahma, the course has been here since 1922 waiting for you to find it. It is the closest public golf course to your front door, and it happens to be one of the best views in the county.</p>
   </div>
 </section>

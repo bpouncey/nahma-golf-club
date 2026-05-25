@@ -83,6 +83,13 @@
     flex-wrap: wrap;
     gap: 20px 36px;
   }
+  .distance__photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    margin-bottom: 24px;
+  }
   .distance__route .item  { display: flex; flex-direction: column; gap: 4px; min-width: 120px; }
   .distance__route .lbl   { font-family: var(--font-body); font-weight: 600; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-text-muted); }
   .distance__route .val   { font-family: var(--font-head); font-weight: 700; font-size: 24px; letter-spacing: 0.04em; color: var(--color-green); line-height: 1; }
@@ -240,7 +247,7 @@
 <section class="hero">
   <div class="hero__inner">
     <div class="overline overline--centered">~27 Miles from Gladstone, MI</div>
-    <h1 class="h-display">Golf Near<br/>Gladstone, Michigan</h1>
+    <h1 class="h-display">Lakeside Golf Near<br/>Gladstone, Michigan</h1>
     <p class="hero__sub">Nahma Golf Club sits on the shore of Big Bay de Noc, less than a half hour from Gladstone. Public course, established 1922.</p>
   </div>
   <div class="hero__pin" aria-hidden="true">45°55'N · 086°41'W</div>
@@ -253,22 +260,17 @@
       <div class="distance__copy">
         <div class="overline">From Gladstone</div>
         <h2 class="h2">Half an Hour West<br/>to Big Bay de Noc</h2>
-        <p>Nahma Golf Club is approximately 27 miles from Gladstone, about a 29-minute drive heading east on US-2 and south on 24th Road and Ll Road. It is the only public lakeside golf course in the area, sitting directly on the shore of Big Bay de Noc.</p>
-        <p>Gladstone golfers already know Little Bay de Noc. Nahma puts you on the other bay, the bigger one, with a course that has been there since 1922. Nine holes, par 36, 2,875 yards. No tee time required, green fees starting at $18.</p>
-        <p>If you have been playing the same courses around Gladstone and want something different, Nahma is the most scenic option in the area and the one most people from Gladstone have not played.</p>
+        <p>Gladstone Golf Club — Irish Oaks — is a punishing 18-hole layout through tight, wooded terrain. Good course if you want a challenge and to lose a sleeve of balls in the trees. Nahma Golf Club is the intentional opposite: open fairways, forgiving lines, and Big Bay de Noc sitting right at the edge of the property with the water in view most of the round. Twenty-seven miles east on US-2 and you are on a completely different type of course than anything else in the county.</p>
+        <p>The route from Gladstone crosses the Days River and Whitefish River bridges before the 24th Road cutoff takes you south. That stretch of 24th Road is narrow, frost-heaved secondary asphalt — the kind that reminds you you are in the UP — and deer are active along the corridor, so watch your speed. At Ll Road, take the sharp right and the bay opens up at the bottom of the hill. The greens have been in play since 1922, dish-shaped and slower in the morning, different enough from modern layouts that the course plays genuinely fresh on a second loop. Nine holes, par 36, 2,875 yards. Green fees from $18.</p>
+        <p>Gladstone has Little Bay de Noc on its doorstep. Nahma is on the bigger bay, farther from the highway noise. The drive over is easy enough that most golfers who make it once end up back within the same season.</p>
       </div>
 
       <div>
-        <div class="map-frame">
-          <div class="map-frame__head">
-            <div class="map-frame__title">Gladstone → Nahma</div>
-            <div class="map-frame__coords">Delta County, MI</div>
-          </div>
-          <div class="map-frame__embed">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d177754.53172529986!2d-86.98113849644731!3d45.883021298733574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x4d4dc01ac5289b17%3A0x416dab8528732012!2sGladstone%2C%20Michigan%2049837!3m2!1d45.852743499999995!2d-87.02180489999999!4m5!1s0x4d4c483ef17b60d5%3A0xd146f60928c023aa!2sNahma%20Golf%20Course%2C%208588%20Ll%20Rd%2C%20Rapid%20River%2C%20MI%2049878!3m2!1d45.856273599999994!2d-86.63740969999999!5e0!3m2!1sen!2sus!4v1779045465298!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-
+        <img
+          src="../photos/outings-fairway-bay.jpg"
+          alt="Fairway at Nahma Golf Club with Big Bay de Noc stretching into the distance — a lakeside setting unlike any course near Gladstone, MI"
+          class="distance__photo"
+        />
         <div class="distance__route">
           <div class="item">
             <span class="lbl">Distance</span>
@@ -333,7 +335,7 @@
       <div class="getting__copy">
         <div class="overline">Directions</div>
         <h2 class="h2">How to Get Here<br/>from Gladstone</h2>
-        <p>From Gladstone, head east on US-2 for about 23 miles to 24th Road. Turn right onto 24th Road, then sharp right onto Ll Road/Main St. Total drive is about 27 miles and takes roughly 29 minutes. Nahma Golf Club is at 8588 Ll Rd, Rapid River, MI 49878, on the left as you come down Ll Road toward the water.</p>
+        <p>From Gladstone, head east on US-2 for about 23 miles. The 24th Road turnoff is a right — locals know it as a useful shortcut that puts you on a quiet secondary road cutting south toward the bay. The asphalt gets narrower and more UP-standard on 24th Road, so ease up and watch for deer in the corridor. At Ll Road, take the sharp right and follow it 2.3 miles to the course on your left at the water's edge. Total drive: about 27 miles, 29 minutes.</p>
 
         <ol class="getting__steps">
           <li>
@@ -380,7 +382,7 @@
     <h2 class="h2">A Better View of the Bay</h2>
     <p>Gladstone sits on Little Bay de Noc. Nahma sits on Big Bay de Noc, the wider bay to the west. The drive between them is easy, mostly along US-2 with the water in view for stretches of the route. When you arrive, the course is right at the waterline. It is a different relationship with the bay than most golfers in the area have seen.</p>
     <p>The <a href="/clubhouse/" class="clink">Nahma clubhouse</a> has a full bar, pizza, and sandwiches. It is the right place for a cold beer after nine holes or a full afternoon if you play 18 and sit on the back end of the round. If you are putting together a group from Gladstone, Nahma handles private outings throughout the season. Call ahead and the club can set it up.</p>
-    <p>Three weekly <a href="/leagues/" class="clink">leagues</a> run through the season: Men's on Tuesdays, an open All Scramble on Wednesdays, and Women's on Thursdays, all at 6 PM. Seasonal memberships start at $75 for students and $425 for seniors. Gladstone golfers who make the drive a few times tend to make it a habit.</p>
+    <p>Three weekly <a href="/leagues/" class="clink">leagues</a> run through the season: Men's on Tuesdays, an open All Scramble on Wednesdays, and Women's on Thursdays, all at 6 PM. Seasonal memberships start at $75 for students and $425 for seniors. Whether you are driving east from <a href="/golf-near-gladstone/" class="clink">Gladstone</a>, meeting friends from <a href="/golf-near-escanaba/" class="clink">Escanaba</a>, or making the trip from <a href="/golf-near-manistique/" class="clink">Manistique</a>, the lakeside setting at Nahma makes the drive worth it every time.</p>
   </div>
 </section>
 

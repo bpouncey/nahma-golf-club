@@ -83,6 +83,13 @@
     flex-wrap: wrap;
     gap: 20px 36px;
   }
+  .distance__photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    margin-bottom: 24px;
+  }
   .distance__route .item  { display: flex; flex-direction: column; gap: 4px; min-width: 120px; }
   .distance__route .lbl   { font-family: var(--font-body); font-weight: 600; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-text-muted); }
   .distance__route .val   { font-family: var(--font-head); font-weight: 700; font-size: 24px; letter-spacing: 0.04em; color: var(--color-green); line-height: 1; }
@@ -240,7 +247,7 @@
 <section class="hero">
   <div class="hero__inner">
     <div class="overline overline--centered">Garden Peninsula, Michigan</div>
-    <h1 class="h-display">Golf Near Garden,<br/>Michigan</h1>
+    <h1 class="h-display">Lakeside Golf Near Garden,<br/>Michigan</h1>
     <p class="hero__sub">Nahma Golf Club is the closest public course to the Garden Peninsula — on the same Big Bay de Noc shoreline, established in 1922.</p>
   </div>
   <div class="hero__pin" aria-hidden="true">45°55'N · 086°41'W</div>
@@ -253,22 +260,17 @@
       <div class="distance__copy">
         <div class="overline">From Garden, MI</div>
         <h2 class="h2">Around the Bay,<br/>About 15 Miles Out</h2>
-        <p>There is no golf on the Garden Peninsula. The nearest public course is Nahma Golf Club, approximately 15 miles from Garden via M-183 north and US-2 west, roughly 18 minutes depending on where you start on the peninsula.</p>
-        <p>Both places share the same bay. Nahma sits on the north shore of Big Bay de Noc, the same body of water the Garden Peninsula flanks on its western side. If you have spent a day at Fayette Historic State Park or a morning fishing the bay, Nahma Golf Club is the natural next stop heading out.</p>
-        <p>Nine holes, par 36, 2,875 yards. Public access, walk-ins welcome, no tee time required. Green fees starting at $18. Established in 1922, it is the second oldest golf course in Delta County and one of the few courses in the Upper Peninsula with a genuine lakeside setting.</p>
+        <p>Garden Golf Course is the community track on the peninsula — casual, short, fine for a quick nine with neighbors. When you want something with genuine course conditioning and a layout that has been growing into itself since 1922, you drive 15 miles north on M-183 and cut west on US-2 to Nahma. Eighteen minutes from Garden, and you are on the north shore of Big Bay de Noc — the same bay you have been looking across from Fayette or from a boat out on the water, except now you are standing on it.</p>
+        <p>Getting there from Garden is its own small experience. M-183 rolls through narrow rolling hills flanked by agricultural fields and limestone cliff faces before you hit the speed of US-2. Watch for slow-moving farm equipment on M-183 — this is working farmland and tractors are real traffic mid-week. Once you cross the Sturgeon River and cut west on US-2, Ll Road comes up on the left and the peninsula road takes you south to the water's edge. No tee time, no reservation. Par 36, 9 holes. Green fees from $18.</p>
+        <p>Garden people tend to know the peninsula well and the rest of the county less so. This course has been sitting 15 miles away for over a hundred years. The setting holds up to anything you have seen from the water — you just have to be standing on the fairway to get the full version of it.</p>
       </div>
 
       <div>
-        <div class="map-frame">
-          <div class="map-frame__head">
-            <div class="map-frame__title">Garden Peninsula → Nahma</div>
-            <div class="map-frame__coords">Delta County, MI</div>
-          </div>
-          <div class="map-frame__embed">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d88947.87724292373!2d-86.66425549662188!3d45.83886623720729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x4d4c5b3ab6819a7d%3A0xb337da1b4e9f67c9!2sGarden%2C%20Michigan%2049835!3m2!1d45.7747004!2d-86.5506953!4m5!1s0x4d4c483ef17b60d5%3A0xd146f60928c023aa!2sNahma%20Golf%20Course%2C%208588%20Ll%20Rd%2C%20Rapid%20River%2C%20MI%2049878!3m2!1d45.856273599999994!2d-86.63740969999999!5e0!3m2!1sen!2sus!4v1779045318224!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-
+        <img
+  src="../photos/course-flag-bay.jpg"
+  alt="A pin flag on a fairway at Nahma Golf Club with Big Bay de Noc visible in the background — the same bay that borders the Garden Peninsula to the south"
+  class="distance__photo"
+/>
         <div class="distance__route">
           <div class="item">
             <span class="lbl">Distance</span>
@@ -333,6 +335,7 @@
       <div class="getting__copy">
         <div class="overline">Directions</div>
         <h2 class="h2">How to Get Here<br/>from Garden</h2>
+        <p>Getting off the Garden Peninsula and up to US-2 is the only mildly involved part of this drive. M-183 north out of Garden rolls through narrow hills, limestone outcroppings, and active farmland — slow-moving farm equipment is real traffic on this road, especially weekday mornings, so budget a few extra minutes if you are heading out early. Cross the Sturgeon River and hit US-2 west for 3.6 miles, then take Ll Road south toward the bay. Total distance is about 15 miles. The whole thing takes around 18 minutes under normal conditions.</p>
 
         <ol class="getting__steps">
           <li>
@@ -382,7 +385,7 @@
     <div class="overline overline--centered">For Garden Peninsula Visitors</div>
     <h2 class="h2">The Same Bay,<br/>a Different Angle</h2>
     <p>The Garden Peninsula draws people for specific reasons: Fayette Historic State Park, the walleye and smallmouth bass in the bay, the deer hunting in fall, and the kind of quiet that is harder to find each year. It is not a place people end up by accident. If you are there, you sought it out.</p>
-    <p>There is no golf on the peninsula itself. When people staying near Garden want a round, Nahma Golf Club is the answer — and it has been since 1922. The course sits on the north shore of Big Bay de Noc, the same bay you have been looking across from Fayette or from the water. The setting is the main event: lake views from most of the course, older dish-shaped greens, and the kind of pace that matches the rest of a day on this part of the lake.</p>
+    <p>There is no golf on the peninsula itself. When people staying near Garden want a round, Nahma Golf Club is the answer — and it has been since 1922. Whether you are heading north from Garden, meeting friends from <a href="/golf-near-escanaba/" class="clink">Escanaba</a>, making the drive from <a href="/golf-near-manistique/" class="clink">Manistique</a>, or coming down from <a href="/golf-near-gladstone/" class="clink">Gladstone</a>, the course sits in the middle of all of it — on the north shore of Big Bay de Noc, the same bay you have been looking across from Fayette or from the water. The lakeside setting makes the trip worth it: lake views from most holes, older dish-shaped greens, and the kind of pace that matches the rest of a day on this part of the bay.</p>
     <p>The <a href="/clubhouse/" class="clink">clubhouse</a> is open the same hours as the course. Full bar, sandwiches, pizza. It is a good stop for lunch before a round or a cold beer after the 9th. If you are building a few days around the peninsula and the bay, a round at Nahma fits the same rhythm as the rest of it.</p>
   </div>
 </section>

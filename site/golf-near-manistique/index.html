@@ -74,6 +74,13 @@
   .distance__copy h2  { margin: 0 0 32px; text-wrap: balance; }
   .distance__copy p   { font-size: 18px; line-height: 1.7; color: var(--color-dark); margin: 0 0 22px; }
   .distance__copy p:last-of-type { margin-bottom: 0; }
+  .distance__photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    margin-bottom: 24px;
+  }
   .distance__route {
     margin-top: 36px;
     padding: 28px 32px;
@@ -240,7 +247,7 @@
 <section class="hero">
   <div class="hero__inner">
     <div class="overline overline--centered">~23 Miles West on US-2</div>
-    <h1 class="h-display">Golf Near<br/>Manistique, Michigan</h1>
+    <h1 class="h-display">Lakeside Golf Near<br/>Manistique, Michigan</h1>
     <p class="hero__sub">Nahma Golf Club sits on the shore of Big Bay de Noc, one of the most scenic stretches of water in the Upper Peninsula. Established in 1922. Public course, $18 green fees.</p>
   </div>
   <div class="hero__pin" aria-hidden="true">45°55'N · 086°41'W</div>
@@ -253,22 +260,17 @@
       <div class="distance__copy">
         <div class="overline">From Manistique</div>
         <h2 class="h2">~24 Minutes West Along<br/>the US-2 Corridor</h2>
-        <p>Nahma Golf Club is approximately 23 miles west of Manistique, a straightforward drive on US-2 through the heart of the Upper Peninsula. The route follows US-2 west before turning south onto Ll Rd. Plan on about 24 minutes.</p>
-        <p>The course is on the shore of Big Bay de Noc, the wide northwestern arm of Green Bay. Established in 1922, Nahma is one of the oldest public golf courses in the UP. Nine holes, par 36, 2,875 yards. No tee time required, walk-ins always welcome, green fees starting at $18.</p>
-        <p>If you are spending time around Manistique and Kitch-iti-kipi, Nahma is less than 25 minutes west — the kind of add-on that turns a day trip into a full day. The drive on US-2 is part of the experience.</p>
+        <p>Indian Lake Golf Course and Stony Point Golf Course give Manistique golfers decent local options — both are inland layouts with inland views. If you want the actual Great Lakes shoreline under your feet while you play, those courses are not it. Nahma Golf Club is. Twenty-three miles west on US-2, and the road takes you from Manistique's Lake Michigan dune boardwalk zone inland and back out to the shore of Big Bay de Noc — a different stretch of water with a different character entirely.</p>
+        <p>The US-2 run west from Manistique has its own quirks to know. Morning sun glints hard off the lake in the early hours — worth knowing if you are heading out before 9 a.m. Once you clear the open shoreline sections, crosswinds pick up across the highway. The sharp left turn south onto Ll Road drops you into the isolated Nahma peninsula, where the road narrows and marsh opens up on either side before the course appears on your left. Established 1922. Par 36, 9 holes. Green fees from $18.</p>
+        <p>A day around Kitch-iti-kipi and Manistique pairs naturally with a round out here. You are already on US-2. The 23-mile run west and back adds maybe an hour and a half to a day that mostly runs itself — and the setting at Nahma is different enough from anything near town that the detour earns its keep.</p>
       </div>
 
       <div>
-        <div class="map-frame">
-          <div class="map-frame__head">
-            <div class="map-frame__title">Manistique → Nahma</div>
-            <div class="map-frame__coords">Schoolcraft &amp; Delta Counties, MI</div>
-          </div>
-          <div class="map-frame__embed">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d177669.23518216293!2d-86.60686064238773!3d45.9096743521888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x4d4c01604bed92ab%3A0xa649548fd1b7fa07!2sManistique%2C%20Michigan%2049854!3m2!1d45.9577506!2d-86.2462523!4m5!1s0x4d4c483ef17b60d5%3A0xd146f60928c023aa!2sNahma%20Golf%20Course%2C%208588%20Ll%20Rd%2C%20Rapid%20River%2C%20MI%2049878!3m2!1d45.856273599999994!2d-86.63740969999999!5e0!3m2!1sen!2sus!4v1779045439141!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-
+        <img
+  src="../photos/hero-aerial-bay.jpg"
+  alt="Aerial view of Big Bay de Noc from above Nahma Golf Club — the scale of the bay golfers from Manistique, MI arrive at after the 23-mile drive west on US-2"
+  class="distance__photo"
+/>
         <div class="distance__route">
           <div class="item">
             <span class="lbl">Distance</span>
@@ -333,7 +335,7 @@
       <div class="getting__copy">
         <div class="overline">Directions</div>
         <h2 class="h2">How to Get Here<br/>from Manistique</h2>
-        <p>From Manistique, head to S Cedar St then take US-2 West. After about 19.5 miles on US-2, turn south onto Ll Rd/Main St. Nahma Golf Club is at 8588 Ll Rd on the left, right at the water's edge. Total drive is roughly 23 miles and 24 minutes.</p>
+        <p>From Manistique, get to S Cedar St and take US-2 West out of town. The first stretch runs parallel to the Lake Michigan dune zone — a nice drive, but expect sun glare off the water if you are heading out before mid-morning. After about 19.5 miles on US-2, turn left onto Ll Rd/Main St. The road narrows as you head south into the Nahma peninsula. The course is on the left at 8588 Ll Rd, right at the water. About 23 miles and 24 minutes total.</p>
 
         <ol class="getting__steps">
           <li>
@@ -379,7 +381,7 @@
     <div class="overline overline--centered">The US-2 Corridor</div>
     <h2 class="h2">A Course Worth the Drive<br/>from Manistique</h2>
     <p>Manistique draws visitors for Kitch-iti-kipi, Michigan's largest natural spring, and the Lake Michigan shoreline along US-2. Most people driving through do not realize that just 23 miles to the west, a course has been sitting on the edge of Big Bay de Noc since 1922. Nahma Golf Club is the kind of place that rewards the detour.</p>
-    <p>Big Bay de Noc is the northernmost arm of Green Bay, and the course runs right along its shore. The setting is different from anything you will find on a municipal layout in town. Older, round, dish-shaped greens. Fairways that slope toward the water. The bay visible from most holes. There is nothing quite like it in this part of the UP, and the $18 green fee makes the question easy to answer.</p>
+    <p>Big Bay de Noc is the northernmost arm of Green Bay, and the course runs right along its shore. The setting is different from anything you will find on a municipal layout in town. Older, round, dish-shaped greens. Fairways that slope toward the water. The bay visible from most holes. There is nothing quite like it in this part of the UP, and the $18 green fee makes the question easy to answer. Whether you are driving west from Manistique, meeting friends from <a href="/golf-near-escanaba/" class="clink">Escanaba</a>, or heading up from <a href="/golf-near-garden/" class="clink">Garden</a>, the shoreline setting makes the drive worth it.</p>
     <p>The <a href="/clubhouse/" class="clink">clubhouse</a> is open the same hours as the course. Full bar, sandwiches, pizza. If you are heading back east on US-2 toward Manistique after a round, it is the right place for a beer before you get back on the road.</p>
   </div>
 </section>
