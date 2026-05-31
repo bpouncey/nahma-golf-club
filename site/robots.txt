@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://map.xml
+Sitemap: https://nahmagolfclub.com/sitemap.xml
