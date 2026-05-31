@@ -1,3 +1,9 @@
+# Dependencies & build
+node_modules
+dist
+dist-ssr
+*.local
+
 # Logs
 logs
 *.log
@@ -7,12 +13,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
+# Editor & OS
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -23,9 +24,27 @@ dist-ssr
 *.sln
 *.sw?
 
-# Handoff bundle (large binary — not needed in version history)
-*.zip
-_handoff_tmp/
-
-# Environment
+# Environment & secrets
 .env
+
+# Large binary source assets (not used in site)
+_handoff_tmp/
+photo-scrapes/
+MLS\ Listing/
+*.zip
+
+# Internal tooling & AI config
+.claude/
+.playwright-mcp/
+
+# Process docs & internal research (not for client repo)
+_archive/
+_design/
+_seo/
+CLAUDE.md
+COPY-AUDIT.md
+SEO-AUDIT-v1.md
+nahma-hole-by-hole.csv
+local-data-gemini.md
+local-page-seo-qa.md
+local-pages-maps-data.md
