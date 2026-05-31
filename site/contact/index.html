@@ -276,6 +276,88 @@
     .hours-card { padding: 32px 28px; }
     .walkin-card { padding: 28px; }
   }
+
+  /* ============== CONTACT FORM SECTION ============== */
+  .contact-form-section {
+    background: var(--color-off-white);
+    padding: 120px 0;
+    border-top: 1px solid var(--color-cream-dark);
+  }
+  .contact-form-section__inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .contact-form-section__header {
+    margin-bottom: 56px;
+  }
+  .contact-form-section__header .overline { margin-bottom: 20px; }
+  .contact-form-section__header h2 { margin: 0 0 16px; }
+  .contact-form-section__header p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+  .form-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-cream-dark);
+    border-top: 4px solid var(--color-green);
+    padding: 48px;
+  }
+  .form-row {
+    margin-bottom: 28px;
+  }
+  .form-row--2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .form-field label {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-dark);
+  }
+  .form-field .req { color: var(--color-terracotta); }
+  .form-field .optional {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--color-text-muted);
+    font-size: 12px;
+  }
+  .form-field input,
+  .form-field textarea {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--color-dark);
+    background: var(--color-off-white);
+    border: 1px solid var(--color-cream-dark);
+    padding: 13px 16px;
+    outline: none;
+    transition: border-color 150ms ease;
+    resize: vertical;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+  .form-field input:focus,
+  .form-field textarea:focus {
+    border-color: var(--color-green);
+  }
+  .form-actions {
+    margin-top: 8px;
+  }
+  @media (max-width: 680px) {
+    .contact-form-section { padding: 80px 0; }
+    .form-card { padding: 32px 24px; }
+    .form-row--2 { grid-template-columns: 1fr; gap: 28px; }
+  }
 </style>
 </head>
 <body>
@@ -292,7 +374,7 @@
       <a href="/the-course/">The Course</a>
       <a href="/rates/">Rates</a>
       <a href="/leagues/">Leagues</a>
-      <a href="/outings/">Outings</a>
+      <a href="/membership/">Memberships</a>
       <a href="/about/">About</a>
     </div>
     <div class="nav__cta">
@@ -392,6 +474,47 @@
   </div>
 </section>
 
+<!-- ============ SECTION — CONTACT FORM ============ -->
+<section class="contact-form-section">
+  <div class="wrap">
+    <div class="contact-form-section__inner">
+      <div class="contact-form-section__header">
+        <div class="overline">Send a Message</div>
+        <h2 class="h2">Get in Touch</h2>
+        <p>Questions about the course, rates, outings, or anything else — we'll get back to you as soon as we can.</p>
+      </div>
+      <form name="contact" method="POST" netlify class="form-card">
+        <input type="hidden" name="form-name" value="contact" />
+        <div class="form-row form-row--2">
+          <div class="form-field">
+            <label for="contact-name">Name <span class="req">*</span></label>
+            <input type="text" id="contact-name" name="name" required />
+          </div>
+          <div class="form-field">
+            <label for="contact-email">Email <span class="req">*</span></label>
+            <input type="email" id="contact-email" name="email" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="contact-phone">Phone <span class="optional">(optional)</span></label>
+            <input type="tel" id="contact-phone" name="phone" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="contact-message">Message <span class="req">*</span></label>
+            <textarea id="contact-message" name="message" rows="5" required></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn--primary">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
 <!-- ============ SECTION 3 — DIRECTIONS / MAP ============ -->
 <section class="directions">
   <div class="wrap">
@@ -477,7 +600,7 @@
           <li><a href="/the-course/">The Course</a></li>
           <li><a href="/rates/">Rates</a></li>
           <li><a href="/leagues/">Leagues</a></li>
-          <li><a href="/outings/">Outings</a></li>
+          <li><a href="/membership/">Memberships</a></li>
           <li><a href="/clubhouse/">Clubhouse</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="/history/">History</a></li>

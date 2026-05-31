@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Membership | Nahma Golf Club — Rapid River, MI</title>
+<meta name="description" content="Join Nahma Golf Club. Season memberships available for individuals, couples, families, students, and seniors. Located in Nahma, Michigan on the shore of Big Bay de Noc." />
+<link rel="stylesheet" href="../css/main.css" />
+<style>
+  /* ============== HERO (green solid variant) ============== */
+  .hero {
+    background: var(--color-green);
+    color: var(--color-white);
+    padding: 128px 0 144px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero__inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+    position: relative;
+    z-index: 2;
+  }
+  .hero__est {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .hero__est::before,
+  .hero__est::after {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 1px;
+    background: var(--color-terracotta);
+  }
+  .hero h1 {
+    margin: 0 0 24px;
+    color: var(--color-white);
+  }
+  .hero__sub {
+    font-size: 20px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  /* ============== MEMBERSHIP SECTION ============== */
+  .membership-section {
+    background: var(--color-cream);
+    padding: 120px 0;
+  }
+  .membership-section__inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .membership-section__header {
+    margin-bottom: 56px;
+  }
+  .membership-section__header .overline { margin-bottom: 20px; }
+  .membership-section__header h2 { margin: 0 0 16px; }
+  .membership-section__header p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* ============== SHARED FORM STYLES ============== */
+  .form-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-cream-dark);
+    border-top: 4px solid var(--color-green);
+    padding: 48px;
+  }
+  .form-row {
+    margin-bottom: 28px;
+  }
+  .form-row--2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .form-row--3 {
+    display: grid;
+    grid-template-columns: 1fr 80px 100px;
+    gap: 16px;
+  }
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .form-field label {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-dark);
+  }
+  .form-field .req { color: var(--color-terracotta); }
+  .form-field .optional {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--color-text-muted);
+    font-size: 12px;
+  }
+  .form-field input,
+  .form-field textarea {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--color-dark);
+    background: var(--color-off-white);
+    border: 1px solid var(--color-cream-dark);
+    padding: 13px 16px;
+    outline: none;
+    transition: border-color 150ms ease;
+    resize: vertical;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+  .form-field input:focus,
+  .form-field textarea:focus {
+    border-color: var(--color-green);
+  }
+  .form-actions {
+    margin-top: 8px;
+  }
+
+  /* ============== MEMBERSHIP FORM STYLES ============== */
+  .form-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 36px;
+  }
+  .form-fieldset--last { margin-bottom: 28px; }
+  .form-legend {
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-dark);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-cream-dark);
+    width: 100%;
+    display: block;
+  }
+  .form-legend .req { color: var(--color-terracotta); }
+  .form-legend .optional-legend {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--color-text-muted);
+    font-size: 12px;
+  }
+  .radio-group,
+  .check-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .radio-item,
+  .check-item {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 12px;
+    align-items: start;
+    padding: 14px 16px;
+    border: 1px solid var(--color-cream-dark);
+    cursor: pointer;
+    transition: background 150ms ease, border-color 150ms ease;
+  }
+  .radio-item:hover,
+  .check-item:hover {
+    background: var(--color-cream);
+    border-color: var(--color-green);
+  }
+  .radio-item input,
+  .check-item input {
+    margin-top: 3px;
+    grid-row: 1;
+    accent-color: var(--color-green);
+    cursor: pointer;
+  }
+  .radio-label,
+  .check-label {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--color-dark);
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .radio-price {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--color-green);
+    letter-spacing: 0.04em;
+  }
+  .radio-note {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+  }
+  .form-disclaimer {
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  /* ============== RESPONSIVE ============== */
+  @media (max-width: 680px) {
+    .membership-section { padding: 80px 0; }
+    .form-card { padding: 32px 24px; }
+    .form-row--2 { grid-template-columns: 1fr; gap: 28px; }
+    .form-row--3 { grid-template-columns: 1fr 1fr; }
+    .form-row--3 .form-field--grow { grid-column: 1 / -1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav nav--solid">
+  <div class="nav__inner">
+    <a href="/" class="logo" aria-label="Nahma Golf Club">
+      <div class="logo__rule"></div>
+      <div class="logo__mark">Nahma Golf Club</div>
+      <div class="logo__rule"></div>
+    </a>
+    <div class="nav__links">
+      <a href="/the-course/">The Course</a>
+      <a href="/rates/">Rates</a>
+      <a href="/leagues/">Leagues</a>
+      <a href="/membership/" class="is-active">Memberships</a>
+      <a href="/about/">About</a>
+    </div>
+    <div class="nav__cta">
+      <a href="/rates/" class="btn btn--nav-primary">See Rates</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ BREADCRUMB ============ -->
+<div class="crumbs">
+  <div class="crumbs__inner">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <span class="here">Memberships</span>
+  </div>
+</div>
+
+<!-- ============ SECTION 1 — HERO ============ -->
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__est">Nahma, Michigan &nbsp;·&nbsp; Upper Peninsula</div>
+    <h1 class="h-display">Membership</h1>
+    <p class="hero__sub">Join the club. Season memberships available for all ages — individual, couple, family, and student rates.</p>
+  </div>
+</section>
+
+<!-- ============ SECTION 2 — MEMBERSHIP FORM ============ -->
+<section class="membership-section">
+  <div class="wrap">
+    <div class="membership-section__inner">
+      <div class="membership-section__header">
+        <div class="overline">Join Nahma Golf Club</div>
+        <h2 class="h2">Season Membership</h2>
+        <p>Fill out the form below to express interest in a season membership. We'll follow up to confirm your membership and arrange payment. No payment is required to submit this form.</p>
+      </div>
+
+      <form name="membership" method="POST" netlify class="form-card">
+        <input type="hidden" name="form-name" value="membership" />
+
+        <fieldset class="form-fieldset">
+          <legend class="form-legend">Your Information</legend>
+          <div class="form-row form-row--2">
+            <div class="form-field">
+              <label for="mem-name">Full Name <span class="req">*</span></label>
+              <input type="text" id="mem-name" name="name" required />
+            </div>
+            <div class="form-field">
+              <label for="mem-email">Email <span class="req">*</span></label>
+              <input type="email" id="mem-email" name="email" required />
+            </div>
+          </div>
+          <div class="form-row form-row--2">
+            <div class="form-field">
+              <label for="mem-phone">Phone <span class="req">*</span></label>
+              <input type="tel" id="mem-phone" name="phone" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="mem-street">Street Address <span class="req">*</span></label>
+              <input type="text" id="mem-street" name="street" required />
+            </div>
+          </div>
+          <div class="form-row form-row--3">
+            <div class="form-field form-field--grow">
+              <label for="mem-city">City <span class="req">*</span></label>
+              <input type="text" id="mem-city" name="city" required />
+            </div>
+            <div class="form-field form-field--sm">
+              <label for="mem-state">State <span class="req">*</span></label>
+              <input type="text" id="mem-state" name="state" maxlength="2" placeholder="MI" required />
+            </div>
+            <div class="form-field form-field--sm">
+              <label for="mem-zip">ZIP <span class="req">*</span></label>
+              <input type="text" id="mem-zip" name="zip" maxlength="10" required />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-fieldset">
+          <legend class="form-legend">Membership Type <span class="req">*</span></legend>
+          <div class="radio-group">
+            <label class="radio-item">
+              <input type="radio" name="membership_type" value="Regular Single — $450" required />
+              <span class="radio-label">Regular Single <span class="radio-price">$450</span></span>
+              <span class="radio-note">59 &amp; under</span>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="membership_type" value="Regular Couple — $525" />
+              <span class="radio-label">Regular Couple <span class="radio-price">$525</span></span>
+              <span class="radio-note">59 &amp; under</span>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="membership_type" value="Family — $550" />
+              <span class="radio-label">Family <span class="radio-price">$550</span></span>
+              <span class="radio-note">Includes children 17 &amp; under</span>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="membership_type" value="College Student — $125" />
+              <span class="radio-label">College Student <span class="radio-price">$125</span></span>
+              <span class="radio-note">25 &amp; under</span>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="membership_type" value="High School Student — $75" />
+              <span class="radio-label">High School Student <span class="radio-price">$75</span></span>
+              <span class="radio-note">17 &amp; under</span>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="membership_type" value="Senior Single — $425" />
+              <span class="radio-label">Senior Single <span class="radio-price">$425</span></span>
+              <span class="radio-note">60+</span>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="membership_type" value="Senior Couple — $500" />
+              <span class="radio-label">Senior Couple <span class="radio-price">$500</span></span>
+              <span class="radio-note">60+</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-fieldset form-fieldset--last">
+          <legend class="form-legend">Add-Ons <span class="optional-legend">(optional)</span></legend>
+          <div class="check-group">
+            <label class="check-item">
+              <input type="checkbox" name="addon_trail_fee" value="Annual Trail Fee — $50" />
+              <span class="check-label">Annual Trail Fee <span class="radio-price">$50</span></span>
+              <span class="radio-note">Required if cart not stored in cart shed</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" name="addon_cart_shed" value="Cart Shed — $150" />
+              <span class="check-label">Cart Shed <span class="radio-price">$150</span></span>
+              <span class="radio-note">12-month storage included</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="mem-notes">Questions or Comments <span class="optional">(optional)</span></label>
+            <textarea id="mem-notes" name="notes" rows="4"></textarea>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn--primary">Submit Membership Interest</button>
+          <p class="form-disclaimer">We'll follow up to confirm your membership and collect payment. No payment is required to submit this form.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="/" class="logo" aria-label="Nahma Golf Club">
+          <div class="logo__rule"></div>
+          <div class="logo__mark">Nahma Golf Club</div>
+          <div class="logo__rule"></div>
+        </a>
+        <p class="footer__tag">Nine holes on the shore of Big Bay de Noc. Public course. Established 1922.</p>
+      </div>
+
+      <div class="footer__col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="/the-course/">The Course</a></li>
+          <li><a href="/rates/">Rates</a></li>
+          <li><a href="/leagues/">Leagues</a></li>
+          <li><a href="/membership/">Memberships</a></li>
+          <li><a href="/clubhouse/">Clubhouse</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/history/">History</a></li>
+          <li><a href="/tee-times/">Tee Times</a></li>
+          <li><a href="/rentals/">Rentals</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h5>Local Golf</h5>
+        <ul>
+          <li><a href="/golf-near-escanaba/">Near Escanaba</a></li>
+          <li><a href="/golf-near-garden/">Near Garden</a></li>
+          <li><a href="/golf-near-gladstone/">Near Gladstone</a></li>
+          <li><a href="/golf-near-manistique/">Near Manistique</a></li>
+          <li><a href="/golf-near-rapid-river/">Near Rapid River</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h5>Visit</h5>
+        <div class="footer__addr">
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Google&amp;query_place_id=ChIJ1WB78T5ITE0RqiPAKAn2RtE" target="_blank" rel="noopener">8588 Ll Rd<br/>
+          Rapid River, MI 49878</a>
+        </div>
+        <h5 style="margin-top:28px">Season</h5>
+        <div class="footer__addr">Open May through September</div>
+      </div>
+
+      <div class="footer__col">
+        <h5>Contact</h5>
+        <div class="footer__addr">
+          <a href="tel:+19066442648">(906) 644-2648</a><br/>
+          <a href="mailto:info@nahmagolfclub.com">info@nahmagolfclub.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="badge">No tee time required. Walk-ins welcome.</div>
+      <div>© 1922–2026 Nahma Golf Club · Nahma, Michigan</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
