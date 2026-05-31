@@ -12,7 +12,7 @@ Fill out this doc, then hand it back to start a new session to deploy all fixes.
 **Correct email:**
 
 ```
-[YOUR ANSWER]
+info@nahmagolfclub.com
 ```
 
 ---
@@ -43,7 +43,8 @@ Fill out this doc, then hand it back to start a new session to deploy all fixes.
 **Phone number to link:** (906) 644-2648 ← confirm this is correct for the CTA  
 
 ```
-[CONFIRM OR CORRECT THE NUMBER]
+Swap for Call to Book
+(906) 644-2648
 ```
 
 ---
@@ -124,8 +125,9 @@ My code review found the HTML structure intact, so this is likely a rendering/CS
 
 **If the column is restored, should an image be added to it — or just fix the layout so existing content displays correctly?**
 
-- Just fix the layout (no new image)
-- Fix layout + add an image (which photo? ____________)
+```
+I basically just want a photo right next to the Explore Hole by Hole card with no padding or gap in between those 2 columns of the grid.
+```
 
 ---
 
@@ -150,7 +152,7 @@ Per Andrew's comment (#6): Tuesday and Thursday registration is closing soon; We
 **What changes are needed?** (days/times correct? registration language? alternate/sub signup process?)
 
 ```
-[YOUR ANSWER]
+Make updates based on Andrew's comments. Working on forms and signups for leagues and events.
 ```
 
 ---
@@ -164,7 +166,7 @@ The contact page currently has a generic Google Maps iframe.
 **Paste your GBP embed code here:**
 
 ```html
-[PASTE EMBED CODE — get it from Google Maps → Share → Embed a map]
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2778.751445107885!2d-86.63740530000001!3d45.856273599999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d4c483ef17b60d5%3A0xd146f60928c023aa!2sNahma%20Golf%20Course!5e0!3m2!1sen!2sus!4v1780194177001!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 ```
 
 ---
@@ -176,8 +178,6 @@ Brad replied asking if this replaces an existing sentence or adds to one. No ans
 
 **What's the call?**
 
-- Replace a specific sentence (which one? ____________)
-- Append to the end of a paragraph (which paragraph? ____________)
 - Skip for now
 
 ---
@@ -189,7 +189,6 @@ Brad asked about data flow (Google Sheet, Airtable, etc.) — no answer yet.
 
 **Is this in scope for this fix batch?**
 
-- Yes — data flow preference: ____________
 - No — defer to a later session
 
 ---
@@ -200,9 +199,7 @@ Brad asked about data flow (Google Sheet, Airtable, etc.) — no answer yet.
 
 No info needed — this is a CSS fix. But: how much more padding do you want?
 
-- Just a moderate bump (~50% more)
-- Significantly more (double current)
-- Your call / match the other page heroes
+- Match other pages hero sections
 
 ---
 
