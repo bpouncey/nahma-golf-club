@@ -25,6 +25,7 @@
   --color-green-dark:      #122519;
   --color-green-light:     #E6EDE8;
   --color-terracotta:      #B85C38;
+  --color-terracotta-dark: #834229;
   --color-terracotta-light:#F2D5C8;
   --color-cream:           #F4EFE6;
   --color-cream-dark:      #E8E0D4;
@@ -190,8 +191,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; padding
 .btn--lg { padding: 16px 32px; font-size: 15px; }
 .btn--sm { padding: 10px 20px; font-size: 13px; }
 
-.btn--primary             { background: var(--color-green); color: var(--color-white); }
-.btn--primary:hover       { background: var(--color-green-dark); }
+.btn--primary             { background: var(--color-terracotta); color: var(--color-white); }
+.btn--primary:hover       { background: var(--color-terracotta-dark); }
 
 .btn--secondary           { background: transparent; color: var(--color-green); border-color: var(--color-green); }
 .btn--secondary:hover     { background: var(--color-green); color: var(--color-white); }
