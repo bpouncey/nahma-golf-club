@@ -618,3 +618,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; padding
    Content is always visible. This attribute is reserved for
    future scroll animations; default state is fully rendered.
    ============================================================ */
+
+/* ============================================================
+   UTILITY
+   ============================================================ */
+.hidden { display: none; }
