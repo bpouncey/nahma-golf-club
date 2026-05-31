@@ -245,13 +245,12 @@
     text-wrap: pretty;
   }
 
-  /* Open badge on All Scramble */
-  .open-badge {
+  /* Status badges on league cards */
+  .open-badge,
+  .closing-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: var(--color-green);
-    color: var(--color-white);
     padding: 5px 12px;
     font-family: var(--font-body);
     font-weight: 600;
@@ -260,6 +259,15 @@
     text-transform: uppercase;
     margin-bottom: 10px;
     align-self: flex-start;
+  }
+  .open-badge {
+    background: var(--color-green);
+    color: var(--color-white);
+  }
+  .closing-badge {
+    background: var(--color-terracotta-light);
+    color: var(--color-terracotta);
+    border: 1px solid rgba(184,92,56,0.3);
   }
 
   /* ============== HOW TO JOIN ============== */
@@ -449,6 +457,7 @@
       <article class="league-card">
         <div class="league-card__num" aria-hidden="true">01</div>
         <span class="league-card__lbl">Tuesdays</span>
+        <div class="closing-badge">Closing Soon — Alternates Welcome</div>
         <h3 class="h4">Men's League</h3>
         <div class="league-card__schedule">
           <div class="league-card__schedule-item">
@@ -471,6 +480,7 @@
       <article class="league-card">
         <div class="league-card__num" aria-hidden="true">02</div>
         <span class="league-card__lbl">Wednesdays</span>
+        <div class="open-badge">Registration Open</div>
         <h3 class="h4">All Scramble</h3>
         <div class="league-card__schedule">
           <div class="league-card__schedule-item">
@@ -493,6 +503,7 @@
       <article class="league-card">
         <div class="league-card__num" aria-hidden="true">03</div>
         <span class="league-card__lbl">Thursdays</span>
+        <div class="closing-badge">Closing Soon — Alternates Welcome</div>
         <h3 class="h4">Women's League</h3>
         <div class="league-card__schedule">
           <div class="league-card__schedule-item">
@@ -522,8 +533,8 @@
       <div class="join__copy">
         <div class="overline">Joining Is Simple</div>
         <h2 class="h2">How to Join a League</h2>
-        <p>There is no registration form, no online portal, no paperwork to fill out. Joining a league at Nahma works the way everything else here works: show up, or give us a call.</p>
-        <p>If you want to know more before committing, call <a href="tel:+19066442648">(906) 644-2648</a>. Someone will tell you exactly what to expect on your first night and answer any questions.</p>
+        <p>The Wednesday All Scramble is fully open — new players are welcome any week, no commitment needed. Just show up at 6 PM or give us a call first.</p>
+        <p>The Tuesday Men's League and Thursday Women's League are filling up for the season, but both still have room for alternates and subs. If you want to fill in when a regular can't make it, call <a href="tel:+19066442648">(906) 644-2648</a> and we'll get your name on the list.</p>
       </div>
 
       <div class="join__steps">
@@ -531,7 +542,7 @@
           <div class="join-step__num">1</div>
           <div class="join-step__body">
             <h4 class="h4">Call Ahead</h4>
-            <p>Give us a call at <a href="tel:+19066442648">(906) 644-2648</a> to let us know you are coming. Not required, but it helps us know to expect you on your first night.</p>
+            <p>Give us a call at <a href="tel:+19066442648">(906) 644-2648</a>. For the Wednesday scramble, it is just a heads up — not required. For Tuesday or Thursday, calling first is the best way to get on the alternate list.</p>
           </div>
         </div>
         <div class="join-step">
@@ -622,7 +633,7 @@
         <h5>Contact</h5>
         <div class="footer__addr">
           <a href="tel:+19066442648">(906) 644-2648</a><br/>
-          <a href="mailto:nahmagolfclub@gmail.com">nahmagolfclub@gmail.com</a>
+          <a href="mailto:info@nahmagolfclub.com">info@nahmagolfclub.com</a>
         </div>
       </div>
     </div>
