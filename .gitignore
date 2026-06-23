@@ -55,3 +55,4 @@ local-pages-maps-data.md
 
 # Local Netlify folder
 .netlify
+.playwright-cli/
