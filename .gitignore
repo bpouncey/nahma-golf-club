@@ -45,9 +45,13 @@ _archive/
 _design/
 _seo/
 CLAUDE.md
+MEMORY.md
 COPY-AUDIT.md
 SEO-AUDIT-v1.md
 nahma-hole-by-hole.csv
 local-data-gemini.md
 local-page-seo-qa.md
 local-pages-maps-data.md
+
+# Local Netlify folder
+.netlify
