@@ -1,0 +1,19 @@
+# Netlify Redirects
+# Syntax: [source path]  [destination path]  [status code]
+# 301 = permanent redirect (use for old URLs that have moved for good)
+# 302 = temporary redirect (use for short-term or conditional redirects)
+#
+# Examples:
+# /old-page          /new-page          301
+# /promo             /rates             302
+
+# -----------------------------------------------------------------------
+# Old WordPress site → new site
+# -----------------------------------------------------------------------
+
+/contact             /contact/          301
+/events              /                  301
+/leagues             /leagues/          301
+/rates               /rates/            301
+/the-clubhouse       /clubhouse/        301
+/the-course          /the-course/       301

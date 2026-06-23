@@ -27,6 +27,9 @@ lerna-debug.log*
 # Environment & secrets
 .env
 
+# Performance trace files
+*.gz
+
 # Large binary source assets (not used in site)
 _handoff_tmp/
 photo-scrapes/
