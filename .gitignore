@@ -39,6 +39,7 @@ MLS\ Listing/
 # Internal tooling & AI config
 .claude/
 .playwright-mcp/
+.playwright-cli/
 
 # Process docs & internal research (not for client repo)
 _archive/
