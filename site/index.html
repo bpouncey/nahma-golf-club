@@ -1252,15 +1252,14 @@
 </footer>
 
 <script>
-  // Nav scroll state — transparent over hero, solid once scrolled
+  // Nav scroll state — solid once 80px sentinel scrolls out of viewport
   (function(){
     const nav = document.getElementById('nav');
-    const onScroll = () => {
-      if (window.scrollY > 80) nav.classList.add('is-scrolled');
-      else nav.classList.remove('is-scrolled');
-    };
-    window.addEventListener('scroll', onScroll, {passive:true});
-    requestAnimationFrame(onScroll);
+    const sentinel = document.createElement('div');
+    sentinel.setAttribute('aria-hidden', 'true');
+    sentinel.style.cssText = 'position:absolute;top:80px;left:0;width:1px;height:1px;pointer-events:none;visibility:hidden';
+    document.querySelector('.hero').appendChild(sentinel);
+    new IntersectionObserver(([e]) => nav.classList.toggle('is-scrolled', !e.isIntersecting)).observe(sentinel);
   })();
 
   // Smooth scroll for in-page anchors
