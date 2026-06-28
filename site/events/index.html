@@ -132,6 +132,22 @@
   .btn--nav-primary { background: var(--color-green); color: var(--color-white); padding: 11px 22px; font-size: 13px; }
   .nav .btn--nav-primary { background: var(--color-white); color: var(--color-green); }
   .nav.is-scrolled .btn--nav-primary { background: var(--color-green); color: var(--color-white); }
+  .crumbs {
+    padding: 100px 0 16px;
+    background: var(--color-cream);
+  }
+  .crumbs__inner {
+    max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad-x);
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--font-body); font-weight: 500; font-size: 12px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--color-text-muted); flex-wrap: wrap;
+  }
+  .crumbs__inner a,
+  .crumbs__inner .here { white-space: nowrap; transition: color 150ms ease; }
+  .crumbs__inner a:hover  { color: var(--color-terracotta); }
+  .crumbs__inner .sep     { color: var(--color-cream-dark); display: inline-block; }
+  .crumbs__inner .here    { color: var(--color-dark); }
 
   /* ============== PAGE HERO (green, no photo) ============== */
   .page-hero {
