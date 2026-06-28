@@ -367,10 +367,22 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nahmagolfclub.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Tee Times", "item": "https://www.nahmagolfclub.com/tee-times/"}
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nahmagolfclub.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Tee Times", "item": "https://www.nahmagolfclub.com/tee-times/"}
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nahmagolfclub.com/tee-times/#webpage",
+      "url": "https://www.nahmagolfclub.com/tee-times/",
+      "name": "Tee Times",
+      "isPartOf": {"@id": "https://www.nahmagolfclub.com/"},
+      "about": {"@id": "https://www.nahmagolfclub.com/#golfcourse"}
+    }
   ]
 }
 </script>
@@ -413,7 +425,7 @@
   <div class="hero__watermark" aria-hidden="true">NGC</div>
   <div class="hero__inner">
     <div class="hero__est">Open May – September &nbsp;·&nbsp; Upper Peninsula, Michigan</div>
-    <h1 class="h-display">No Reservation<br/>Required</h1>
+    <h1 class="h-display">Tee Times at Nahma Golf Club, Walk-Ins Welcome</h1>
     <p class="hero__sub">Walk-ins are welcome at Nahma Golf Club. Show up during regular hours and you're on the course. No booking system. No hold times. Just golf.</p>
     <div class="hero__badge" aria-label="Walk-ins welcome — no tee time required">
       Walk-Ins Welcome

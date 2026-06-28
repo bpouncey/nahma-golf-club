@@ -260,10 +260,22 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nahmagolfclub.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Membership", "item": "https://www.nahmagolfclub.com/membership/"}
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nahmagolfclub.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Membership", "item": "https://www.nahmagolfclub.com/membership/"}
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nahmagolfclub.com/membership/#webpage",
+      "url": "https://www.nahmagolfclub.com/membership/",
+      "name": "Golf Membership",
+      "isPartOf": {"@id": "https://www.nahmagolfclub.com/"},
+      "about": {"@id": "https://www.nahmagolfclub.com/#golfcourse"}
+    }
   ]
 }
 </script>
@@ -305,7 +317,7 @@
 <section class="hero">
   <div class="hero__inner">
     <div class="hero__est">Nahma, Michigan &nbsp;·&nbsp; Upper Peninsula</div>
-    <h1 class="h-display">Membership</h1>
+    <h1 class="h-display">Golf Memberships at Nahma Golf Club</h1>
     <p class="hero__sub">Join the club. Season memberships available for all ages — individual, couple, family, and student rates.</p>
   </div>
 </section>
