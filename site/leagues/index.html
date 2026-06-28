@@ -1,17 +1,20 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTPHPPRT7K"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-BTPHPPRT7K');
+    window.addEventListener('load', function() {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-BTPHPPRT7K';
+      document.head.appendChild(s);
+    });
   </script>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Golf Leagues | Nahma Golf Club — Weekly Leagues in Michigan's Upper Peninsula</title>
 <meta name="description" content="Join a golf league at Nahma Golf Club on Big Bay de Noc. Men's League Tuesdays, Women's League Thursdays, All Scramble Wednesdays — all at 6 PM, May through September. Call (906) 644-2648 to join." />
 <link rel="canonical" href="https://www.nahmagolfclub.com/leagues/" />
@@ -24,9 +27,127 @@
 <meta property="og:image:height" content="630" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/main.css" />
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" href="../css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="../css/main.css"></noscript>
 <style>
+  /* ============================================================
+     CRITICAL CSS — inlined to eliminate render-blocking main.css
+     Tokens, reset, nav, h-display, overline, and buttons are
+     duplicated from main.css here so above-fold content paints
+     immediately. main.css still loads (non-blocking) for the
+     rest of the page; these rules are harmlessly overwritten.
+     ============================================================ */
+  :root {
+    --color-green:           #1C3829;
+    --color-green-dark:      #122519;
+    --color-green-light:     #E6EDE8;
+    --color-terracotta:      #B85C38;
+    --color-terracotta-dark: #834229;
+    --color-terracotta-light:#F2D5C8;
+    --color-cream:           #F4EFE6;
+    --color-cream-dark:      #E8E0D4;
+    --color-off-white:       #FAFAF8;
+    --color-dark:            #1A1A18;
+    --color-text-muted:      #6B7264;
+    --color-white:           #FFFFFF;
+    --maxw:   1280px;
+    --pad-x:  80px;
+    --font-head: "Barlow Condensed", "Helvetica Neue", Arial, sans-serif;
+    --font-body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--color-cream);
+    color: var(--color-dark);
+    font-family: var(--font-body);
+    font-size: 16px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  img { display: block; max-width: 100%; }
+  a   { color: inherit; text-decoration: none; }
+  .h-display {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(52px, 7.4vw, 92px);
+    line-height: 0.98;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .overline {
+    display: inline-flex; align-items: center; gap: 14px;
+    font-family: var(--font-body); font-weight: 600; font-size: 13px;
+    text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--color-text-muted); margin: 0 0 22px; white-space: nowrap;
+  }
+  .overline::before, .overline::after {
+    content: ""; display: block; width: 46px; height: 1px;
+    background: var(--color-terracotta);
+  }
+  .overline--centered { display: flex; justify-content: center; align-items: center; }
+  .overline--dark { color: rgba(255,255,255,0.78); }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 10px; font-family: var(--font-body); font-weight: 600;
+    font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 14px 28px; border-radius: 2px;
+    transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+    border: 1px solid transparent; line-height: 1; white-space: nowrap;
+  }
+  .btn--lg      { padding: 16px 32px; font-size: 15px; }
+  .btn--primary { background: var(--color-terracotta); color: var(--color-white); }
+  .btn--primary:hover { background: var(--color-terracotta-dark); }
+  .btn--ghost   { background: transparent; color: var(--color-white); border-color: rgba(255,255,255,0.6); }
+  .btn--ghost:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.9); }
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+    transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: var(--color-white);
+  }
+  .nav.is-scrolled, .nav--solid {
+    background: var(--color-cream); color: var(--color-dark);
+    border-bottom-color: var(--color-cream-dark);
+  }
+  .nav__inner {
+    max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad-x);
+    height: 84px; display: flex; align-items: center;
+    justify-content: space-between; gap: 32px;
+  }
+  .logo { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; line-height: 1; padding: 4px 0; }
+  .logo__rule  { width: 100%; height: 1px; background: currentColor; opacity: 0.7; }
+  .logo__mark  {
+    font-family: var(--font-head); font-weight: 700; font-size: 18px;
+    letter-spacing: 0.18em; text-transform: uppercase; white-space: nowrap; padding: 2px 0;
+  }
+  .nav__links  { display: flex; align-items: center; gap: 36px; }
+  .nav__links a { font-weight: 500; font-size: 15px; letter-spacing: 0.02em; transition: color 150ms ease; position: relative; padding: 6px 0; }
+  .nav__cta    { display: flex; align-items: center; gap: 14px; }
+  .btn--nav-primary { background: var(--color-green); color: var(--color-white); padding: 11px 22px; font-size: 13px; }
+  .nav .btn--nav-primary { background: var(--color-white); color: var(--color-green); }
+  .nav.is-scrolled .btn--nav-primary { background: var(--color-green); color: var(--color-white); }
+  .crumbs {
+    padding: 100px 0 16px;
+    background: var(--color-cream);
+  }
+  .crumbs__inner {
+    max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad-x);
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--font-body); font-weight: 500; font-size: 12px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--color-text-muted); flex-wrap: wrap;
+  }
+  .crumbs__inner a,
+  .crumbs__inner .here { white-space: nowrap; transition: color 150ms ease; }
+  .crumbs__inner a:hover  { color: var(--color-terracotta); }
+  .crumbs__inner .sep     { color: var(--color-cream-dark); display: inline-block; }
+  .crumbs__inner .here    { color: var(--color-dark); }
+
   /* ============== HERO (green solid variant) ============== */
   .hero {
     background: var(--color-green);
