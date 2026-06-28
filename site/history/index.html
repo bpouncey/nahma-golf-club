@@ -559,10 +559,22 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nahmagolfclub.com/"},
-    {"@type": "ListItem", "position": 2, "name": "History", "item": "https://www.nahmagolfclub.com/history/"}
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nahmagolfclub.com/"},
+        {"@type": "ListItem", "position": 2, "name": "History", "item": "https://www.nahmagolfclub.com/history/"}
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nahmagolfclub.com/history/#webpage",
+      "url": "https://www.nahmagolfclub.com/history/",
+      "name": "History of Nahma Golf Club",
+      "isPartOf": {"@id": "https://www.nahmagolfclub.com/"},
+      "about": {"@id": "https://www.nahmagolfclub.com/#golfcourse"}
+    }
   ]
 }
 </script>
@@ -604,7 +616,7 @@
 <section class="hero">
   <div class="hero__inner">
     <div class="hero__est">Est. 1922 &nbsp;·&nbsp; Delta County, Michigan</div>
-    <h1 class="h-display">Our<br/>History</h1>
+    <h1 class="h-display">History of Nahma Golf Club, Est. 1922</h1>
     <p class="hero__sub">Over a century of public golf on the shore of Big Bay de Noc. The same course. The same community. Since 1922.</p>
   </div>
 </section>

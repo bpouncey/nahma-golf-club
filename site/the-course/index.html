@@ -499,10 +499,22 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nahmagolfclub.com/"},
-    {"@type": "ListItem", "position": 2, "name": "The Course", "item": "https://www.nahmagolfclub.com/the-course/"}
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nahmagolfclub.com/"},
+        {"@type": "ListItem", "position": 2, "name": "The Course", "item": "https://www.nahmagolfclub.com/the-course/"}
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nahmagolfclub.com/the-course/#webpage",
+      "url": "https://www.nahmagolfclub.com/the-course/",
+      "name": "The Course at Nahma Golf Club",
+      "isPartOf": {"@id": "https://www.nahmagolfclub.com/"},
+      "about": {"@id": "https://www.nahmagolfclub.com/#golfcourse"}
+    }
   ]
 }
 </script>
@@ -544,7 +556,7 @@
 <section class="hero">
   <div class="hero__inner">
     <div class="hero__est">Est. 1922 &nbsp;·&nbsp; Nahma, Michigan</div>
-    <h1 class="h-display">The Course</h1>
+    <h1 class="h-display">9-Hole Golf Course on Big Bay de Noc</h1>
     <div class="hero__tag">
       <span>9 Holes</span>
       <span>Par 36</span>

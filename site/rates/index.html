@@ -602,10 +602,22 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nahmagolfclub.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Rates and Fees", "item": "https://www.nahmagolfclub.com/rates/"}
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nahmagolfclub.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Rates and Fees", "item": "https://www.nahmagolfclub.com/rates/"}
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nahmagolfclub.com/rates/#webpage",
+      "url": "https://www.nahmagolfclub.com/rates/",
+      "name": "Green Fees & Rates",
+      "isPartOf": {"@id": "https://www.nahmagolfclub.com/"},
+      "about": {"@id": "https://www.nahmagolfclub.com/#golfcourse"}
+    }
   ]
 }
 </script>
@@ -647,7 +659,7 @@
 <section class="hero">
   <div class="hero__inner">
     <div class="hero__est">Est. 1922 &nbsp;·&nbsp; Nahma, Michigan</div>
-    <h1 class="h-display">Rates<br/>&amp; Fees</h1>
+    <h1 class="h-display">Green Fees and Rates at Nahma Golf Club</h1>
     <p class="hero__sub">Affordable golf on the shore of Big Bay de Noc. Green fees start at $18. No tee time required. Walk-ins always welcome.</p>
   </div>
 </section>
