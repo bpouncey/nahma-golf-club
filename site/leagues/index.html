@@ -583,10 +583,22 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nahmagolfclub.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Golf Leagues", "item": "https://www.nahmagolfclub.com/leagues/"}
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nahmagolfclub.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Golf Leagues", "item": "https://www.nahmagolfclub.com/leagues/"}
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nahmagolfclub.com/leagues/#webpage",
+      "url": "https://www.nahmagolfclub.com/leagues/",
+      "name": "Golf Leagues",
+      "isPartOf": {"@id": "https://www.nahmagolfclub.com/"},
+      "about": {"@id": "https://www.nahmagolfclub.com/#golfcourse"}
+    }
   ]
 }
 </script>

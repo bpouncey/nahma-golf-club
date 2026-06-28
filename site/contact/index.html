@@ -382,35 +382,22 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "GolfCourse",
-  "@id": "https://www.nahmagolfclub.com/#golfcourse",
-  "name": "Nahma Golf Club",
-  "url": "https://www.nahmagolfclub.com",
-  "telephone": "+19066442648",
-  "email": "info@nahmagolfclub.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "8588 Ll Rd",
-    "addressLocality": "Rapid River",
-    "addressRegion": "MI",
-    "postalCode": "49878",
-    "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "45.85630",
-    "longitude": "-86.63740"
-  },
-  "hasMap": "https://www.google.com/maps/place/?q=place_id:ChIJ1WB78T5ITE0RqiPAKAn2RtE"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nahmagolfclub.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.nahmagolfclub.com/contact/"}
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nahmagolfclub.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.nahmagolfclub.com/contact/"}
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nahmagolfclub.com/contact/#webpage",
+      "url": "https://www.nahmagolfclub.com/contact/",
+      "name": "Contact Nahma Golf Club",
+      "isPartOf": {"@id": "https://www.nahmagolfclub.com/"},
+      "about": {"@id": "https://www.nahmagolfclub.com/#golfcourse"}
+    }
   ]
 }
 </script>

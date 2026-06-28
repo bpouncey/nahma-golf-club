@@ -126,11 +126,23 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nahmagolfclub.com/"},
-    {"@type": "ListItem", "position": 2, "name": "The Course", "item": "https://www.nahmagolfclub.com/the-course/"},
-    {"@type": "ListItem", "position": 3, "name": "Hole by Hole", "item": "https://www.nahmagolfclub.com/the-course/hole-by-hole/"}
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nahmagolfclub.com/"},
+        {"@type": "ListItem", "position": 2, "name": "The Course", "item": "https://www.nahmagolfclub.com/the-course/"},
+        {"@type": "ListItem", "position": 3, "name": "Hole by Hole", "item": "https://www.nahmagolfclub.com/the-course/hole-by-hole/"}
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nahmagolfclub.com/the-course/hole-by-hole/#webpage",
+      "url": "https://www.nahmagolfclub.com/the-course/hole-by-hole/",
+      "name": "Hole by Hole Guide",
+      "isPartOf": {"@id": "https://www.nahmagolfclub.com/"},
+      "about": {"@id": "https://www.nahmagolfclub.com/#golfcourse"}
+    }
   ]
 }
 </script>
